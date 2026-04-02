@@ -10,7 +10,7 @@ const fadeUp = {
 };
 
 const images = {
-  hero: "/images/drinkig-hero.jpg",
+  hero: "/images/drinkig.png",
   screens: [
     "/images/drinkig-screen-1.png",
     "/images/drinkig-screen-2.png",
@@ -63,8 +63,9 @@ export default function DrinkigPage() {
             </span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-2">Drinkig</h1>
+          <p className="text-lg text-white/40">드링키지</p>
           <p className="text-xl text-white/50 mb-6">
-            드링키지 — 와인 입문의 장벽을 낮추는 취향 기반 큐레이션 앱
+            와인 입문의 장벽을 낮추는 취향 기반 큐레이션 앱
           </p>
 
           <div className="flex flex-wrap gap-3">
@@ -93,21 +94,19 @@ export default function DrinkigPage() {
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="relative w-full h-64 md:h-[400px] rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02] mb-16"
+          className="relative w-full rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02] mb-16"
         >
           <Image
             src={images.hero}
-            alt="Drinkig 메인"
-            fill
-            className="object-cover"
+            alt="드링키지 메인"
+            width={1200}
+            height={800}
+            className="w-full h-auto"
             sizes="100vw"
             onError={(e) => {
               e.currentTarget.style.display = "none";
             }}
           />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="text-4xl font-bold text-white/10">Drinkig</span>
-          </div>
         </motion.div>
 
         {/* Problem & Motivation */}
@@ -325,7 +324,7 @@ export default function DrinkigPage() {
               >
                 <Image
                   src={src}
-                  alt={`Drinkig 화면 ${i + 1}`}
+                  alt={`드링키지 화면 ${i + 1}`}
                   fill
                   className="object-contain"
                   sizes="(max-width: 640px) 50vw, 25vw"

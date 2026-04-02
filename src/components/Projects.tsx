@@ -13,7 +13,7 @@ const projects = [
       "2030 타겟 맞춤형 와인 큐레이션 앱. Figma 설계부터 React Native/MySQL 개발까지 AI로 구현 및 상용화.",
     tags: ["React Native", "MySQL", "1인 기획·개발", "AI 활용"],
     badge: "창업경진대회 2위",
-    image: "/images/drinkig.jpg",
+    image: "/images/drinkig-card.png",
     link: "/projects/drinkig",
     external: [
       { label: "웹사이트", href: "https://drinkig.com/" },
@@ -71,7 +71,7 @@ export default function Projects() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-[center_60%] group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
                   onError={(e) => {
                     const target = e.currentTarget;

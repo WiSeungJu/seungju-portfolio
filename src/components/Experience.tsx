@@ -68,7 +68,7 @@ export default function Experience() {
               </motion.div>
 
               {/* Card */}
-              <div className="p-6 md:p-8 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-accent/15 transition-all">
+              <Link href={exp.link} className="block p-6 md:p-8 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-accent/15 transition-all cursor-pointer">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
                   <div className="flex items-center gap-3">
@@ -120,13 +120,10 @@ export default function Experience() {
                 </div>
 
                 {/* Detail link */}
-                <Link
-                  href={exp.link}
-                  className="text-xs text-accent font-medium hover:underline"
-                >
+                <span className="text-xs text-accent font-medium hover:underline">
                   자세히 보기 →
-                </Link>
-              </div>
+                </span>
+              </Link>
             </motion.div>
           ))}
         </div>
