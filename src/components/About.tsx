@@ -59,7 +59,7 @@ const badges = [
   "AI-Driven",
   "AI-Native",
   "3 Languages",
-  "홍익대 컴공",
+  "홍익대학교 컴퓨터공학과",
 ];
 
 export default function About() {

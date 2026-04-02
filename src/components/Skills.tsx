@@ -23,7 +23,6 @@ const skillGroups = [
       { name: "TypeScript", detail: "타입 안전 개발" },
       { name: "React", detail: "웹 프론트엔드" },
       { name: "React Native", detail: "모바일 앱 개발" },
-      { name: "Next.js", detail: "풀스택 웹 프레임워크" },
       { name: "Node.js", detail: "서버사이드 런타임" },
       { name: "Django", detail: "백엔드 프레임워크" },
       { name: "Python", detail: "데이터·백엔드" },
@@ -36,7 +35,6 @@ const skillGroups = [
     category: "AI & Tools",
     items: [
       { name: "GPT API", detail: "LLM 기반 기능 개발" },
-      { name: "RAG", detail: "검색 증강 생성" },
       { name: "Claude Code", detail: "AI 코딩 에이전트" },
       { name: "Cursor", detail: "AI 코딩 메인 IDE" },
       { name: "AWS", detail: "클라우드 인프라" },
