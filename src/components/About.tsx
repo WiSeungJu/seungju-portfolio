@@ -90,10 +90,6 @@ export default function About() {
                   target.style.display = "none";
                 }}
               />
-              {/* Fallback */}
-              <div className="absolute inset-0 flex items-center justify-center text-white/20 text-6xl font-bold">
-                SJ
-              </div>
             </div>
           </div>
 
