@@ -73,7 +73,7 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="text-white/60 mb-12 text-lg"
         >
-          같이 일해요.
+          새로운 가능성을 함께 만들어가요.
         </motion.p>
 
         {/* Links */}

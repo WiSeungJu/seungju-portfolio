@@ -110,7 +110,7 @@ export default function Hero() {
             href="#contact"
             className="px-6 py-3 border border-white/15 hover:border-white/30 text-white/70 hover:text-white text-sm font-medium rounded-full transition-all"
           >
-            연락하기
+            함께 이야기하기
           </a>
         </motion.div>
       </div>
