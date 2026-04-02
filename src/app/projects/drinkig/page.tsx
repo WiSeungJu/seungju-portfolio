@@ -12,9 +12,10 @@ const fadeUp = {
 const images = {
   hero: "/images/drinkig-hero.jpg",
   screens: [
-    "/images/drinkig-screen-1.jpg",
-    "/images/drinkig-screen-2.jpg",
-    "/images/drinkig-screen-3.jpg",
+    "/images/drinkig-screen-1.png",
+    "/images/drinkig-screen-2.png",
+    "/images/drinkig-screen-3.png",
+    "/images/drinkig-screen-4.png",
   ],
 };
 
@@ -316,7 +317,7 @@ export default function DrinkigPage() {
           <h2 className="text-2xl font-bold mb-8">
             <span className="text-accent">#</span> Screens
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {images.screens.map((src, i) => (
               <div
                 key={i}
@@ -326,8 +327,8 @@ export default function DrinkigPage() {
                   src={src}
                   alt={`Drinkig 화면 ${i + 1}`}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 33vw"
+                  className="object-contain"
+                  sizes="(max-width: 640px) 50vw, 25vw"
                   onError={(e) => {
                     e.currentTarget.style.display = "none";
                   }}
