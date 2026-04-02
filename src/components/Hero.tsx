@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   const [text, setText] = useState("");
   const [done, setDone] = useState(false);
-  const fullText = "기획부터 바이브 코딩까지, AI로 프로덕트를 만드는 솔버";
+  const fullText = "기획부터 바이브 코딩까지, AI로 프로덕트를 만드는 기획자";
   const mouseRef = useRef<HTMLDivElement>(null);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
@@ -64,7 +64,7 @@ export default function Hero() {
         >
           <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
           <span className="text-xs font-mono text-white/80">
-            Product Owner & AI Solver
+            Product Owner & AI-Native Planner
           </span>
         </motion.div>
 

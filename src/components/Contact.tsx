@@ -105,7 +105,7 @@ export default function Contact() {
           className="border-t border-white/5 pt-8"
         >
           <p className="text-xs font-mono text-white/40">
-            <span className="text-accent/70">seungju@solver:~$</span>{" "}
+            <span className="text-accent/70">seungju@planner:~$</span>{" "}
             echo &quot;Let&apos;s build something great together.&quot;
           </p>
           <p className="text-xs text-white/30 mt-4">

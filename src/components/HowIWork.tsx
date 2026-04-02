@@ -60,7 +60,7 @@ const principles = [
     keyword: "No Boundaries",
     title: "역할을 넘나드는 문제 해결",
     description:
-      "PO로서 코드를 이해하고, 개발자로서 비즈니스를 설계합니다. 필요한 일이라면 직무의 경계를 두지 않고, C-레벨 협업부터 프로덕트 구현까지 주도합니다.",
+      "PO로서 코드를 이해하고, 개발자로서 비즈니스를 설계합니다. 막히면 멈추지 않고 진행할 수 있는 방향을 찾으며, 직무의 경계 없이 직접 해결합니다.",
     terminal: "$ collaborate --no-limits",
   },
   {

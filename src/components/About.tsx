@@ -56,7 +56,7 @@ const stats = [
 
 const badges = [
   "Product Owner",
-  "Solver",
+  "AI-Driven",
   "AI-Native",
   "3 Languages",
   "홍익대 컴공",
@@ -103,7 +103,7 @@ export default function About() {
               <span className="text-accent">#</span> About
             </h2>
             <p className="text-white/80 text-lg leading-relaxed mb-6">
-              기획부터 개발, AI 활용까지 모두 가능한 실전형 PO이자 솔버입니다.
+              기획부터 개발, AI 활용까지 모두 가능한 실전형 기획자입니다.
               <br />
               문제를 정의하고, 직접 만들고, 숫자로 증명합니다.
               <br />

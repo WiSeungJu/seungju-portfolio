@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   {
@@ -13,7 +14,11 @@ const projects = [
     tags: ["React Native", "MySQL", "1인 기획·개발", "AI 활용"],
     badge: "창업경진대회 2위",
     image: "/images/drinkig.jpg",
-    link: null,
+    link: "/projects/drinkig",
+    external: [
+      { label: "웹사이트", href: "https://drinkig.com/" },
+      { label: "App Store", href: "https://apps.apple.com/kr/app/%EB%93%9C%EB%A7%81%ED%82%A4%EC%A7%80-%EC%B7%A8%ED%96%A5-%EA%B8%B0%EB%B0%98-%EC%99%80%EC%9D%B8-%EC%B6%94%EC%B2%9C%EA%B3%BC-%EA%B8%B0%EB%A1%9D/id6741486172" },
+    ],
   },
   {
     title: "Gourmevel",
@@ -23,7 +28,11 @@ const projects = [
     tags: ["콘텐츠 기획", "알고리즘 최적화", "총괄 운영"],
     badge: "124만 뷰",
     image: "/images/gourmevel.jpg",
-    link: null,
+    link: "/projects/gourmevel",
+    external: [
+      { label: "Instagram", href: "https://www.instagram.com/gourmevel/" },
+      { label: "Blog", href: "https://blog.naver.com/gourmevel" },
+    ],
   },
 ];
 
@@ -50,7 +59,10 @@ export default function Projects() {
               initial={{ opacity: 0, y: 40 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
-              className="group relative rounded-2xl border border-white/5 bg-white/[0.02] overflow-hidden hover:border-accent/20 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg hover:shadow-accent/5"
+            >
+            <div
+              className="group relative rounded-2xl border border-white/5 bg-white/[0.02] overflow-hidden hover:border-accent/20 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg hover:shadow-accent/5 cursor-pointer"
+              onClick={() => window.location.href = project.link}
             >
               {/* Image area */}
               <div className="relative h-48 md:h-56 bg-gradient-to-br from-accent/10 to-accent-secondary/10 overflow-hidden">
@@ -96,7 +108,7 @@ export default function Projects() {
                   {project.description}
                 </p>
 
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
@@ -106,7 +118,32 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
+
+                <div className="flex items-center justify-between">
+                  <div className="flex gap-2">
+                    {project.external.map((ext) => (
+                      <a
+                        key={ext.label}
+                        href={ext.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="px-2.5 py-1 text-xs rounded border border-white/10 text-white/50 hover:text-white hover:border-accent/30 transition-all"
+                      >
+                        {ext.label}
+                      </a>
+                    ))}
+                  </div>
+                  <Link
+                    href={project.link}
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-xs text-accent font-medium hover:underline"
+                  >
+                    자세히 보기 →
+                  </Link>
+                </div>
               </div>
+            </div>
             </motion.div>
           ))}
         </div>

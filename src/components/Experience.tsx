@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 const experiences = [
   {
@@ -24,6 +25,7 @@ const experiences = [
       },
     ],
     highlight: "6개월간 30+건 실험 주도",
+    link: "/experience/planfit",
   },
 ];
 
@@ -96,7 +98,7 @@ export default function Experience() {
                 </div>
 
                 {/* Achievements */}
-                <div className="grid sm:grid-cols-2 gap-4">
+                <div className="grid sm:grid-cols-2 gap-4 mb-6">
                   {exp.achievements.map((achievement) => (
                     <div
                       key={achievement.title}
@@ -116,6 +118,14 @@ export default function Experience() {
                     </div>
                   ))}
                 </div>
+
+                {/* Detail link */}
+                <Link
+                  href={exp.link}
+                  className="text-xs text-accent font-medium hover:underline"
+                >
+                  자세히 보기 →
+                </Link>
               </div>
             </motion.div>
           ))}
