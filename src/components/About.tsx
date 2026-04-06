@@ -41,10 +41,10 @@ function CountUp({
 const stats = [
   { value: 30, suffix: "+", label: "실험 수행", description: "4개월간 PO로서" },
   {
-    value: 85,
+    value: 75,
     suffix: "%",
-    label: "리드타임 단축",
-    description: "AI 풀사이클로",
+    label: "결제 전환율 상승",
+    description: "Planfit Monetai 제휴",
   },
   {
     value: 124,
