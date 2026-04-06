@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const projects = [
   {
@@ -39,6 +40,7 @@ const projects = [
 export default function Projects() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const router = useRouter();
 
   return (
     <section id="projects" className="py-24 md:py-32 px-6" ref={ref}>
@@ -61,22 +63,22 @@ export default function Projects() {
               transition={{ duration: 0.6, delay: 0.2 + i * 0.15 }}
             >
             <div
+              role="link"
+              tabIndex={0}
               className="group relative rounded-2xl border border-white/5 bg-white/[0.02] overflow-hidden hover:border-accent/20 transition-all duration-300 hover:translate-y-[-4px] hover:shadow-lg hover:shadow-accent/5 cursor-pointer"
-              onClick={() => window.location.href = project.link}
+              onClick={() => router.push(project.link)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") router.push(project.link);
+              }}
             >
               {/* Image area */}
               <div className="relative h-48 md:h-56 bg-gradient-to-br from-accent/10 to-accent-secondary/10 overflow-hidden">
-                {/* TODO: 프로젝트 이미지를 /public/images/ 에 추가 */}
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
                   className="object-cover object-[center_60%] group-hover:scale-105 transition-transform duration-500"
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    target.style.display = "none";
-                  }}
                 />
 
                 {/* Badge */}

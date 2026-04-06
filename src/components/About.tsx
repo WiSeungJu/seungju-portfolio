@@ -39,7 +39,7 @@ function CountUp({
 }
 
 const stats = [
-  { value: 30, suffix: "+", label: "실험 수행", description: "4개월간 PO로서" },
+  { value: 30, suffix: "+", label: "실험 수행", description: "Planfit PO/Solver 4개월" },
   {
     value: 75,
     suffix: "%",
@@ -78,17 +78,12 @@ export default function About() {
           {/* Profile image placeholder */}
           <div className="flex justify-center md:justify-start">
             <div className="relative w-56 h-56 rounded-2xl overflow-hidden border border-white/10 bg-white/5">
-              {/* TODO: 프로필 이미지를 /public/images/profile.jpg 에 추가 */}
               <Image
                 src="/images/profile.jpg"
                 alt="위승주 프로필"
                 fill
                 className="object-cover"
                 sizes="224px"
-                onError={(e) => {
-                  const target = e.currentTarget;
-                  target.style.display = "none";
-                }}
               />
             </div>
           </div>

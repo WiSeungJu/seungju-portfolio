@@ -13,8 +13,10 @@ const experiences = [
     role: "PO / Solver (인턴)",
     tags: ["PO", "Solver", "AI"],
     tagline: "제약 안에서 해법을 찾는 PO",
+    roleNote:
+      "Solver — 기획·디자인·프론트엔드·QA를 1인 스프린트로 운영하며 병목을 해결하는 신설 직무",
     summary:
-      "기획·디자인·프론트엔드·QA를 1인 스프린트로 운영하며, 4개월간 30건 이상의 전환율 실험을 직접 설계·실행했습니다.",
+      "재직 6개월 중 초기 2개월 온보딩을 거쳐, 이후 4개월간 Solver 역할로 30건 이상의 전환율 실험을 직접 설계·실행했습니다.",
     summarySub:
       "두 개의 대표 프로젝트가 각기 다른 제약 조건에서 가설 검증 방식을 보여줍니다.",
     achievements: [
@@ -31,13 +33,13 @@ const experiences = [
         index: "02",
         title: "Monetai 제휴 · 노출 제어 레이어",
         description:
-          "실험이 제한되는 기존 유저 화면에 손대지 않고, 외부 AI 예측 솔루션을 발굴·제휴·도입해 구매 확률 기반 노출 제어 레이어를 확보했습니다.",
+          "실험이 제한되는 기존 유저 화면에 손대지 않고, 외부 AI 예측 솔루션을 도입·운영해 구매 확률 기반 노출 제어 레이어를 확보했습니다.",
         metric: "+75%",
         metricLabel: "CVR",
         sub: "현재까지 프로덕션 운영 중",
       },
     ],
-    highlight: "4개월 · 30+건 실험",
+    highlight: "Solver 4개월 · 30+건 실험",
     link: "/experience/planfit",
   },
 ];
@@ -121,6 +123,11 @@ export default function Experience() {
                   {/* Tagline */}
                   <p className="text-base md:text-lg font-semibold text-white/85 mb-2">
                     {exp.tagline}
+                  </p>
+
+                  {/* Role note */}
+                  <p className="text-xs text-accent/80 mb-3 max-w-2xl">
+                    {exp.roleNote}
                   </p>
 
                   {/* Summary */}

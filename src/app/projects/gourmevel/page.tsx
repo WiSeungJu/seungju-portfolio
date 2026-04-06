@@ -96,9 +96,6 @@ export default function GourmevelPage() {
             height={1080}
             className="w-full h-auto"
             sizes="100vw"
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-            }}
           />
         </motion.div>
 
@@ -196,7 +193,7 @@ export default function GourmevelPage() {
             {[
               { value: "124만", label: "숏폼 최고 조회수" },
               { value: "1만+", label: "팔로워" },
-              { value: "30만", label: "월 평균 방문" },
+              { value: "30만", label: "릴스 평균 조회수" },
               { value: "50+", label: "브랜드 협업 건수" },
             ].map((metric) => (
               <div

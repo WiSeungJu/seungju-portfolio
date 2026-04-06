@@ -103,9 +103,6 @@ export default function DrinkigPage() {
             height={800}
             className="w-full h-auto"
             sizes="100vw"
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-            }}
           />
         </motion.div>
 
@@ -190,18 +187,15 @@ export default function DrinkigPage() {
           </motion.div>
         </div>
 
-        {/* Screenshots */}
+        {/* Screens & Features */}
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mb-20"
         >
-          <h2 className="text-2xl font-bold mb-3">
-            <span className="text-accent">#</span> Screens
+          <h2 className="text-2xl font-bold mb-8">
+            <span className="text-accent">#</span> Key Features
           </h2>
-          <p className="text-sm text-white/50 mb-8">
-            아이디어 재정의부터 출시까지, 1인으로 만든 결과물입니다
-          </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {images.screens.map((src, i) => (
               <div
@@ -214,15 +208,7 @@ export default function DrinkigPage() {
                   fill
                   className="object-contain"
                   sizes="(max-width: 640px) 50vw, 25vw"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-sm text-white/10">
-                    Screen {i + 1}
-                  </span>
-                </div>
               </div>
             ))}
           </div>
@@ -335,20 +321,28 @@ export default function DrinkigPage() {
                 <h4 className="text-lg md:text-xl font-bold text-white/90 mb-3 leading-snug">
                   출시는 했지만, 유저는 없었다
                 </h4>
-                <p className="text-sm text-white/60 leading-relaxed mb-8 max-w-2xl">
-                  팀 프로젝트로 Swift · UIKit 기반 iOS 앱을 App Store에
+                <p className="text-sm text-white/60 leading-relaxed mb-4 max-w-2xl">
+                  <span className="text-white/85 font-semibold">
+                    아이디어 오너 · PM(기획) 리드
+                  </span>
+                  로서 6명의 개발자, 3명의 디자이너와 함께 10인 팀
+                  프로젝트를 구성해 Swift · UIKit 기반 iOS 앱을 App Store에
                   출시했습니다. 에디터가 선별한 와인 카드 + 유저 테이스팅
                   노트 기록을 핵심 기능으로 잡고, SNS 광고와 지인 유입을
                   돌렸지만 활성 유저는 확보되지 않았습니다. 2025.06
                   팀원들이 취업 준비에 들어가면서 프로젝트는 중단됐습니다.
                 </p>
+                <p className="text-xs text-white/50 leading-relaxed mb-8 max-w-2xl">
+                  v1은 실패로 마무리됐지만, 그대로 끝내지 않고 혼자 다시
+                  시작했습니다.
+                </p>
 
                 {/* v1 스펙 요약 */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                   {[
+                    { k: "MY ROLE", v: "PM (기획 리드)" },
+                    { k: "TEAM", v: "10인 (dev 6 · design 3 · PM 1)" },
                     { k: "STACK", v: "Swift · UIKit" },
-                    { k: "TEAM", v: "10인 팀" },
-                    { k: "DISTRIBUTION", v: "App Store 출시" },
                     { k: "STATUS", v: "검증 실패 · 중단" },
                   ].map((item) => (
                     <div
@@ -622,48 +616,6 @@ export default function DrinkigPage() {
                 </div>
               </section>
             </div>
-          </div>
-        </motion.div>
-
-        {/* Key Features */}
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mb-20"
-        >
-          <h2 className="text-2xl font-bold mb-8">
-            <span className="text-accent">#</span> Key Features
-          </h2>
-          <div className="grid sm:grid-cols-3 gap-4">
-            {[
-              {
-                title: "취향 기반 추천",
-                description:
-                  "유저의 맛 선호도를 분석하여 개인화된 와인을 추천하고, 각 와인이 나와 얼마나 잘 맞는지 점수로 보여줍니다.",
-              },
-              {
-                title: "AI 스마트렌즈",
-                description:
-                  "카메라로 와인 라벨이나 레스토랑 메뉴판을 촬영하면 와인을 자동 인식하고, 내 취향과의 매칭 점수를 즉시 확인할 수 있습니다.",
-              },
-              {
-                title: "와인 기록",
-                description:
-                  "마셔본 와인을 기록하고 취향 데이터를 쌓아갈수록 추천 정확도가 높아지는 구조로 설계했습니다.",
-              },
-            ].map((feature) => (
-              <div
-                key={feature.title}
-                className="p-5 rounded-xl border border-white/5 bg-white/[0.02]"
-              >
-                <h3 className="text-sm font-bold text-white/90 mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-sm text-white/60 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
           </div>
         </motion.div>
 

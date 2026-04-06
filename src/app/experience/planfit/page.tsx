@@ -20,7 +20,7 @@ const PROJECT_TABS = [
   {
     id: "monetai",
     index: "02",
-    label: "Monetai 제휴",
+    label: "Monetai 도입·운영",
     metric: "+75% CVR",
   },
 ] as const;
@@ -67,7 +67,7 @@ export default function PlanfitPage() {
               PO / Solver
             </span>
             <span className="px-3 py-1 text-xs font-mono rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              30+ 실험 · CVR 최대 +75%
+              Solver 4개월 · 30+ 실험 · CVR 최대 +75%
             </span>
             <span className="px-3 py-1 text-xs font-mono rounded-full bg-white/5 text-white/50 border border-white/10">
               2025.06 — 2025.12
@@ -91,9 +91,6 @@ export default function PlanfitPage() {
             fill
             className="object-cover"
             sizes="100vw"
-            onError={(e) => {
-              e.currentTarget.style.display = "none";
-            }}
           />
         </motion.div>
 
@@ -114,10 +111,11 @@ export default function PlanfitPage() {
                 만들어졌고, 이 포지션에 자원하여 합류했습니다.
               </p>
               <p>
-                Solver로서 기획부터 디자인, 프론트엔드 개발, QA까지 1인
+                재직 6개월 중 초기 2개월은 기존 업무·온보딩 과정을 거쳤고, 이후
+                4개월간 Solver 역할로 전환해 기획·디자인·프론트엔드·QA까지 1인
                 스프린트 사이클을 운영하며, 무료 유저의 유료 구독
-                전환율(Conversion Rate) 개선을 담당했습니다. 4개월간 30건
-                이상의 실험을 직접 설계하고 실행했습니다.
+                전환율(Conversion Rate) 개선을 담당했습니다. Solver 전환 이후
+                4개월간 30건 이상의 실험을 직접 설계하고 실행했습니다.
               </p>
             </div>
           </motion.div>
@@ -133,7 +131,10 @@ export default function PlanfitPage() {
             </div>
             <div>
               <h3 className="text-xs font-mono text-white/40 mb-2">기간</h3>
-              <p className="text-sm text-white/80">2025.06 — 2025.12 (6개월)</p>
+              <p className="text-sm text-white/80">2025.06 — 2025.12 (재직 6개월)</p>
+              <p className="text-xs text-white/50 mt-1">
+                Solver 역할 수행: 4개월
+              </p>
             </div>
             <div>
               <h3 className="text-xs font-mono text-white/40 mb-2">
@@ -382,15 +383,18 @@ export default function PlanfitPage() {
                 {/* 우측: 초대형 성과 넘버 */}
                 <div className="relative">
                   <div className="flex items-baseline gap-3">
-                    <span className="text-[96px] md:text-[140px] leading-none font-bold bg-gradient-to-br from-white to-white/40 bg-clip-text text-transparent tracking-tighter">
-                      2×
+                    <span className="text-[88px] md:text-[128px] leading-none font-bold bg-gradient-to-br from-white to-white/40 bg-clip-text text-transparent tracking-tighter">
+                      +20
+                      <span className="text-[44px] md:text-[64px] align-top text-white/60">
+                        %
+                      </span>
                     </span>
                     <div className="pb-3">
                       <p className="text-xs font-mono text-emerald-400 whitespace-nowrap">
-                        GOAL EXCEEDED
+                        CVR UPLIFT
                       </p>
                       <p className="text-[11px] text-white/50 mt-0.5">
-                        목표 대비 2배 달성
+                        목표 +10% 대비 2배 달성
                       </p>
                     </div>
                   </div>
@@ -545,13 +549,7 @@ export default function PlanfitPage() {
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 45vw, 320px"
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none";
-                        }}
                       />
-                      <div className="absolute inset-0 flex items-center justify-center text-white/20 text-xs font-mono pointer-events-none">
-                        AS-IS
-                      </div>
                     </div>
                     <figcaption className="mt-3 flex items-center gap-2">
                       <span className="text-[10px] font-mono text-white/40 px-2 py-0.5 rounded bg-white/5 border border-white/10">
@@ -572,24 +570,9 @@ export default function PlanfitPage() {
                         muted
                         loop
                         playsInline
+                        aria-label="AI 시즌 영상 기반 크리스마스 페이월"
                         className="absolute inset-0 w-full h-full object-cover"
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none";
-                        }}
                       />
-                      <Image
-                        src="/images/planfit/paywall-after.png"
-                        alt="AI 시즌 영상 기반 크리스마스 페이월"
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 45vw, 320px"
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none";
-                        }}
-                      />
-                      <div className="absolute inset-0 flex items-center justify-center text-white/20 text-xs font-mono pointer-events-none">
-                        TO-BE
-                      </div>
                       <div className="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-1 rounded-full bg-black/60 backdrop-blur-sm border border-white/10">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                         <span className="text-[9px] font-mono text-white/80">
@@ -626,9 +609,9 @@ export default function PlanfitPage() {
                         {
                           n: "02",
                           tag: "VEO · MIDJOURNEY",
-                          title: "AI로 시즌 영상 직접 제작",
+                          title: "AI로 시즌 애니메이션 영상 직접 제작",
                           detail:
-                            "Veo·Midjourney로 크리스마스 시즌 영상을 생성. 촬영·외주 없이 단기간에 여러 버전을 만들어 실험 속도를 빠르게 가져갔습니다.",
+                            "Veo·Midjourney로 크리스마스 시즌 애니메이션 영상을 생성. 외주 없이 단기간에 여러 버전을 만들어 실험 속도를 빠르게 가져갔습니다.",
                         },
                         {
                           n: "03",
@@ -737,7 +720,7 @@ export default function PlanfitPage() {
                     환경이었습니다. 화면에 개입하지 않고도 전환율에 영향을 줄
                     수 있는 지점을 찾기 위해 리서치를 진행했고, 구매 확률을
                     예측해 할인권 노출을 제어해주는 외부 AI 솔루션 Monetai를
-                    발굴·제휴·도입해 해결했습니다.
+                    발굴·도입해 해결했습니다.
                   </p>
                 </div>
 
@@ -765,7 +748,7 @@ export default function PlanfitPage() {
                     <div>
                       <div className="flex items-center justify-between text-[10px] font-mono text-white/40 mb-1">
                         <span>BEFORE</span>
-                        <span>주간 결제 전환율 4%</span>
+                        <span>기존 주간 결제 전환율</span>
                       </div>
                       <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
                         <div className="h-full w-[40%] rounded-full bg-white/30" />
@@ -774,7 +757,7 @@ export default function PlanfitPage() {
                     <div>
                       <div className="flex items-center justify-between text-[10px] font-mono text-accent mb-1">
                         <span>WITH MONETAI</span>
-                        <span className="text-white font-bold">7% (+75%)</span>
+                        <span className="text-white font-bold">+75%</span>
                       </div>
                       <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
                         <div className="h-full w-full rounded-full bg-gradient-to-r from-violet-400 to-emerald-400" />
@@ -870,7 +853,7 @@ export default function PlanfitPage() {
                       진행했습니다. 구매 확률이 낮은 유저에게만 할인권을
                       노출해주는{" "}
                       <span className="text-white">Monetai</span>를 발굴해
-                      제휴·도입을 직접 주도했습니다.
+                      도입·운영·지속 개선까지 단독으로 주도했습니다.
                     </p>
                   </div>
                 </div>
@@ -919,24 +902,24 @@ export default function PlanfitPage() {
                     },
                     {
                       n: "02",
-                      tag: "RESEARCH",
+                      tag: "RESEARCH · SOURCING",
                       title: "시야를 밖으로, Monetai 발굴",
                       detail:
-                        "사내 해결이 막혀있던 문제를 외부 솔루션으로 풀기 위해 리서치. 구매 확률을 예측해 낮은 유저에게만 할인권을 노출해주는 Monetai를 찾아냈습니다.",
+                        "사내 해결이 막혀있던 문제를 외부 솔루션으로 풀기 위해 리서치. 구매 확률을 예측해 낮은 유저에게만 할인권을 노출해주는 Monetai를 직접 찾아냈습니다.",
                     },
                     {
                       n: "03",
-                      tag: "PARTNERSHIP · OWNERSHIP",
-                      title: "협업·도입 주도",
+                      tag: "PARTNERSHIP · 1:3 MEETING",
+                      title: "도입 주도 & Monetai 측과 직접 협업",
                       detail:
-                        "Monetai 측과 직접 커뮤니케이션하며 제휴를 성사. 내부에는 ROI 근거를 정리해 도입 의사결정을 이끌어냈습니다.",
+                        "Monetai 측 CTO, 개발자, 디자이너로 구성된 3인과 저 1인이 붙는 1:3 미팅을 지속하며, 세그먼트 기준·노출 로직·성과 해석 방식을 합의하고 파일럿부터 프로덕션 도입까지 단독으로 주도했습니다.",
                     },
                     {
                       n: "04",
-                      tag: "LIVE · IN PRODUCTION",
-                      title: "운영 & 지속 검증",
+                      tag: "LIVE · CONTINUOUS IMPROVEMENT",
+                      title: "운영 & 데이터 기반 지속 개선",
                       detail:
-                        "Monetai가 선정한 세그먼트에만 할인권을 노출하는 구조로 실환경 적용. 지금까지도 플랜핏 프로덕션에서 운영되고 있습니다.",
+                        "프로덕션 적용 이후에도 Amplitude 데이터를 지속 모니터링하고, Monetai 측과 세그먼트·노출 조건을 함께 조정하며 주간 결제 전환율을 계속 끌어올렸습니다. 지금까지도 플랜핏 프로덕션에서 운영되고 있습니다.",
                     },
                   ].map((item) => (
                     <div
@@ -975,8 +958,8 @@ export default function PlanfitPage() {
                 <div className="p-5 md:p-6 rounded-xl bg-gradient-to-br from-accent/10 via-white/[0.02] to-emerald-500/5 border border-accent/20">
                   <p className="text-sm md:text-base text-white/80 leading-relaxed">
                     기존 유저 화면에 전혀 개입하지 않고 주간 결제 전환율을{" "}
-                    <span className="text-white font-bold">1.75배(+75%)</span>{" "}
-                    개선했습니다. 외부 AI 솔루션과의 제휴로 확보한 노출 제어
+                    <span className="text-white font-bold">+75% 상승</span>
+                    시켰습니다. 외부 AI 솔루션과의 제휴로 확보한 노출 제어
                     레이어는 일회성 실험에 그치지 않고,{" "}
                     <span className="text-white font-semibold">
                       지금까지도 플랜핏 프로덕션에서 운영
@@ -1015,7 +998,7 @@ export default function PlanfitPage() {
               {
                 title: "비즈니스 커뮤니케이션",
                 description:
-                  "외부 파트너사 C-레벨과 직접 협업한 경험이 있습니다. 인턴 포지션에서도 의사결정권자와 동등한 위치에서 소통하며 성과를 만들었습니다.",
+                  "Monetai 측 CTO·개발자·디자이너와의 1:3 미팅을 단독으로 리드하며, 세그먼트·로직·성과 해석의 합의 과정을 책임지고 진행했습니다.",
               },
             ].map((item) => (
               <div
