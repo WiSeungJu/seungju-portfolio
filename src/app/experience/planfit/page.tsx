@@ -21,7 +21,7 @@ const PROJECT_TABS = [
     id: "monetai",
     index: "02",
     label: "Monetai 제휴",
-    metric: "4% → 7%",
+    metric: "+75% CVR",
   },
 ] as const;
 
@@ -725,38 +725,39 @@ export default function PlanfitPage() {
                 {/* 좌측 타이틀 */}
                 <div>
                   <h3 className="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-5">
-                    화면을 건드리는 대신,
+                    기존 화면에 손대지 않고,
                     <br />
                     <span className="bg-gradient-to-r from-violet-300 via-white to-emerald-300 bg-clip-text text-transparent">
-                      보여줄 사람
+                      작동시킬 지점
                     </span>
-                    을 바꿨다.
+                    을 찾다.
                   </h3>
                   <p className="text-sm md:text-base text-white/60 leading-relaxed max-w-md">
-                    이미 익숙한 기존 유저의 화면·플로우를 망치지 않고, 구매
-                    확률이 낮은 유저에게만 할인권을 노출. AI 예측 솔루션
-                    Monetai를 발굴·제휴·도입까지 주도했습니다.
+                    기존 유저의 화면은 여러 실험을 자유롭게 적용하기 어려운
+                    환경이었습니다. 화면에 개입하지 않고도 전환율에 영향을 줄
+                    수 있는 지점을 찾기 위해 리서치를 진행했고, 구매 확률을
+                    예측해 할인권 노출을 제어해주는 외부 AI 솔루션 Monetai를
+                    발굴·제휴·도입해 해결했습니다.
                   </p>
                 </div>
 
                 {/* 우측 성과 넘버 */}
                 <div className="relative">
                   <div className="flex items-baseline gap-3">
-                    <span className="text-[80px] md:text-[120px] leading-none font-bold bg-gradient-to-br from-white to-white/40 bg-clip-text text-transparent tracking-tighter">
-                      4
-                      <span className="text-white/40">→</span>7
-                      <span className="text-[40px] md:text-[60px] align-top text-white/60">
-                        %
+                    <span className="text-[96px] md:text-[140px] leading-none font-bold bg-gradient-to-br from-white to-white/40 bg-clip-text text-transparent tracking-tighter">
+                      1.75
+                      <span className="text-[48px] md:text-[72px] align-top text-white/60">
+                        ×
                       </span>
                     </span>
-                  </div>
-                  <div className="mt-1">
-                    <p className="text-xs font-mono text-emerald-400">
-                      +75% LIFT · STILL IN PRODUCTION
-                    </p>
-                    <p className="text-[11px] text-white/50 mt-0.5">
-                      기존 유저 14일 이후 주간 결제 전환율
-                    </p>
+                    <div className="pb-3">
+                      <p className="text-xs font-mono text-emerald-400 whitespace-nowrap">
+                        STILL IN PRODUCTION
+                      </p>
+                      <p className="text-[11px] text-white/50 mt-0.5">
+                        지금까지도 운영 중
+                      </p>
+                    </div>
                   </div>
 
                   {/* 비교 바 */}
@@ -764,7 +765,7 @@ export default function PlanfitPage() {
                     <div>
                       <div className="flex items-center justify-between text-[10px] font-mono text-white/40 mb-1">
                         <span>BEFORE</span>
-                        <span>4%</span>
+                        <span>주간 결제 전환율 4%</span>
                       </div>
                       <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
                         <div className="h-full w-[40%] rounded-full bg-white/30" />
@@ -773,10 +774,10 @@ export default function PlanfitPage() {
                     <div>
                       <div className="flex items-center justify-between text-[10px] font-mono text-accent mb-1">
                         <span>WITH MONETAI</span>
-                        <span className="text-white font-bold">7%</span>
+                        <span className="text-white font-bold">7% (+75%)</span>
                       </div>
                       <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
-                        <div className="h-full w-[70%] rounded-full bg-gradient-to-r from-violet-400 to-emerald-400" />
+                        <div className="h-full w-full rounded-full bg-gradient-to-r from-violet-400 to-emerald-400" />
                       </div>
                     </div>
                   </div>
@@ -796,10 +797,10 @@ export default function PlanfitPage() {
                 </div>
 
                 <h4 className="text-lg md:text-xl font-bold text-white/90 mb-8 leading-snug">
-                  익숙한 화면은 그대로 두고,
+                  화면에 전혀 개입하지 않고,
                   <br className="hidden sm:block" />
                   <span className="text-white/50">
-                    어떻게 기존 유저의 전환을 끌어올렸나?
+                    어떻게 전환율에 영향을 줄 수 있을까?
                   </span>
                 </h4>
 
@@ -815,13 +816,13 @@ export default function PlanfitPage() {
                       </p>
                     </div>
                     <p className="text-sm font-semibold text-white/90 mb-2 leading-snug">
-                      기존 유저는 화면이 이미 &lsquo;내 것&rsquo;이었다
+                      기존 유저 화면은 실험이 제한되는 영역이었다
                     </p>
                     <p className="text-xs text-white/55 leading-relaxed">
-                      가입 14일이 넘었는데도 무료로 머무는 유저를 &lsquo;기존
-                      유저&rsquo;로 정의했습니다. 이들은 이미 플랜핏의 화면과
-                      플로우에 익숙해진 상태라, 페이월이나 UI를 과감하게 바꾸는
-                      실험은 오히려 경험을 해칠 수 있었습니다.
+                      가입 14일이 지나도 무료로 머무는 유저를 기존 유저로
+                      정의했습니다. 이들은 이미 익숙해진 화면·플로우가 있어,
+                      페이월과 UI에 다수의 실험을 자유롭게 적용하기 어려운
+                      환경이었습니다.
                     </p>
                   </div>
 
@@ -836,16 +837,17 @@ export default function PlanfitPage() {
                       </p>
                     </div>
                     <p className="text-sm font-semibold text-white/90 mb-2 leading-snug">
-                      바꿀 수 있는 건 화면이 아니라{" "}
+                      해법은 화면이 아닌{" "}
                       <span className="text-accent">
-                        &lsquo;누구에게 보여줄지&rsquo;
+                        다른 레이어
                       </span>
+                      에 있다
                     </p>
                     <p className="text-xs text-white/55 leading-relaxed">
-                      기존 UX를 지키면서도 전환을 끌어올리려면, 화면을
-                      바꾸는 게 아니라 &lsquo;누구에게 할인권을 보여줄지&rsquo;를
-                      바꿔야 했습니다. 모두에게 할인권을 뿌리면 가치가
-                      떨어지고, 구매할 사람에게까지 할인을 쓰는 낭비가 생깁니다.
+                      화면에 개입할 수 없다면, 화면을 바꾸지 않고도 전환율에
+                      영향을 줄 수 있는 지점을 찾아야 했습니다. 화면 자체가
+                      아닌, &lsquo;할인권이 노출되는 조건&rsquo;을 제어하는
+                      레이어가 그 지점이라고 판단했습니다.
                     </p>
                   </div>
 
@@ -860,14 +862,15 @@ export default function PlanfitPage() {
                       </p>
                     </div>
                     <p className="text-sm font-semibold text-white/90 mb-2 leading-snug">
-                      구매 확률이 낮은 유저에게만 할인권을
+                      노출 제어 레이어는 외부 솔루션으로 확보한다
                     </p>
                     <p className="text-xs text-white/55 leading-relaxed">
-                      시야를 사내 밖으로 넓혀 솔루션을 찾던 중, 구매 확률을
-                      예측해 낮은 유저에게만 할인권을 노출해주는{" "}
-                      <span className="text-white">Monetai</span>를
-                      발견했습니다. 기존 화면은 그대로 두고 &lsquo;대상&rsquo;만
-                      바꾼다는 가설로 제휴·도입을 주도했습니다.
+                      구매 확률 기반의 노출 제어는 사내 리소스만으로 구축하기
+                      어려웠기에, 외부 솔루션까지 범위를 넓혀 리서치를
+                      진행했습니다. 구매 확률이 낮은 유저에게만 할인권을
+                      노출해주는{" "}
+                      <span className="text-white">Monetai</span>를 발굴해
+                      제휴·도입을 직접 주도했습니다.
                     </p>
                   </div>
                 </div>
@@ -877,15 +880,17 @@ export default function PlanfitPage() {
                     &ldquo;
                   </span>
                   <p className="text-base md:text-lg text-white/80 leading-relaxed italic">
-                    기존 UX는 지키되,{" "}
+                    기존 화면에 개입하지 않고도{" "}
                     <strong className="text-white not-italic">
-                      누구에게 보여줄지
+                      작동할 수 있는 지점
                     </strong>
-                    만 AI에게 맡겼다.
+                    을 찾는 것.
                     <br className="hidden md:block" />
-                    화면을 건드리지 않고도{" "}
-                    <strong className="text-white not-italic">전환율</strong>
-                    은 바꿀 수 있다는 걸 증명한 실험.
+                    그 지점이 사내에 없다면,{" "}
+                    <strong className="text-white not-italic">
+                      외부 리소스
+                    </strong>
+                    와 연결해 확보한다.
                   </p>
                 </div>
               </section>
@@ -969,14 +974,12 @@ export default function PlanfitPage() {
 
                 <div className="p-5 md:p-6 rounded-xl bg-gradient-to-br from-accent/10 via-white/[0.02] to-emerald-500/5 border border-accent/20">
                   <p className="text-sm md:text-base text-white/80 leading-relaxed">
-                    기존 유저의 14일 이후 주간 결제 전환율이{" "}
-                    <span className="text-white font-bold">4%에서 7%로</span>,
-                    상대적으로{" "}
-                    <span className="text-white font-bold">+75% 상승</span>
-                    했습니다. 화면을 건드리지 않고 &lsquo;누구에게&rsquo;만
-                    바꿔 전환율을 끌어올린 이 구조는, 지금까지도{" "}
+                    기존 유저 화면에 전혀 개입하지 않고 주간 결제 전환율을{" "}
+                    <span className="text-white font-bold">1.75배(+75%)</span>{" "}
+                    개선했습니다. 외부 AI 솔루션과의 제휴로 확보한 노출 제어
+                    레이어는 일회성 실험에 그치지 않고,{" "}
                     <span className="text-white font-semibold">
-                      플랜핏 프로덕션에서 운영
+                      지금까지도 플랜핏 프로덕션에서 운영
                     </span>
                     되고 있습니다.
                   </p>
