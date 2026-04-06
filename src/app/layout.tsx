@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "위승주 | AI-Native Planner & Product Owner",
   description:
-    "기획부터 바이브 코딩까지, AI로 프로덕트 메이킹 속도를 극대화하는 실전형 PM",
+    "기획부터 바이브 코딩까지, AI로 프로덕트를 만드는 기획자",
   openGraph: {
     title: "위승주 | AI-Native Planner & Product Owner",
     description:
-      "기획부터 바이브 코딩까지, AI로 프로덕트 메이킹 속도를 극대화하는 실전형 PM",
+      "기획부터 바이브 코딩까지, AI로 프로덕트를 만드는 기획자",
     url: "https://portfolio.gourmevel.com",
     type: "website",
   },

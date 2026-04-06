@@ -2,29 +2,31 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 
 const experiences = [
   {
     period: "2025.06 - 2025.12",
     company: "Planfit",
+    logo: "/images/planfit-logo.png",
     role: "PO / Solver (인턴)",
-    tags: ["PO", "Solver", "B2B", "AI"],
+    tags: ["PO", "Solver", "AI"],
     achievements: [
       {
-        title: "B2B AI 솔루션 제휴 리드",
+        title: "외부 AI 솔루션 제휴",
         description:
-          "외부 AI 솔루션(모네타이) B2B 제휴를 직접 리드, 타사 C-레벨과 협업하여 기존 유저 결제 전환율(CVR) 30% 상승",
+          "외부 AI 솔루션(모네타이) 제휴를 담당하여 타사 C-레벨과 협업했고, 기존 유저 결제 전환율(CVR)을 30% 개선했습니다.",
         metric: "CVR +30%",
       },
       {
         title: "AI 풀사이클 프로세스 구축",
         description:
-          "AI 코딩 툴 및 생성형 AI(Veo, Sora 등)를 활용해 기획-개발-QA 풀사이클을 단독 수행, 리드타임 대폭 단축",
+          "AI 코딩 툴과 생성형 AI(Veo, Sora 등)를 활용해 기획-개발-QA 풀사이클을 1인으로 수행하며 리드타임을 단축했습니다.",
         metric: "리드타임 -85%",
       },
     ],
-    highlight: "6개월간 30+건 실험 주도",
+    highlight: "6개월간 30+건 실험",
     link: "/experience/planfit",
   },
 ];
@@ -68,7 +70,21 @@ export default function Experience() {
               </motion.div>
 
               {/* Card */}
-              <Link href={exp.link} className="block p-6 md:p-8 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-accent/15 transition-all cursor-pointer">
+              <Link href={exp.link} className="group relative block p-6 md:p-8 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-accent/15 transition-all cursor-pointer overflow-hidden">
+                {/* Background logo */}
+                {exp.logo && (
+                  <div className="pointer-events-none absolute right-6 -top-12 w-44 h-44 md:w-56 md:h-56 opacity-[0.06] group-hover:opacity-[0.1] transition-opacity duration-500">
+                    <Image
+                      src={exp.logo}
+                      alt=""
+                      fill
+                      className="object-contain"
+                      sizes="288px"
+                    />
+                  </div>
+                )}
+
+                <div className="relative z-10">
                 {/* Header */}
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
                   <div className="flex items-center gap-3">
@@ -123,6 +139,7 @@ export default function Experience() {
                 <span className="text-xs text-accent font-medium hover:underline">
                   자세히 보기 →
                 </span>
+                </div>
               </Link>
             </motion.div>
           ))}

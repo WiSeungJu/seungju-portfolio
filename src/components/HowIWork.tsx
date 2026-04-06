@@ -21,8 +21,7 @@ const principles = [
     keyword: "User-First",
     title: "데이터 기반 의사결정",
     description:
-      "직감보다 근거를 우선합니다. Amplitude 퍼널 분석과 30+건의 A/B 테스트 경험을 바탕으로, 유저 행동에 기반한 의사결정을 내립니다.",
-    terminal: "$ analyze --funnel --data-driven",
+      "직감보다 근거를 우선합니다. Amplitude 퍼널 분석과 30+건의 A/B 테스트를 기반으로, 유저 행동 데이터를 근거로 의사결정합니다.",
   },
   {
     icon: (
@@ -40,8 +39,7 @@ const principles = [
     keyword: "Speed-Driven",
     title: "빠른 실행, 빠른 검증",
     description:
-      "AI 툴을 활용해 기획부터 개발, QA까지 풀사이클을 직접 수행합니다. 아이디어를 빠르게 프로덕트로 전환하고, 시장에서 검증하는 과정을 즐깁니다.",
-    terminal: "$ ship --fast --ai-powered",
+      "AI 툴을 활용해 기획부터 개발, QA까지 풀사이클을 직접 수행합니다. 아이디어를 빠르게 프로덕트로 구현하고, 시장에서 검증하는 방식을 선호합니다.",
   },
   {
     icon: (
@@ -58,10 +56,9 @@ const principles = [
       </svg>
     ),
     keyword: "No Boundaries",
-    title: "역할을 넘나드는 문제 해결",
+    title: "역할의 경계를 넘는 문제 해결",
     description:
-      "PO로서 코드를 이해하고, 개발자로서 비즈니스를 설계합니다. 막히면 멈추지 않고 진행할 수 있는 방향을 찾으며, 직무의 경계 없이 직접 해결합니다.",
-    terminal: "$ collaborate --no-limits",
+      "PO로서 코드를 이해하고, 개발자로서 비즈니스를 함께 고민합니다. 막히는 지점이 있으면 직무에 구애받지 않고 직접 해결하는 방식으로 일합니다.",
   },
   {
     icon: (
@@ -80,8 +77,7 @@ const principles = [
     keyword: "Multilingual",
     title: "다문화 환경에서의 소통",
     description:
-      "싱가포르에서 5년간 생활하며 다양한 문화적 맥락을 체득했습니다. 한국어, 영어, 중국어 3개 국어로 자연스럽게 커뮤니케이션합니다.",
-    terminal: "$ speak --lang ko,en,zh",
+      "싱가포르에서 5년간 생활하며 다양한 문화권의 사람들과 협업했습니다. 한국어, 영어, 중국어로 커뮤니케이션이 가능합니다.",
   },
 ];
 
@@ -101,9 +97,6 @@ export default function HowIWork() {
           <h2 className="text-3xl md:text-4xl font-bold mb-3">
             <span className="text-accent">#</span> How I Work
           </h2>
-          <p className="text-sm font-mono text-white/50">
-            $ how-i-work --show-principles
-          </p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 gap-6">
@@ -135,13 +128,8 @@ export default function HowIWork() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-white/70 leading-relaxed mb-4">
+                <p className="text-sm text-white/70 leading-relaxed">
                   {item.description}
-                </p>
-
-                {/* Terminal line */}
-                <p className="text-xs font-mono text-white/40 group-hover:text-white/50 transition-colors">
-                  {item.terminal}
                 </p>
               </div>
             </motion.div>

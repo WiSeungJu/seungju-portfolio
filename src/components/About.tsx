@@ -39,7 +39,7 @@ function CountUp({
 }
 
 const stats = [
-  { value: 30, suffix: "+", label: "실험 주도", description: "6개월간 PO로서" },
+  { value: 30, suffix: "+", label: "실험 수행", description: "6개월간 PO로서" },
   {
     value: 85,
     suffix: "%",
@@ -99,12 +99,11 @@ export default function About() {
               <span className="text-accent">#</span> About
             </h2>
             <p className="text-white/80 text-lg leading-relaxed mb-6">
-              기획부터 개발, AI 활용까지 모두 가능한 실전형 기획자입니다.
+              기획부터 개발, AI 활용까지 직접 수행하는 기획자입니다.
               <br />
-              문제를 정의하고, 직접 만들고, 숫자로 증명합니다.
+              문제를 정의하고, 프로덕트로 구현하며, 데이터로 검증합니다.
               <br />
-              싱가포르에서 5년간 거주하며 체득한 글로벌 시각으로 프로덕트를
-              바라봅니다.
+              싱가포르에서 5년간 생활하며 다양한 문화권에서 협업한 경험이 있습니다.
             </p>
 
             {/* Badges */}
