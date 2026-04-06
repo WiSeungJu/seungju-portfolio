@@ -11,11 +11,6 @@ const fadeUp = {
 
 const images = {
   hero: "/images/gourmevel-hero.jpg",
-  gallery: [
-    "/images/gourmevel-gallery-1.jpg",
-    "/images/gourmevel-gallery-2.jpg",
-    "/images/gourmevel-gallery-3.jpg",
-  ],
 };
 
 export default function GourmevelPage() {
@@ -132,8 +127,8 @@ export default function GourmevelPage() {
                 미디어의 한계를 계속 확장해왔습니다.
               </p>
               <p>
-                광고 집행 없이 오가닉 트래픽만으로 팔로워 1만 명을 넘겼고,
-                브랜드·외부 업체와의 협업 캠페인을 50건 이상 진행했습니다.
+                유료 광고 집행 없이 오가닉 도달만으로 팔로워 1만 명을 넘겼고,
+                브랜드·외부 업체와의 협업 캠페인은 50건 이상 진행했습니다.
                 인스타그램에서 출발해 네이버 블로그, 유튜브 롱폼·숏폼으로
                 채널을 확장하는 과정에서, 각 플랫폼의 알고리즘과 소비 맥락에
                 맞춘 콘텐츠 전략을 다시 설계하며 성과를 이어왔습니다.
@@ -323,41 +318,6 @@ export default function GourmevelPage() {
           </div>
         </motion.div>
 
-        {/* Gallery */}
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="mb-20"
-        >
-          <h2 className="text-2xl font-bold mb-8">
-            <span className="text-accent">#</span> Gallery
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {images.gallery.map((src, i) => (
-              <div
-                key={i}
-                className="relative aspect-[4/5] rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02]"
-              >
-                <Image
-                  src={src}
-                  alt={`Gourmevel 콘텐츠 ${i + 1}`}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 33vw"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-sm text-white/10">
-                    Content {i + 1}
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* What I Learned */}
         <motion.div
           {...fadeUp}
@@ -382,7 +342,7 @@ export default function GourmevelPage() {
               {
                 title: "오가닉 그로스의 본질",
                 description:
-                  "광고비 없이 0에서 1만 팔로워까지 성장시키는 과정에서, 유저가 남는 채널과 스쳐 지나가는 채널의 차이를 피부로 배웠습니다. 그로스는 결국 콘텐츠 자체의 설득력에서 온다는 관점이 이때 굳어졌습니다.",
+                  "유료 광고 없이 0에서 1만 팔로워까지 성장시키는 과정에서, 유저가 남는 채널과 스쳐 지나가는 채널의 차이를 피부로 배웠습니다. 그로스는 결국 콘텐츠 자체의 설득력에서 온다는 관점이 이때 굳어졌습니다.",
               },
               {
                 title: "외부 파트너십 운영",
