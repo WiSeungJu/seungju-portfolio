@@ -39,7 +39,7 @@ function CountUp({
 }
 
 const stats = [
-  { value: 30, suffix: "+", label: "실험 수행", description: "6개월간 PO로서" },
+  { value: 30, suffix: "+", label: "실험 수행", description: "4개월간 PO로서" },
   {
     value: 85,
     suffix: "%",

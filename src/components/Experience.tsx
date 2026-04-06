@@ -12,21 +12,32 @@ const experiences = [
     logo: "/images/planfit-logo.png",
     role: "PO / Solver (인턴)",
     tags: ["PO", "Solver", "AI"],
+    tagline: "제약 안에서 해법을 찾는 PO",
+    summary:
+      "기획·디자인·프론트엔드·QA를 1인 스프린트로 운영하며, 4개월간 30건 이상의 전환율 실험을 직접 설계·실행했습니다.",
+    summarySub:
+      "두 개의 대표 프로젝트가 각기 다른 제약 조건에서 가설 검증 방식을 보여줍니다.",
     achievements: [
       {
-        title: "외부 AI 솔루션 제휴",
+        index: "01",
+        title: "AI 영상 기반 시즌 페이월",
         description:
-          "외부 AI 솔루션(모네타이) 제휴를 담당하여 타사 C-레벨과 협업했고, 기존 유저 결제 전환율(CVR)을 30% 개선했습니다.",
-        metric: "CVR +30%",
+          "정적 이미지를 AI 생성 시즌 영상으로 전환해 '한정성'이라는 맥락을 만들고, 신규 유저 할인권 결제 전환율을 목표 대비 2배 초과 달성했습니다.",
+        metric: "+20%",
+        metricLabel: "CVR",
+        sub: "목표 대비 2배 달성",
       },
       {
-        title: "AI 풀사이클 프로세스 구축",
+        index: "02",
+        title: "Monetai 제휴 · 노출 제어 레이어",
         description:
-          "AI 코딩 툴과 생성형 AI(Veo, Sora 등)를 활용해 기획-개발-QA 풀사이클을 1인으로 수행하며 리드타임을 단축했습니다.",
-        metric: "리드타임 -85%",
+          "실험이 제한되는 기존 유저 화면에 손대지 않고, 외부 AI 예측 솔루션을 발굴·제휴·도입해 구매 확률 기반 노출 제어 레이어를 확보했습니다.",
+        metric: "+75%",
+        metricLabel: "CVR",
+        sub: "현재까지 프로덕션 운영 중",
       },
     ],
-    highlight: "6개월간 30+건 실험",
+    highlight: "4개월 · 30+건 실험",
     link: "/experience/planfit",
   },
 ];
@@ -70,10 +81,19 @@ export default function Experience() {
               </motion.div>
 
               {/* Card */}
-              <Link href={exp.link} className="group relative block p-6 md:p-8 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-accent/15 transition-all cursor-pointer overflow-hidden">
+              <Link
+                href={exp.link}
+                className="group relative block p-6 md:p-8 rounded-2xl border border-white/5 bg-white/[0.02] hover:border-accent/30 hover:bg-white/[0.035] transition-all cursor-pointer overflow-hidden"
+              >
+                {/* Hover glow */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute -top-24 -right-24 w-72 h-72 rounded-full bg-accent/10 blur-3xl" />
+                  <div className="absolute -bottom-24 -left-24 w-72 h-72 rounded-full bg-emerald-500/5 blur-3xl" />
+                </div>
+
                 {/* Background logo */}
                 {exp.logo && (
-                  <div className="pointer-events-none absolute right-6 -top-12 w-44 h-44 md:w-56 md:h-56 opacity-[0.06] group-hover:opacity-[0.1] transition-opacity duration-500">
+                  <div className="pointer-events-none absolute right-6 -top-12 w-44 h-44 md:w-56 md:h-56 opacity-20 group-hover:opacity-30 transition-opacity duration-500 mix-blend-screen brightness-150">
                     <Image
                       src={exp.logo}
                       alt=""
@@ -85,60 +105,96 @@ export default function Experience() {
                 )}
 
                 <div className="relative z-10">
-                {/* Header */}
-                <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-6">
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-mono text-accent bg-accent/10 px-3 py-1 rounded-full">
-                      {exp.period}
-                    </span>
-                    <h3 className="text-xl font-bold text-white">
-                      {exp.company}
-                    </h3>
+                  {/* Header */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-3 mb-3">
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-mono text-accent bg-accent/10 px-3 py-1 rounded-full border border-accent/20">
+                        {exp.period}
+                      </span>
+                      <h3 className="text-2xl font-bold text-white">
+                        {exp.company}
+                      </h3>
+                    </div>
+                    <span className="text-sm text-white/50">{exp.role}</span>
                   </div>
-                  <span className="text-sm text-white/60">{exp.role}</span>
-                </div>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {exp.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 text-xs font-mono rounded border border-white/10 text-white/60"
-                    >
-                      {tag}
+                  {/* Tagline */}
+                  <p className="text-base md:text-lg font-semibold text-white/85 mb-2">
+                    {exp.tagline}
+                  </p>
+
+                  {/* Summary */}
+                  <p className="text-sm text-white/55 leading-relaxed max-w-2xl">
+                    {exp.summary}
+                  </p>
+                  <p className="text-sm text-white/55 leading-relaxed mb-5 max-w-2xl">
+                    {exp.summarySub}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {exp.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 text-[10px] font-mono rounded border border-white/10 text-white/50"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                    <span className="px-2 py-0.5 text-[10px] font-mono rounded border border-accent/40 text-accent">
+                      {exp.highlight}
                     </span>
-                  ))}
-                  <span className="px-2 py-0.5 text-xs font-mono rounded border border-accent/40 text-accent">
-                    {exp.highlight}
-                  </span>
-                </div>
+                  </div>
 
-                {/* Achievements */}
-                <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                  {exp.achievements.map((achievement) => (
-                    <div
-                      key={achievement.title}
-                      className="p-4 rounded-xl bg-white/[0.02] border border-white/5"
-                    >
-                      <div className="flex items-start justify-between mb-2">
-                        <h4 className="text-sm font-semibold text-white/90">
+                  {/* Key Projects preview */}
+                  <div className="grid sm:grid-cols-2 gap-3 mb-6">
+                    {exp.achievements.map((achievement) => (
+                      <div
+                        key={achievement.title}
+                        className="relative p-4 rounded-xl bg-gradient-to-br from-white/[0.03] to-white/[0.01] border border-white/5 group-hover:border-accent/20 transition-colors"
+                      >
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="text-[10px] font-mono text-accent/70">
+                            {achievement.index}
+                          </span>
+                          <span className="text-[10px] font-mono text-white/30 tracking-wider">
+                            KEY PROJECT
+                          </span>
+                        </div>
+
+                        {/* Huge metric */}
+                        <div className="flex items-baseline gap-1.5 mb-2">
+                          <span className="text-3xl md:text-4xl font-bold bg-gradient-to-br from-white to-white/50 bg-clip-text text-transparent leading-none tracking-tight">
+                            {achievement.metric}
+                          </span>
+                          <span className="text-xs font-mono text-white/40">
+                            {achievement.metricLabel}
+                          </span>
+                        </div>
+                        <p className="text-xs font-semibold text-emerald-400 mb-3">
+                          {achievement.sub}
+                        </p>
+
+                        <h4 className="text-sm font-bold text-white mb-1.5 leading-snug">
                           {achievement.title}
                         </h4>
-                        <span className="text-xs font-mono font-bold text-accent whitespace-nowrap ml-2">
-                          {achievement.metric}
-                        </span>
+                        <p className="text-xs text-white/55 leading-relaxed">
+                          {achievement.description}
+                        </p>
                       </div>
-                      <p className="text-xs text-white/60 leading-relaxed">
-                        {achievement.description}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                    ))}
+                  </div>
 
-                {/* Detail link */}
-                <span className="text-xs text-accent font-medium hover:underline">
-                  자세히 보기 →
-                </span>
+                  {/* CTA */}
+                  <div className="flex items-center gap-2 text-sm font-semibold text-accent">
+                    <span>케이스 스터디 보기</span>
+                    <span className="inline-block transition-transform duration-300 group-hover:translate-x-1.5">
+                      →
+                    </span>
+                    <span className="ml-2 text-[10px] font-mono text-white/30 border-l border-white/10 pl-2">
+                      2 PROJECTS · THINKING + EXECUTION
+                    </span>
+                  </div>
                 </div>
               </Link>
             </motion.div>

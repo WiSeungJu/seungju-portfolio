@@ -725,10 +725,10 @@ export default function PlanfitPage() {
                 {/* 좌측 타이틀 */}
                 <div>
                   <h3 className="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-5">
-                    기존 화면에 손대지 않고,
+                    화면은 그대로,
                     <br />
                     <span className="bg-gradient-to-r from-violet-300 via-white to-emerald-300 bg-clip-text text-transparent">
-                      작동시킬 지점
+                      작동할 지점
                     </span>
                     을 찾다.
                   </h3>
@@ -744,10 +744,10 @@ export default function PlanfitPage() {
                 {/* 우측 성과 넘버 */}
                 <div className="relative">
                   <div className="flex items-baseline gap-3">
-                    <span className="text-[96px] md:text-[140px] leading-none font-bold bg-gradient-to-br from-white to-white/40 bg-clip-text text-transparent tracking-tighter">
-                      1.75
-                      <span className="text-[48px] md:text-[72px] align-top text-white/60">
-                        ×
+                    <span className="text-[88px] md:text-[128px] leading-none font-bold bg-gradient-to-br from-white to-white/40 bg-clip-text text-transparent tracking-tighter">
+                      +75
+                      <span className="text-[44px] md:text-[64px] align-top text-white/60">
+                        %
                       </span>
                     </span>
                     <div className="pb-3">
@@ -913,7 +913,7 @@ export default function PlanfitPage() {
                     {
                       n: "01",
                       tag: "USER DEFINITION",
-                      title: "&lsquo;기존 유저&rsquo;를 정의",
+                      title: "\u2018기존 유저\u2019를 정의",
                       detail:
                         "가입 후 14일이 지났음에도 무료로 사용하는 유저를 &lsquo;기존 유저&rsquo;로 정의. 익숙해진 화면을 함부로 바꿀 수 없다는 제약을 출발점으로 삼았습니다.",
                     },
