@@ -234,76 +234,394 @@ export default function DrinkigPage() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-20"
         >
-          <h2 className="text-2xl font-bold mb-3">
+          <h2 className="text-2xl font-bold mb-6">
             <span className="text-accent">#</span> 0 → 1 Journey
           </h2>
-          <p className="text-sm text-white/50 mb-8">
-            한 번의 실패, 그리고 문제 정의를 다시 뾰족하게 다듬기까지
-          </p>
 
-          {/* Timeline */}
-          <div className="relative">
-            <div className="absolute left-[15px] top-0 bottom-0 w-px bg-gradient-to-b from-accent/50 via-accent/20 to-transparent hidden sm:block" />
+          <div className="relative rounded-2xl border border-white/5 bg-white/[0.02] overflow-hidden">
+            {/* 백그라운드 액센트 */}
+            <div
+              className="absolute inset-0 opacity-[0.14] pointer-events-none"
+              style={{
+                background:
+                  "radial-gradient(circle at 85% 0%, #6366f1 0%, transparent 45%), radial-gradient(circle at 15% 100%, #a78bfa 0%, transparent 45%)",
+              }}
+            />
 
-            {[
-              {
-                phase: "v1 → 2025.06",
-                title: "첫 시도, 그리고 중단",
-                description:
-                  "팀 프로젝트로 Swift 기반 iOS 앱을 출시했습니다. 에디터가 선별한 와인을 일방적으로 추천하고, 유저가 테이스팅 노트를 기록하는 구조. 마케팅도 돌려봤지만 찾는 유저가 거의 없었습니다. 결국 2025.06, 팀원들이 취업 준비에 들어가면서 저 혼자 남게 되어 프로젝트를 중단했습니다.",
-                tags: ["Swift", "iOS 출시", "초기 검증 실패"],
-              },
-              {
-                phase: "회고",
-                title: "원인은 구현이 아니라 문제 정의였다",
-                description:
-                  "시간이 지나 다시 꺼내 보니, 유저가 없던 이유가 명확해졌습니다. 추천은 취향과 무관한 일방적 큐레이션이었고, ‘와인 초보’를 타겟으로 했지만 핵심 기능인 테이스팅 노트는 오히려 숙련자에게 어울리는 기능이었습니다. 초보가 자기 언어로 향·맛을 기록하는 건 애초에 어려운 일. 타겟과 기능이 어긋나 있었습니다.",
-                tags: ["회고", "타겟-기능 미스매치"],
-              },
-              {
-                phase: "2025.12",
-                title: "피벗 — 취향 기반 큐레이션",
-                description:
-                  "‘초보는 자기 취향 자체를 모른다’를 새 출발점으로 삼았습니다. 테이스팅 노트를 버리고, 간단한 취향 테스트로 맛 취향을 파악한 뒤 매칭 점수로 와인을 보여주는 구조로 완전히 다시 설계. Swift 코드도 전부 버리고 React Native로 처음부터 새로 시작했습니다.",
-                tags: ["문제 재정의", "React Native", "Figma Make"],
-              },
-              {
-                phase: "2026.01–02",
-                title: "설계 · 개발 · 재출시",
-                description:
-                  "Figma로 UI/UX를 설계하며 개발을 병행, 매일 빌드-테스트-수정을 반복해 약 2개월 만에 App Store 재출시까지 1인으로 풀사이클을 완수했습니다. 현재까지 직접 운영하며 유저 반응을 바탕으로 개선 중입니다.",
-                tags: ["1인 풀사이클", "App Store 출시", "운영 중"],
-              },
-            ].map((item, i) => (
-              <div key={item.phase} className="relative sm:pl-12 mb-5 last:mb-0">
-                {/* Node */}
-                <div className="hidden sm:flex absolute left-0 top-1 w-[30px] h-[30px] rounded-full border-2 border-accent/50 bg-[#0a0a0a] items-center justify-center">
-                  <div className="w-2 h-2 rounded-full bg-accent" />
+            {/* HERO: 실패 → 재출시 내러티브 */}
+            <div className="relative p-6 md:p-10 border-b border-white/5">
+              <div className="flex flex-wrap items-center gap-2 mb-6">
+                <span className="text-[10px] font-mono text-accent bg-accent/10 px-2.5 py-1 rounded-full">
+                  REBUILD
+                </span>
+                <span className="text-[10px] font-mono text-white/40">——</span>
+                <span className="text-[10px] font-mono text-white/50 uppercase tracking-wider">
+                  From Failed v1 to App Store Relaunch
+                </span>
+              </div>
+
+              <div className="grid md:grid-cols-[1.1fr_1fr] gap-8 md:gap-12 items-end">
+                {/* 좌측: 타이틀 + 서브카피 */}
+                <div>
+                  <h3 className="text-3xl md:text-5xl font-bold text-white leading-[1.1] tracking-tight mb-5">
+                    코드를 버리고,
+                    <br />
+                    <span className="bg-gradient-to-r from-[#a78bfa] via-white to-[#6366f1] bg-clip-text text-transparent">
+                      문제를 다시
+                    </span>
+                    {" "}썼다.
+                  </h3>
+                  <p className="text-sm md:text-base text-white/60 leading-relaxed max-w-md">
+                    팀 프로젝트로 출시했던 v1이 초기 검증에 실패하고 팀이
+                    해체된 뒤, 6개월의 공백과 회고를 거쳐 문제 정의부터 다시
+                    쓰고 혼자 힘으로 App Store에 재출시하기까지의 과정입니다.
+                  </p>
                 </div>
 
-                <div className="p-5 rounded-2xl border border-white/5 bg-white/[0.02]">
-                  <span className="text-xs font-mono text-accent mb-1.5 block">
-                    {item.phase}
-                  </span>
-                  <h3 className="text-base font-bold text-white mb-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-white/60 leading-relaxed mb-3">
-                    {item.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {item.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-2 py-0.5 text-xs font-mono rounded border border-white/10 text-white/50"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+                {/* 우측: 초대형 성과 넘버 */}
+                <div className="relative">
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-[96px] md:text-[140px] leading-none font-bold bg-gradient-to-br from-white to-white/40 bg-clip-text text-transparent tracking-tighter">
+                      2<span className="text-[60px] md:text-[80px]">개월</span>
+                    </span>
+                    <div className="pb-3">
+                      <p className="text-xs font-mono text-accent whitespace-nowrap">
+                        SOLO FULL-CYCLE
+                      </p>
+                      <p className="text-[11px] text-white/50 mt-0.5">
+                        기획 · 디자인 · 개발 · 출시
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Before / After 비교 */}
+                  <div className="mt-4 space-y-2.5">
+                    <div>
+                      <div className="flex items-center justify-between text-[10px] font-mono text-white/40 mb-1">
+                        <span>v1 (팀 · Swift)</span>
+                        <span>검증 실패 · 중단</span>
+                      </div>
+                      <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+                        <div className="h-full w-[8%] rounded-full bg-white/30" />
+                      </div>
+                    </div>
+                    <div>
+                      <div className="flex items-center justify-between text-[10px] font-mono text-accent mb-1">
+                        <span>v2 (1인 · React Native)</span>
+                        <span className="text-white font-bold">
+                          App Store 재출시 · 운영 중
+                        </span>
+                      </div>
+                      <div className="h-1.5 rounded-full bg-white/5 overflow-hidden">
+                        <div className="h-full w-full rounded-full bg-gradient-to-r from-accent to-indigo-400" />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-            ))}
+            </div>
+
+            {/* BODY */}
+            <div className="relative p-6 md:p-10 space-y-12">
+              {/* ━━━━ 01 — FAILURE ━━━━ */}
+              <section>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[10px] font-mono text-accent tracking-[0.15em]">
+                    01 — FAILURE
+                  </span>
+                  <span className="h-px flex-1 bg-white/5" />
+                </div>
+
+                <h4 className="text-lg md:text-xl font-bold text-white/90 mb-3 leading-snug">
+                  출시는 했지만, 유저는 없었다
+                </h4>
+                <p className="text-sm text-white/60 leading-relaxed mb-8 max-w-2xl">
+                  팀 프로젝트로 Swift · UIKit 기반 iOS 앱을 App Store에
+                  출시했습니다. 에디터가 선별한 와인 카드 + 유저 테이스팅
+                  노트 기록을 핵심 기능으로 잡고, SNS 광고와 지인 유입을
+                  돌렸지만 활성 유저는 확보되지 않았습니다. 2025.06
+                  팀원들이 취업 준비에 들어가면서 프로젝트는 중단됐습니다.
+                </p>
+
+                {/* v1 스펙 요약 */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  {[
+                    { k: "STACK", v: "Swift · UIKit" },
+                    { k: "TEAM", v: "10인 팀" },
+                    { k: "DISTRIBUTION", v: "App Store 출시" },
+                    { k: "STATUS", v: "검증 실패 · 중단" },
+                  ].map((item) => (
+                    <div
+                      key={item.k}
+                      className="p-3 rounded-lg border border-white/5 bg-white/[0.02]"
+                    >
+                      <p className="text-[9px] font-mono text-white/40 tracking-wider mb-1">
+                        {item.k}
+                      </p>
+                      <p className="text-xs text-white/80">{item.v}</p>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              {/* ━━━━ 02 — DIAGNOSIS ━━━━ */}
+              <section>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[10px] font-mono text-accent tracking-[0.15em]">
+                    02 — DIAGNOSIS
+                  </span>
+                  <span className="h-px flex-1 bg-white/5" />
+                </div>
+
+                <h4 className="text-lg md:text-xl font-bold text-white/90 mb-8 leading-snug">
+                  문제는 구현이 아니라,
+                  <br className="hidden sm:block" />
+                  <span className="text-white/50">
+                    타겟과 기능이 어긋나 있었다
+                  </span>
+                </h4>
+
+                <div className="grid md:grid-cols-3 gap-5 md:gap-4">
+                  {/* 01 관찰 */}
+                  <div className="relative">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[10px] font-mono text-white/50">
+                        1
+                      </span>
+                      <p className="text-[11px] font-mono text-white/40 uppercase tracking-wider">
+                        관찰
+                      </p>
+                    </div>
+                    <p className="text-sm font-semibold text-white/90 mb-2 leading-snug">
+                      타겟은 &lsquo;초보&rsquo;, 핵심 기능은 &lsquo;테이스팅 노트&rsquo;
+                    </p>
+                    <p className="text-xs text-white/55 leading-relaxed">
+                      앱이 내세운 타겟은 와인 입문자였지만, 앱의 중심
+                      기능은 향과 맛을 직접 언어화해 기록하는 테이스팅
+                      노트였습니다. 이건 본질적으로 숙련자의 도구입니다.
+                    </p>
+                  </div>
+
+                  {/* 02 진단 */}
+                  <div className="relative">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-6 h-6 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[10px] font-mono text-white/50">
+                        2
+                      </span>
+                      <p className="text-[11px] font-mono text-white/40 uppercase tracking-wider">
+                        진단
+                      </p>
+                    </div>
+                    <p className="text-sm font-semibold text-white/90 mb-2 leading-snug">
+                      초보는{" "}
+                      <span className="text-accent">
+                        자기 취향 자체를 모른다
+                      </span>
+                    </p>
+                    <p className="text-xs text-white/55 leading-relaxed">
+                      초보에게 &lsquo;달다&rsquo;의 기준은 애호가의
+                      &lsquo;달다&rsquo;와 완전히 다릅니다. 기록할 언어가 없는
+                      사람에게 기록 기능을 주는 건, 입문 장벽을 오히려
+                      높이는 일이었습니다.
+                    </p>
+                  </div>
+
+                  {/* 03 재정의 */}
+                  <div className="relative">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="w-6 h-6 rounded-full bg-accent/15 border border-accent/40 flex items-center justify-center text-[10px] font-mono text-accent">
+                        3
+                      </span>
+                      <p className="text-[11px] font-mono text-accent uppercase tracking-wider">
+                        재정의
+                      </p>
+                    </div>
+                    <p className="text-sm font-semibold text-white/90 mb-2 leading-snug">
+                      기록이 아니라, 취향 발견이 먼저다
+                    </p>
+                    <p className="text-xs text-white/55 leading-relaxed">
+                      제품의 진입점을 &lsquo;테이스팅 노트&rsquo;에서
+                      &lsquo;취향 테스트&rsquo;로 옮겼습니다. 초보가
+                      자기 언어 없이도 시작할 수 있어야, 그 다음이
+                      열립니다.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              {/* ━━━━ 03 — REBUILD ━━━━ */}
+              <section>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[10px] font-mono text-accent tracking-[0.15em]">
+                    03 — REBUILD
+                  </span>
+                  <span className="h-px flex-1 bg-white/5" />
+                </div>
+
+                <h4 className="text-lg md:text-xl font-bold text-white/90 mb-8 leading-snug">
+                  Swift 코드를 전부 버리고,
+                  <br className="hidden sm:block" />
+                  <span className="text-white/50">처음부터 다시 짰다</span>
+                </h4>
+
+                <div className="grid md:grid-cols-[1fr_1fr] gap-6 md:gap-8 items-stretch">
+                  {/* AS-IS */}
+                  <div className="relative p-6 rounded-xl border border-white/5 bg-white/[0.02]">
+                    <p className="text-[10px] font-mono text-white/40 mb-3 tracking-wider">
+                      v1 · AS-IS
+                    </p>
+                    <p className="text-sm font-semibold text-white/80 mb-3 leading-snug">
+                      에디터 큐레이션 + 테이스팅 노트 기록
+                    </p>
+                    <ul className="space-y-2 text-xs text-white/55 leading-relaxed">
+                      <li>· Swift · 팀 프로젝트</li>
+                      <li>· 추천이 취향과 무관한 일방 큐레이션</li>
+                      <li>· 핵심 기능이 타겟(초보)에게 너무 어려움</li>
+                      <li>· 초기 검증 실패 · 프로젝트 중단</li>
+                    </ul>
+                  </div>
+
+                  {/* TO-BE */}
+                  <div className="relative p-6 rounded-xl border border-accent/30 bg-accent/[0.04]">
+                    <p className="text-[10px] font-mono text-accent mb-3 tracking-wider">
+                      v2 · TO-BE
+                    </p>
+                    <p className="text-sm font-semibold text-white/90 mb-3 leading-snug">
+                      취향 테스트 기반 매칭 큐레이션
+                    </p>
+                    <ul className="space-y-2 text-xs text-white/65 leading-relaxed">
+                      <li>· React Native · 1인 풀사이클</li>
+                      <li>· 간단한 취향 테스트로 맛 선호도 파악</li>
+                      <li>· 매칭 점수로 &lsquo;나와 맞는 정도&rsquo;를 가시화</li>
+                      <li>· 마셔본 기록이 쌓일수록 정확도가 올라가는 구조</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* 실행 플로우 */}
+                <div className="mt-8 space-y-3">
+                  {[
+                    {
+                      step: "01",
+                      title: "Figma Make로 전체 플로우 프로토타이핑",
+                      desc: "테이스팅 노트 기능 제거 후, 취향 테스트 → 매칭 점수 → 와인 상세 3단계 플로우를 Figma Make로 먼저 그림. 1인이 2개월 안에 배포 가능한 MVP 범위로 스코프를 고정.",
+                      tools: ["Figma Make", "Figma"],
+                    },
+                    {
+                      step: "02",
+                      title: "React Native 전면 리라이트 · MySQL 스키마 재설계",
+                      desc: "Swift/UIKit 코드베이스를 폐기하고 React Native로 iOS 빌드. Claude로 매칭 점수 로직과 MySQL 스키마를 설계하고, Cursor에서 일일 빌드-테스트-수정 루프로 개발 속도를 확보.",
+                      tools: ["React Native", "MySQL", "Claude", "Cursor"],
+                    },
+                    {
+                      step: "03",
+                      title: "AI 도구로 디자이너 없이 비주얼 에셋 확보",
+                      desc: "Antigravity로 UI/UX 피드백, Midjourney · Veo로 로딩 화면 영상, Nano Banana로 아이콘 · 일러스트를 생성. 1인 조직에서 부족한 디자인 리소스를 AI 파이프라인으로 메꿈.",
+                      tools: ["Antigravity", "Midjourney", "Veo", "Nano Banana"],
+                    },
+                    {
+                      step: "04",
+                      title: "TestFlight 내부 배포 → App Store 재출시",
+                      desc: "약 2개월 만에 App Store 재심사 · 재출시. 현재까지 1인으로 운영하며 유저 피드백 기반으로 매칭 로직과 UI를 개선 중.",
+                      tools: ["TestFlight", "App Store Connect"],
+                    },
+                  ].map((item) => (
+                    <div
+                      key={item.step}
+                      className="flex items-start gap-4 p-4 rounded-xl border border-white/5 bg-white/[0.02]"
+                    >
+                      <span className="text-xs font-mono text-accent/70 pt-0.5">
+                        {item.step}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-semibold text-white/90 mb-1">
+                          {item.title}
+                        </p>
+                        <p className="text-xs text-white/55 leading-relaxed mb-2">
+                          {item.desc}
+                        </p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {item.tools.map((tool) => (
+                            <span
+                              key={tool}
+                              className="px-1.5 py-0.5 text-[10px] font-mono rounded border border-white/10 text-white/50"
+                            >
+                              {tool}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* 임팩트 */}
+                <div className="mt-8 p-5 md:p-6 rounded-xl border border-white/5 bg-white/[0.02]">
+                  <p className="text-[10px] font-mono text-white/40 tracking-wider mb-1">
+                    OUTCOME
+                  </p>
+                  <p className="text-sm text-white/70">
+                    1인 풀사이클로 약 2개월 만에 App Store 재출시 · 현재까지 직접 운영하며 개선 중
+                  </p>
+                </div>
+
+                {/* 기술 마이그레이션 요약 */}
+                <div className="mt-8 p-5 md:p-6 rounded-xl border border-white/5 bg-white/[0.02]">
+                  <p className="text-[10px] font-mono text-white/40 tracking-wider mb-4">
+                    MIGRATION · v1 → v2
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-x-8 gap-y-3 text-xs">
+                    {[
+                      {
+                        label: "Platform",
+                        from: "Swift · UIKit (iOS only)",
+                        to: "React Native (iOS)",
+                      },
+                      {
+                        label: "Team",
+                        from: "10인 팀",
+                        to: "1인 풀사이클",
+                      },
+                      {
+                        label: "Design",
+                        from: "Figma 수기 설계",
+                        to: "Figma Make 프로토타입 + Antigravity 피드백",
+                      },
+                      {
+                        label: "Backend",
+                        from: "—",
+                        to: "MySQL + 매칭 점수 로직 (Claude 설계)",
+                      },
+                      {
+                        label: "Dev Loop",
+                        from: "Xcode · 주 단위 릴리스",
+                        to: "Cursor + Claude · 일일 빌드-테스트",
+                      },
+                      {
+                        label: "Visual Assets",
+                        from: "디자이너 리소스 의존",
+                        to: "Midjourney · Veo · Nano Banana",
+                      },
+                    ].map((row) => (
+                      <div
+                        key={row.label}
+                        className="grid grid-cols-[80px_1fr] md:grid-cols-[90px_1fr] gap-2 items-baseline py-1.5 border-b border-white/5 last:border-b-0"
+                      >
+                        <span className="font-mono text-[10px] text-white/40 uppercase tracking-wider">
+                          {row.label}
+                        </span>
+                        <div className="space-y-0.5">
+                          <p className="text-white/40 line-through decoration-white/20">
+                            {row.from}
+                          </p>
+                          <p className="text-white/85">→ {row.to}</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </section>
+            </div>
           </div>
         </motion.div>
 

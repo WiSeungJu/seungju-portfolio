@@ -27,7 +27,7 @@ const projects = [
       "1인 운영으로 오가닉 팔로워 1만, 숏폼 최고 124만 뷰를 달성한 F&B 매거진. 데이터 기반 알고리즘 분석으로 반복 가능한 그로스 공식을 설계했고, 캐치테이블 등 브랜드와 50건 이상의 협업을 진행했습니다.",
     tags: ["오가닉 그로스", "알고리즘 분석", "1인 총괄 운영", "브랜드 협업 50+"],
     badge: "124만 뷰",
-    image: "/images/gourmevel.jpg",
+    image: "/images/gourmevel-card.png",
     link: "/projects/gourmevel",
     external: [
       { label: "Instagram", href: "https://www.instagram.com/gourmevel/" },
