@@ -97,16 +97,15 @@ export default function Contact() {
           ))}
         </motion.div>
 
-        {/* Terminal footer */}
+        {/* Footer */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="border-t border-white/5 pt-8"
         >
-          <p className="text-xs font-mono text-white/40">
-            <span className="text-accent/70">seungju@planner:~$</span>{" "}
-            echo &quot;Let&apos;s build something great together.&quot;
+          <p className="text-sm text-white/50">
+            새로운 제안과 협업 기회는 언제든 환영합니다.
           </p>
           <p className="text-xs text-white/30 mt-4">
             &copy; 2025 Seungju Wi. Built with Next.js & Tailwind CSS.

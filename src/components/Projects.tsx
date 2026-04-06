@@ -10,8 +10,8 @@ const projects = [
     title: "Drinkig",
     subtitle: "드링키지",
     description:
-      "2030 타겟 맞춤형 와인 큐레이션 앱. Figma 설계부터 React Native/MySQL 개발까지 AI로 구현 및 상용화.",
-    tags: ["React Native", "MySQL", "1인 기획·개발", "AI 활용"],
+      "‘초보는 자기 취향조차 모른다’에서 출발한 취향 기반 와인 큐레이션 앱. 첫 버전의 실패를 딛고 문제 정의부터 다시 다듬어, 1인으로 React Native 재설계·재출시해 현재까지 직접 운영 중입니다.",
+    tags: ["취향 큐레이션", "React Native", "1인 풀사이클", "App Store 출시"],
     badge: "창업경진대회 2위",
     image: "/images/drinkig-card.png",
     link: "/projects/drinkig",
@@ -24,8 +24,8 @@ const projects = [
     title: "Gourmevel",
     subtitle: "고메블",
     description:
-      "F&B 숏폼 매거진 운영. 알고리즘 최적화로 오가닉 트래픽 최고 124만 뷰 달성 및 1만 팬덤 구축.",
-    tags: ["콘텐츠 기획", "알고리즘 최적화", "총괄 운영"],
+      "1인 운영으로 오가닉 팔로워 1만, 숏폼 최고 124만 뷰를 달성한 F&B 매거진. 데이터 기반 알고리즘 분석으로 반복 가능한 그로스 공식을 설계했고, 캐치테이블 등 브랜드와 50건 이상의 협업을 진행했습니다.",
+    tags: ["오가닉 그로스", "알고리즘 분석", "1인 총괄 운영", "브랜드 협업 50+"],
     badge: "124만 뷰",
     image: "/images/gourmevel.jpg",
     link: "/projects/gourmevel",

@@ -127,11 +127,8 @@ export default function DrinkigPage() {
               </p>
               <p>
                 와인을 부담 없이, 자신의 언어로 탐색할 수 있는 경험을 만들고
-                싶었습니다. 원래 2025년 6월 팀 프로젝트로 시작했지만, 팀원들의
-                사정으로 종료되었습니다. 하지만 문제의식을 놓을 수 없어서 같은
-                해 12월, 문제 정의부터 다시 뾰족하게 다듬고 기술 스택도 Swift에서
-                React Native로 전환하여 1인으로 처음부터 다시 만들기로
-                결정했습니다. 현재까지 직접 운영하고 있습니다.
+                싶었습니다. 이 문제의식에 도달하기까지는 한 번의 실패와 긴
+                회고가 있었습니다. 아래 Journey에서 그 과정을 풀어냈습니다.
               </p>
             </div>
           </motion.div>
@@ -193,17 +190,55 @@ export default function DrinkigPage() {
           </motion.div>
         </div>
 
-        {/* 0 → 1 Journey */}
+        {/* Screenshots */}
         <motion.div
           {...fadeUp}
           transition={{ duration: 0.6, delay: 0.35 }}
           className="mb-20"
         >
           <h2 className="text-2xl font-bold mb-3">
+            <span className="text-accent">#</span> Screens
+          </h2>
+          <p className="text-sm text-white/50 mb-8">
+            아이디어 재정의부터 출시까지, 1인으로 만든 결과물입니다
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+            {images.screens.map((src, i) => (
+              <div
+                key={i}
+                className="relative aspect-[9/16] rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02]"
+              >
+                <Image
+                  src={src}
+                  alt={`드링키지 화면 ${i + 1}`}
+                  fill
+                  className="object-contain"
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-sm text-white/10">
+                    Screen {i + 1}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* 0 → 1 Journey */}
+        <motion.div
+          {...fadeUp}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mb-20"
+        >
+          <h2 className="text-2xl font-bold mb-3">
             <span className="text-accent">#</span> 0 → 1 Journey
           </h2>
           <p className="text-sm text-white/50 mb-8">
-            1인으로 아이디어부터 App Store 출시, 그리고 현재 운영까지
+            한 번의 실패, 그리고 문제 정의를 다시 뾰족하게 다듬기까지
           </p>
 
           {/* Timeline */}
@@ -212,38 +247,45 @@ export default function DrinkigPage() {
 
             {[
               {
-                phase: "12월",
-                title: "문제 재정의 & 키 피처 설계",
+                phase: "v1 → 2025.06",
+                title: "첫 시도, 그리고 중단",
                 description:
-                  "기존 팀 프로젝트의 방향성을 재검토하고, '초보자의 언어로 와인을 탐색한다'는 핵심 가설을 수립했습니다. Swift로 되어 있던 기존 코드를 버리고, React Native로 처음부터 새로 시작하기로 결정. Figma Make를 활용해 전반적인 UI/UX 흐름을 빠르게 프로토타이핑했습니다.",
-                tags: ["문제 정의", "기술 전환", "Figma Make", "React Native"],
+                  "팀 프로젝트로 Swift 기반 iOS 앱을 출시했습니다. 에디터가 선별한 와인을 일방적으로 추천하고, 유저가 테이스팅 노트를 기록하는 구조. 마케팅도 돌려봤지만 찾는 유저가 거의 없었습니다. 결국 2025.06, 팀원들이 취업 준비에 들어가면서 저 혼자 남게 되어 프로젝트를 중단했습니다.",
+                tags: ["Swift", "iOS 출시", "초기 검증 실패"],
               },
               {
-                phase: "1월",
-                title: "설계 · 개발 풀사이클",
+                phase: "회고",
+                title: "원인은 구현이 아니라 문제 정의였다",
                 description:
-                  "Figma로 UI/UX를 설계하면서 동시에 개발을 병행했습니다. 취향 테스트 플로우, 와인 점수 시스템, AI 스마트렌즈 등 핵심 기능을 구현하고, 매일 빌드-테스트-수정을 반복했습니다.",
-                tags: ["Figma", "개발 병행", "빠른 이터레이션"],
+                  "시간이 지나 다시 꺼내 보니, 유저가 없던 이유가 명확해졌습니다. 추천은 취향과 무관한 일방적 큐레이션이었고, ‘와인 초보’를 타겟으로 했지만 핵심 기능인 테이스팅 노트는 오히려 숙련자에게 어울리는 기능이었습니다. 초보가 자기 언어로 향·맛을 기록하는 건 애초에 어려운 일. 타겟과 기능이 어긋나 있었습니다.",
+                tags: ["회고", "타겟-기능 미스매치"],
               },
               {
-                phase: "2월",
-                title: "App Store 출시",
+                phase: "2025.12",
+                title: "피벗 — 취향 기반 큐레이션",
                 description:
-                  "App Store 심사를 통과하고 정식 출시했습니다. 아이디어 재정의부터 출시까지 약 2개월, 1인으로 풀사이클을 완수했습니다.",
-                tags: ["App Store 출시", "1인 풀사이클"],
+                  "‘초보는 자기 취향 자체를 모른다’를 새 출발점으로 삼았습니다. 테이스팅 노트를 버리고, 간단한 취향 테스트로 맛 취향을 파악한 뒤 매칭 점수로 와인을 보여주는 구조로 완전히 다시 설계. Swift 코드도 전부 버리고 React Native로 처음부터 새로 시작했습니다.",
+                tags: ["문제 재정의", "React Native", "Figma Make"],
+              },
+              {
+                phase: "2026.01–02",
+                title: "설계 · 개발 · 재출시",
+                description:
+                  "Figma로 UI/UX를 설계하며 개발을 병행, 매일 빌드-테스트-수정을 반복해 약 2개월 만에 App Store 재출시까지 1인으로 풀사이클을 완수했습니다. 현재까지 직접 운영하며 유저 반응을 바탕으로 개선 중입니다.",
+                tags: ["1인 풀사이클", "App Store 출시", "운영 중"],
               },
             ].map((item, i) => (
-              <div key={item.phase} className="relative sm:pl-12 mb-8 last:mb-0">
+              <div key={item.phase} className="relative sm:pl-12 mb-5 last:mb-0">
                 {/* Node */}
                 <div className="hidden sm:flex absolute left-0 top-1 w-[30px] h-[30px] rounded-full border-2 border-accent/50 bg-[#0a0a0a] items-center justify-center">
                   <div className="w-2 h-2 rounded-full bg-accent" />
                 </div>
 
-                <div className="p-6 rounded-2xl border border-white/5 bg-white/[0.02]">
-                  <span className="text-xs font-mono text-accent mb-2 block">
+                <div className="p-5 rounded-2xl border border-white/5 bg-white/[0.02]">
+                  <span className="text-xs font-mono text-accent mb-1.5 block">
                     {item.phase}
                   </span>
-                  <h3 className="text-lg font-bold text-white mb-2">
+                  <h3 className="text-base font-bold text-white mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm text-white/60 leading-relaxed mb-3">
@@ -268,7 +310,7 @@ export default function DrinkigPage() {
         {/* Key Features */}
         <motion.div
           {...fadeUp}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.45 }}
           className="mb-20"
         >
           <h2 className="text-2xl font-bold mb-8">
@@ -302,41 +344,6 @@ export default function DrinkigPage() {
                 <p className="text-sm text-white/60 leading-relaxed">
                   {feature.description}
                 </p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Screenshots */}
-        <motion.div
-          {...fadeUp}
-          transition={{ duration: 0.6, delay: 0.45 }}
-          className="mb-20"
-        >
-          <h2 className="text-2xl font-bold mb-8">
-            <span className="text-accent">#</span> Screens
-          </h2>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-            {images.screens.map((src, i) => (
-              <div
-                key={i}
-                className="relative aspect-[9/16] rounded-2xl overflow-hidden border border-white/5 bg-white/[0.02]"
-              >
-                <Image
-                  src={src}
-                  alt={`드링키지 화면 ${i + 1}`}
-                  fill
-                  className="object-contain"
-                  sizes="(max-width: 640px) 50vw, 25vw"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-sm text-white/10">
-                    Screen {i + 1}
-                  </span>
-                </div>
               </div>
             ))}
           </div>

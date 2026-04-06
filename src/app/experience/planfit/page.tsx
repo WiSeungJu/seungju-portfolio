@@ -67,7 +67,7 @@ export default function PlanfitPage() {
               PO / Solver
             </span>
             <span className="px-3 py-1 text-xs font-mono rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-              30+ 실험 · CVR 30%↑
+              30+ 실험 · CVR 최대 +75%
             </span>
             <span className="px-3 py-1 text-xs font-mono rounded-full bg-white/5 text-white/50 border border-white/10">
               2025.06 — 2025.12
@@ -180,7 +180,7 @@ export default function PlanfitPage() {
             {[
               { value: "30+", label: "실험 수행" },
               { value: "+20%", label: "신규 유저 결제 전환율" },
-              { value: "+30%", label: "기존 유저 구독 전환율" },
+              { value: "+75%", label: "기존 유저 주간 결제 전환율" },
               { value: "1인", label: "풀사이클 스프린트" },
             ].map((metric) => (
               <div
