@@ -92,7 +92,7 @@ export default function Contact() {
           transition={{ duration: 0.6, delay: 0.15 }}
           className="text-white/60 mb-4 text-lg"
         >
-          새로운 제안, 채용, 커피챗 모두 환영합니다.
+          무엇이든 함께 이야기할 준비가 되어 있습니다.
         </motion.p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -132,7 +132,7 @@ export default function Contact() {
           className="border-t border-white/5 pt-8"
         >
           <p className="text-sm text-white/50">
-            커피챗 · 협업 · 채용 제안 언제든 환영합니다. ☕
+            작은 이야기 한 조각도 소중하게 듣겠습니다. ☕
           </p>
           <p className="text-xs text-white/30 mt-4">
             &copy; 2025 Seungju Wi. Built with Next.js & Tailwind CSS.

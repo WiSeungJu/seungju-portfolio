@@ -583,45 +583,82 @@ export default function GourmevelPage() {
           <h2 className="text-2xl font-bold mb-8">
             <span className="text-accent">#</span> Featured Collaboration
           </h2>
-          <div className="p-6 md:p-8 rounded-2xl border border-white/5 bg-white/[0.02]">
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <h3 className="text-xl font-bold text-white">캐치테이블</h3>
-              <span className="px-2 py-0.5 text-xs font-mono rounded border border-accent/30 text-accent">
-                총 6회 협업
-              </span>
-            </div>
-            <p className="text-sm text-white/70 leading-relaxed mb-4">
-              국내 대표 레스토랑 예약 플랫폼 &lsquo;캐치테이블&rsquo;과 여섯
-              차례에 걸쳐 공동 콘텐츠를 제작했습니다. 기획안 작성, 촬영, 편집은
-              물론 브랜드 측과의 톤 조율과 최종 전달까지 전 과정을 단독으로
-              담당했고, 일회성에 그치지 않고 반복 의뢰로 이어질 수 있었던
-              배경에는 결과물만큼 과정 관리에 집중했던 점이 있었다고 생각합니다.
-            </p>
-            <div className="grid sm:grid-cols-3 gap-4">
-              {[
-                {
-                  metric: "2만~4만",
-                  label: "콜라보 콘텐츠 평균 도달 수",
-                },
-                {
-                  metric: "재협업",
-                  label: "캐치테이블 측 재협업 요청",
-                },
-                {
-                  metric: "↑",
-                  label: "브랜드 노출 및 참여율 증가",
-                },
-              ].map((item) => (
-                <div
-                  key={item.label}
-                  className="p-4 rounded-xl bg-white/[0.03] border border-white/5 text-center"
-                >
-                  <p className="text-lg font-bold text-accent mb-1">
-                    {item.metric}
-                  </p>
-                  <p className="text-xs text-white/50">{item.label}</p>
+          <div className="relative overflow-hidden p-6 md:p-8 rounded-2xl border border-[#FF3D00]/30 bg-gradient-to-br from-[#FF3D00]/[0.08] via-[#FF3D00]/[0.03] to-transparent">
+            {/* 배경 글로우 */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-24 -right-24 w-72 h-72 rounded-full bg-[#FF3D00]/20 blur-3xl"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -bottom-32 -left-20 w-72 h-72 rounded-full bg-[#FF3D00]/10 blur-3xl"
+            />
+
+            <div className="relative">
+              <div className="flex flex-wrap items-center gap-4 mb-5">
+                <div className="w-14 h-14 rounded-xl overflow-hidden shadow-lg shadow-[#FF3D00]/30 ring-1 ring-[#FF3D00]/40 shrink-0">
+                  <Image
+                    src="/images/catchtable-logo.png"
+                    alt="캐치테이블 로고"
+                    width={56}
+                    height={56}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              ))}
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="text-xl font-bold text-white">캐치테이블</h3>
+                  <span className="px-2.5 py-0.5 text-xs font-mono rounded-full border border-[#FF3D00]/50 bg-[#FF3D00]/10 text-[#FF7A40]">
+                    총 6회 협업
+                  </span>
+                </div>
+              </div>
+              <p className="text-sm text-white/70 leading-relaxed mb-6">
+                국내 대표 레스토랑 예약 플랫폼 &lsquo;캐치테이블&rsquo;과 여섯
+                차례에 걸쳐 공동 콘텐츠를 제작했습니다. 기획안 작성, 촬영,
+                편집은 물론 브랜드 측과의 톤 조율과 최종 전달까지 전 과정을
+                단독으로 담당했고, 일회성에 그치지 않고 반복 의뢰로 이어질 수
+                있었던 배경에는 결과물만큼 과정 관리에 집중했던 점이 있었다고
+                생각합니다.
+              </p>
+
+              {/* 협업 영상 썸네일 스트립 */}
+              <div className="mb-6 rounded-xl overflow-hidden border border-[#FF3D00]/20 bg-black/20">
+                <Image
+                  src="/images/catchtable-collabs.png"
+                  alt="캐치테이블 협업 콘텐츠 모음"
+                  width={7073}
+                  height={2163}
+                  className="w-full h-auto"
+                  sizes="(max-width: 768px) 100vw, 768px"
+                />
+              </div>
+
+              <div className="grid sm:grid-cols-3 gap-4">
+                {[
+                  {
+                    metric: "2만~4만",
+                    label: "콜라보 콘텐츠 평균 도달 수",
+                  },
+                  {
+                    metric: "재협업",
+                    label: "캐치테이블 측 재협업 요청",
+                  },
+                  {
+                    metric: "↑",
+                    label: "브랜드 노출 및 참여율 증가",
+                  },
+                ].map((item) => (
+                  <div
+                    key={item.label}
+                    className="p-4 rounded-xl bg-white/[0.04] border border-[#FF3D00]/20 text-center backdrop-blur-sm"
+                  >
+                    <p className="text-lg font-bold text-[#FF7A40] mb-1">
+                      {item.metric}
+                    </p>
+                    <p className="text-xs text-white/60">{item.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>
