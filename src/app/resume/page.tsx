@@ -160,13 +160,15 @@ export default function ResumePage() {
                   </span>
                 </div>
                 <p className="text-[10px] text-[#666] italic mb-1">
-                  기획·디자인·개발·운영 1인 · 2025 홍익인 창업페스티벌 2위
+                  기획·디자인·개발·운영 1인 · App Store 운영 중
                 </p>
                 <ul className="resume-ul">
                   <li>
                     v1: 10인 팀(개발 6·디자인 3·PM 1) Swift/UIKit 프로젝트에서{" "}
-                    <strong>PM 리드 / 아이디어 오너</strong>로 참여, 초기 검증
-                    실패 후 팀 해체
+                    <strong>PM 리드 / 아이디어 오너</strong>로 참여,{" "}
+                    <strong>2025 홍익인 창업페스티벌 2위</strong>(전체 30+팀
+                    중) 수상 — 시장성·기획력 부문 평가. 이후 초기 사용자 검증
+                    실패로 팀 해체
                   </li>
                   <li>
                     실패 회고에서 &ldquo;초보는 자기 취향 자체를 모른다&rdquo;는
