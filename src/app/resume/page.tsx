@@ -367,6 +367,10 @@ export default function ResumePage() {
               <li>
                 <strong>제2종 보통 운전면허</strong>
               </li>
+              <li>
+                <strong>UMC 6th</strong> — University MakeUs Challenge 홍익대학교
+                Project Manager 수료 (2024.08)
+              </li>
             </ul>
           </section>
 
