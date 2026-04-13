@@ -111,7 +111,7 @@ export default function ResumePage() {
 
           {/* Experience */}
           <section className="py-3 border-b border-[#d4d4d4]">
-            <h2 className="resume-h2">EXPERIENCE · 경력 (총 1년)</h2>
+            <h2 className="resume-h2">EXPERIENCE · 경력 (총 7개월)</h2>
             <div>
               <div className="flex items-baseline justify-between gap-3">
                 <h3 className="text-[14px] font-bold text-[#0f0f0f]">
