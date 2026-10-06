@@ -12,10 +12,29 @@ import {
   Steps,
   Story,
 } from "@/components/CaseStudy";
+import JsonLd, { PERSON, SITE_URL } from "@/components/JsonLd";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "드링키지",
+  alternateName: "Drinkig",
+  description:
+    "와인 입문자의 진입장벽을 낮추는 AI 와인 큐레이팅 앱. 취향, 테이스팅 노트, 품종 기반 개인화 추천.",
+  applicationCategory: "LifestyleApplication",
+  operatingSystem: "iOS",
+  url: "https://drinkig.com/",
+  installUrl:
+    "https://apps.apple.com/kr/app/%EB%93%9C%EB%A7%81%ED%82%A4%EC%A7%80-%EC%B7%A8%ED%96%A5-%EA%B8%B0%EB%B0%98-%EC%99%80%EC%9D%B8-%EC%B6%94%EC%B2%9C%EA%B3%BC-%EA%B8%B0%EB%A1%9D/id6741486172",
+  author: PERSON,
+  mainEntityOfPage: `${SITE_URL}/projects/drinkig`,
+};
 
 export const metadata: Metadata = {
-  title: "Drinkig | 위승주",
-  description: "와인 입문의 장벽을 낮추는 취향 기반 큐레이션 앱",
+  title: "드링키지 Drinkig — AI 와인 큐레이팅 앱",
+  description:
+    "위승주가 1인으로 기획·디자인·개발한 AI 와인 큐레이팅 앱 드링키지(Drinkig). 와인 입문자를 위한 취향 기반 추천, React Native, App Store 출시, 홍익대학교 창업경진대회 우수상.",
+  alternates: { canonical: "/projects/drinkig" },
 };
 
 const screens = [
@@ -27,6 +46,8 @@ const screens = [
 
 export default function DrinkigPage() {
   return (
+    <>
+    <JsonLd data={jsonLd} />
     <CasePage
       back={{ label: "Projects", href: "/#projects" }}
       title="Drinkig"
@@ -252,5 +273,6 @@ export default function DrinkigPage() {
       </Section>
 
     </CasePage>
+    </>
   );
 }

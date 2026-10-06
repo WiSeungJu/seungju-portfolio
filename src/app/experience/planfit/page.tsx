@@ -14,8 +14,10 @@ import {
 } from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
-  title: "Planfit | 위승주",
-  description: "AI 풀사이클 Solver로서 구독 전환율 개선을 담당",
+  title: "Planfit AI Problem Solver 인턴",
+  description:
+    "위승주의 Planfit(플랜핏) 경력. 유료 구독 전환율 개선을 전담하며 약 3개월간 70건 이상의 실험을 설계·실행, AI 영상 페이월(+20%)과 Monetai 도입(+75%) 케이스 스터디.",
+  alternates: { canonical: "/experience/planfit" },
 };
 
 export default function PlanfitPage() {

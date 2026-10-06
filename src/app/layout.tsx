@@ -16,17 +16,52 @@ const geistMono = Geist_Mono({
   preload: false,
 });
 
+const DESCRIPTION =
+  "위승주(Seungju Wi) 포트폴리오. 멋쟁이사자처럼 Problem Solver(PM). AI를 활용해 문제 정의부터 기획, 개발, 출시까지 직접 하는 PM. 채용 플랫폼 Salary FYI, Planfit, 와인 큐레이팅 앱 드링키지(Drinkig), 미식 매거진 고메블(Gourmevel).";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio.gourmevel.com"),
-  title: "위승주 | Problem Solver (PM)",
-  description:
-    "AI를 활용해 문제 정의부터 기획, 개발, 출시까지 엔드투엔드로 담당하는 PM",
+  title: {
+    default: "위승주 | Problem Solver (PM)",
+    template: "%s | 위승주",
+  },
+  description: DESCRIPTION,
+  keywords: [
+    "위승주",
+    "Seungju Wi",
+    "포트폴리오",
+    "PM",
+    "Product Manager",
+    "Problem Solver",
+    "AI PM",
+    "멋쟁이사자처럼",
+    "LIKELION",
+    "Salary FYI",
+    "Planfit",
+    "드링키지",
+    "Drinkig",
+    "고메블",
+    "Gourmevel",
+  ],
+  authors: [{ name: "위승주", url: "https://portfolio.gourmevel.com" }],
+  creator: "위승주",
   openGraph: {
-    title: "위승주 | Problem Solver (PM)",
-    description:
-      "AI를 활용해 문제 정의부터 기획, 개발, 출시까지 엔드투엔드로 담당하는 PM",
-    url: "https://portfolio.gourmevel.com",
     type: "website",
+    locale: "ko_KR",
+    siteName: "위승주 포트폴리오",
+    url: "https://portfolio.gourmevel.com",
+    title: "위승주 | Problem Solver (PM)",
+    description: DESCRIPTION,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "위승주 | Problem Solver (PM)",
+    description: DESCRIPTION,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
 };
 

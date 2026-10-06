@@ -13,9 +13,10 @@ import {
 } from "@/components/CaseStudy";
 
 export const metadata: Metadata = {
-  title: "멋쟁이사자처럼 | 위승주",
+  title: "멋쟁이사자처럼 Problem Solver (PM)",
   description:
-    "입사 3일 차에 첫 MVP 배포, 4개월간 제품 5개 이상을 단독으로 기획·개발·출시",
+    "위승주의 멋쟁이사자처럼 글로벌신사업본부 경력. 베트남 IT 인재 채용 플랫폼 Salary FYI 제품 전체 담당, 출시 5개월 만에 가입 8,800명·채용 지원 1만 건. 채용 업무 자동화, 크로스보더 협업 툴, KTC.",
+  alternates: { canonical: "/experience/likelion" },
 };
 
 export default function LikelionPage() {

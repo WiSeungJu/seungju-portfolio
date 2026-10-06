@@ -16,14 +16,36 @@ import {
   Steps,
   Story,
 } from "@/components/CaseStudy";
+import JsonLd, { PERSON, SITE_URL } from "@/components/JsonLd";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "고메블",
+  alternateName: "Gourmevel",
+  description:
+    "파인다이닝과 미쉐린 레스토랑 심층 리뷰 중심의 미식 매거진. 2021년 11월 창간.",
+  url: "https://gourmevel.com/",
+  foundingDate: "2021-11",
+  founder: PERSON,
+  sameAs: [
+    "https://www.instagram.com/gourmevel/",
+    "https://blog.naver.com/gourmevel",
+  ],
+  mainEntityOfPage: `${SITE_URL}/projects/gourmevel`,
+};
 
 export const metadata: Metadata = {
-  title: "Gourmevel | 위승주",
-  description: "고메블 — 미식 정보 기반 인스타그램 매거진",
+  title: "고메블 Gourmevel — 미식 매거진",
+  description:
+    "위승주가 창간해 운영하는 미식 매거진 고메블(Gourmevel). 파인다이닝·미쉐린 레스토랑 심층 리뷰, 유료 광고 없이 팔로워 1만, 숏폼 최고 124만 뷰, 브랜드 협업 50건 이상. 200명에서 1만 팔로워까지의 성장 과정.",
+  alternates: { canonical: "/projects/gourmevel" },
 };
 
 export default function GourmevelPage() {
   return (
+    <>
+    <JsonLd data={jsonLd} />
     <CasePage
       back={{ label: "Projects", href: "/#projects" }}
       title="Gourmevel"
@@ -35,6 +57,7 @@ export default function GourmevelPage() {
         "Nov 2021 – Present",
       ]}
       links={[
+        { label: "gourmevel.com", href: "https://gourmevel.com/" },
         { label: "Instagram", href: "https://www.instagram.com/gourmevel/" },
         { label: "Blog", href: "https://blog.naver.com/gourmevel" },
       ]}
@@ -266,5 +289,6 @@ export default function GourmevelPage() {
       </Section>
 
     </CasePage>
+    </>
   );
 }
