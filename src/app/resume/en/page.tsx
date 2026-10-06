@@ -1,5 +1,6 @@
 "use client";
 
+import "computer-modern/cmu-serif.css";
 import ResumeBar from "@/components/ResumeBar";
 
 // US-style one-page resume (Jake's Resume layout): no photo, no personal details,
