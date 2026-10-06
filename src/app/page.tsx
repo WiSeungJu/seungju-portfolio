@@ -8,7 +8,7 @@ import Recognition from "@/components/home/Recognition";
 export default function Home() {
   return (
     <div className="page-enter mx-auto max-w-[1080px] px-5 sm:px-8">
-      <SiteHeader />
+      <SiteHeader home />
       <main>
         <Intro />
         <ExperienceList />
