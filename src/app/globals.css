@@ -1,68 +1,136 @@
 @import "tailwindcss";
 
-:root {
-  --background: #0a0a0a;
-  --foreground: #ededed;
-  --accent: #6366f1;
-  --accent-secondary: #8b5cf6;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-accent: var(--accent);
-  --color-accent-secondary: var(--accent-secondary);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* Paper & ink */
+  --color-paper: #ffffff;
+  --color-wash: #f4f4f3;
+  --color-ink: #111111;
+  --color-copy: #3d3d3d;
+  --color-muted: #6b6b6b;
+  --color-rule: #e4e4e2;
+  --color-point: #111111;
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+  /* /portfolio-pdf 인쇄용 문서가 쓰는 기존 토큰 */
+  --color-accent: #6366f1;
+  --color-accent-secondary: #8b5cf6;
+
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
+    system-ui, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-mono: var(--font-geist-mono);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #0a0a0a;
-}
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 3px;
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  /* 한글이 어절 중간에서 끊기지 않도록 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
-/* Typing cursor blink */
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+/* 종이 질감: 배경 위, 콘텐츠 아래에 깔리는 미세한 노이즈 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.075 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 }
 
-.cursor-blink::after {
-  content: "_";
-  animation: blink 1s step-end infinite;
-  color: #6366f1;
+@media print {
+  body::before {
+    display: none;
+  }
 }
 
-/* Grid background for hero */
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+::selection {
+  background: var(--color-point);
+  color: var(--color-paper);
 }
 
-/* Glow effect */
-.glow {
-  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15), 0 0 60px rgba(99, 102, 241, 0.05);
+:focus-visible {
+  outline: 2px solid var(--color-point);
+  outline-offset: 3px;
 }
 
-.glow-text {
-  text-shadow: 0 0 40px rgba(99, 102, 241, 0.3);
+/* 이력서·PDF는 기존 서체를 그대로 쓴다 */
+.resume-root,
+.pdf-root {
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  word-break: normal;
 }
+
+@layer components {
+  .link {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: #b9b9b6;
+    transition: color 150ms, text-decoration-color 150ms;
+  }
+  .link:hover {
+    color: var(--color-point);
+    text-decoration-color: var(--color-point);
+  }
+
+  /* 제목 안 강조: 형광펜처럼 아래쪽만 깔리는 회색 */
+  .mark {
+    background: linear-gradient(transparent 62%, #e6e6e3 62%);
+  }
+
+  .page-enter {
+    animation: page-enter 500ms ease-out both;
+  }
+
+  /* 목록 포커스: 올려둔 행은 배경이 깔리고 나머지 행은 흐려진다 */
+  .entry-list > li {
+    position: relative;
+    isolation: isolate;
+    transition: opacity 180ms ease;
+  }
+  .entry-list > li::before {
+    content: "";
+    position: absolute;
+    inset: 0 -14px;
+    z-index: -1;
+    background: rgb(0 0 0 / 0.045);
+    opacity: 0;
+    transition: opacity 180ms ease;
+  }
+  .entry-list > li:focus-within::before {
+    opacity: 1;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    .entry-list:hover > li:not(:hover) {
+      opacity: 0.4;
+    }
+    .entry-list > li:hover::before {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .page-enter {
+    animation: none;
+  }
+  .entry-list > li,
+  .entry-list > li::before {
+    transition: none;
+  }
+}
+

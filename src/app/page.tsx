@@ -1,23 +1,21 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Experience from "@/components/Experience";
-import Projects from "@/components/Projects";
-import HowIWork from "@/components/HowIWork";
-import Contact from "@/components/Contact";
+import SiteHeader from "@/components/SiteHeader";
+import SiteFooter from "@/components/SiteFooter";
+import Intro from "@/components/home/Intro";
+import ExperienceList from "@/components/home/ExperienceList";
+import ProjectList from "@/components/home/ProjectList";
+import Recognition from "@/components/home/Recognition";
 
 export default function Home() {
   return (
-    <>
-      <Navbar />
+    <div className="page-enter mx-auto max-w-[1080px] px-5 sm:px-8">
+      <SiteHeader />
       <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <HowIWork />
-        <Contact />
+        <Intro />
+        <ExperienceList />
+        <ProjectList />
+        <Recognition />
       </main>
-    </>
+      <SiteFooter />
+    </div>
   );
 }

@@ -4,23 +4,23 @@ import Link from "next/link";
 
 export default function ResumePage() {
   return (
-    <main className="resume-root min-h-screen bg-[#0a0a0a] text-[#ededed]">
+    <main className="resume-root min-h-screen bg-wash text-ink">
       {/* Print button — screen only */}
-      <div className="print:hidden sticky top-0 z-50 bg-[#0a0a0a]/90 backdrop-blur-xl border-b border-white/5">
+      <div className="print:hidden sticky top-0 z-50 bg-paper/90 backdrop-blur-xl border-b border-rule">
         <div className="max-w-[820px] mx-auto px-6 h-14 flex items-center justify-between">
           <Link
             href="/"
-            className="text-sm text-white/60 hover:text-white transition-colors"
+            className="text-sm text-muted hover:text-ink transition-colors"
           >
             ← 포트폴리오
           </Link>
           <div className="flex items-center gap-3">
-            <span className="hidden sm:inline text-[11px] font-mono text-white/40">
+            <span className="hidden sm:inline text-[11px] font-mono text-muted">
               브라우저 인쇄 → PDF로 저장
             </span>
             <button
               onClick={() => window.print()}
-              className="px-4 py-2 rounded-full bg-accent hover:bg-indigo-400 text-white text-xs font-semibold transition-all inline-flex items-center gap-2"
+              className="px-4 py-2 bg-ink hover:bg-copy text-paper text-xs font-semibold transition-colors inline-flex items-center gap-2"
             >
               <svg
                 width="14"
@@ -422,7 +422,7 @@ export default function ResumePage() {
       </div>
 
       {/* Footer note — screen only */}
-      <div className="print:hidden text-center text-[11px] text-white/30 pb-8">
+      <div className="print:hidden text-center text-[11px] text-muted pb-8">
         상단 &lsquo;PDF로 저장&rsquo; 또는 브라우저 인쇄(⌘+P) → &lsquo;PDF로 저장&rsquo; 선택
       </div>
 

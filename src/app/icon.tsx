@@ -16,13 +16,11 @@ export default function Icon() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          background: "#0a0a0a",
-          color: "#a5b4fc",
-          fontSize: 22,
-          fontWeight: 900,
+          background: "#111111",
+          color: "#ffffff",
+          fontSize: 19,
+          fontWeight: 700,
           letterSpacing: -1,
-          borderRadius: 6,
-          border: "1.5px solid #6366f1",
         }}
       >
         WI
