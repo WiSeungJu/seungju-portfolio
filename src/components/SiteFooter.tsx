@@ -72,7 +72,7 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
         </dl>
 
         <p className="mt-10 text-xs text-muted">
-          &copy; {new Date().getFullYear()} Seungju Wi
+          &copy; {new Date().getFullYear()} Seungju WI
         </p>
       </div>
     </footer>

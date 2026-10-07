@@ -32,11 +32,11 @@ const jsonLd = {
 
 export function gourmevelMetadata(lang: Lang): Metadata {
   return {
-    title: lang === "ko" ? "고메블 Gourmevel — 미식 매거진" : { absolute: "Gourmevel — Fine-dining Magazine | Seungju Wi" },
+    title: lang === "ko" ? "고메블 Gourmevel — 미식 매거진" : { absolute: "Gourmevel — Fine-dining Magazine | Seungju WI" },
     description: pick(
       lang,
       "위승주가 창간해 대표로 운영하는 미식 매거진 고메블(Gourmevel). 파인다이닝·미쉐린 레스토랑 심층 리뷰, 유료 광고 없이 팔로워 1만, 숏폼 최고 124만 뷰, 브랜드 협업 50건 이상. 200명에서 1만 팔로워까지의 성장 과정.",
-      "Gourmevel (고메블), the fine-dining magazine founded and run by Seungju Wi. In-depth reviews of fine-dining and Michelin restaurants, 10K followers with zero ad spend, a 1.24M-view short-form video, and 50+ brand collaborations. How it grew from 200 to 10K followers."
+      "Gourmevel (고메블), the fine-dining magazine founded and run by Seungju WI. In-depth reviews of fine-dining and Michelin restaurants, 10K followers with zero ad spend, a 1.24M-view short-form video, and 50+ brand collaborations. How it grew from 200 to 10K followers."
     ),
     alternates: alternatesFor(lang, PATH),
     ...(lang === "en" ? { openGraph: { locale: "en_US" } } : {}),

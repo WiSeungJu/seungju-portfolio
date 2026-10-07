@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Reveal from "./Reveal";
 
 // 왼쪽에 섹션 제목이 고정되고, 오른쪽으로 내용이 흐르는 2단
 export default function SectionGrid({
@@ -21,9 +22,11 @@ export default function SectionGrid({
       }`}
     >
       <h2 className="text-[22px] font-bold tracking-tight lg:sticky lg:top-8 lg:self-start">
-        {title}
+        <Reveal>{title}</Reveal>
       </h2>
-      <div className="min-w-0">{children}</div>
+      <div className="min-w-0">
+        <Reveal delay={80}>{children}</Reveal>
+      </div>
     </section>
   );
 }

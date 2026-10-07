@@ -29,8 +29,8 @@ export const PERSON = {
   "@type": "Person",
   "@id": `${SITE_URL}/#person`,
   name: "위승주",
-  alternateName: ["Seungju Wi", "Wi Seungju"],
-  jobTitle: ["고메블 대표", "Problem Solver (Product Manager)"],
+  alternateName: ["Seungju WI", "Seungju Wi", "Wi Seungju"],
+  jobTitle: ["고메블 대표", "Problem Solver"],
   description:
     "미식 매거진 고메블(Gourmevel)을 창간해 운영하는 대표이자, AI를 활용해 문제 정의부터 기획, 개발, 출시까지 엔드투엔드로 담당하는 PM",
   url: SITE_URL,

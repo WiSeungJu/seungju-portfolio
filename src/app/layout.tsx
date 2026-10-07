@@ -17,18 +17,18 @@ const geistMono = Geist_Mono({
 });
 
 const DESCRIPTION =
-  "위승주(Seungju Wi) 포트폴리오. 미식 매거진 고메블(Gourmevel) 대표, 멋쟁이사자처럼 Problem Solver(PM). AI를 활용해 문제 정의부터 기획, 개발, 출시까지 직접 하는 PM. 채용 플랫폼 Salary FYI, Planfit, 와인 큐레이팅 앱 드링키지(Drinkig), 미식 매거진 고메블(Gourmevel).";
+  "위승주(Seungju WI) 포트폴리오. 미식 매거진 고메블(Gourmevel) 대표, 멋쟁이사자처럼 Problem Solver. AI를 활용해 문제 정의부터 기획, 개발, 출시까지 직접 하는 PM. 채용 플랫폼 Salary FYI, Planfit, 와인 큐레이팅 앱 드링키지(Drinkig), 미식 매거진 고메블(Gourmevel).";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://portfolio.gourmevel.com"),
   title: {
-    default: "위승주 | Problem Solver (PM)",
+    default: "위승주 | Problem Solver",
     template: "%s | 위승주",
   },
   description: DESCRIPTION,
   keywords: [
     "위승주",
-    "Seungju Wi",
+    "Seungju WI",
     "포트폴리오",
     "PM",
     "Product Manager",
@@ -51,12 +51,12 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     siteName: "위승주 포트폴리오",
     url: "https://portfolio.gourmevel.com",
-    title: "위승주 | Problem Solver (PM)",
+    title: "위승주 | Problem Solver",
     description: DESCRIPTION,
   },
   twitter: {
     card: "summary_large_image",
-    title: "위승주 | Problem Solver (PM)",
+    title: "위승주 | Problem Solver",
     description: DESCRIPTION,
   },
   robots: {

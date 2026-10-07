@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Seungju Wi — Problem Solver (PM)";
+export const alt = "Seungju WI — Problem Solver";
 export const size = {
   width: 1200,
   height: 630,
@@ -31,11 +31,11 @@ export default function OpengraphImage() {
             color: "#6b6b6b",
           }}
         >
-          Problem Solver (PM)
+          Problem Solver
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 120, fontWeight: 700, letterSpacing: -4 }}>
-            Seungju Wi
+            Seungju WI
           </div>
           <div style={{ fontSize: 30, color: "#6b6b6b", marginTop: 12 }}>
             portfolio.gourmevel.com

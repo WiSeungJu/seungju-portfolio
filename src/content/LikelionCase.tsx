@@ -17,11 +17,11 @@ const PATH = "/experience/likelion";
 
 export function likelionMetadata(lang: Lang): Metadata {
   return {
-    title: lang === "ko" ? "멋쟁이사자처럼 Problem Solver (PM)" : { absolute: "LIKELION — Problem Solver (PM) | Seungju Wi" },
+    title: lang === "ko" ? "멋쟁이사자처럼 Problem Solver" : { absolute: "LIKELION — Problem Solver | Seungju WI" },
     description: pick(
       lang,
       "위승주의 멋쟁이사자처럼 글로벌신사업본부 경력. 베트남 IT 인재 채용 플랫폼 Salary FYI 제품 전체 담당, 출시 5개월 만에 가입 8,800명·채용 지원 1만 건. 채용 업무 자동화, 크로스보더 협업 툴, KTC.",
-      "Seungju Wi at LIKELION's Global New Business division: owned Salary FYI, a hiring platform for Vietnamese IT talent, reaching 8,800 sign-ups and 10K job applications within 5 months of launch. Hiring automation, a cross-border collaboration tool, and KTC."
+      "Seungju WI at LIKELION's Global New Business division: owned Salary FYI, a hiring platform for Vietnamese IT talent, reaching 8,800 sign-ups and 10K job applications within 5 months of launch. Hiring automation, a cross-border collaboration tool, and KTC."
     ),
     alternates: alternatesFor(lang, PATH),
     ...(lang === "en" ? { openGraph: { locale: "en_US" } } : {}),
@@ -43,7 +43,7 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
       )}
       meta={[
         "Full-time",
-        "Problem Solver (PM) · Sep 2026 – Present",
+        "Problem Solver · Sep 2026 – Present",
         "AI Product Manager · Apr–Sep 2026",
       ]}
       links={[{ label: "salary-fyi.com", href: "https://salary-fyi.com" }]}
@@ -54,8 +54,8 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
         <Prose>
           <p>
             {t(
-              "AI Product Manager로 시작해 현재 Problem Solver(PM). 입사 3일 차에 첫 MVP 배포, 4개월간 제품 5개 이상을 단독으로 기획·개발·출시. 2026년 9월부터 애니멀리그 공개 플랫폼 PM 담당(출시 전).",
-              "Joined as AI Product Manager, now Problem Solver (PM). Shipped the first MVP on day 3 and planned, built, and launched 5+ products solo in 4 months. Since Sep 2026, also PM for the Animal League public platform (pre-launch)."
+              "AI Product Manager로 시작해 현재 Problem Solver. 입사 3일 차에 첫 MVP 배포, 4개월간 제품 5개 이상을 단독으로 기획·개발·출시. 2026년 9월부터 애니멀리그 공개 플랫폼 PM 담당(출시 전).",
+              "Joined as AI Product Manager, now Problem Solver. Shipped the first MVP on day 3 and planned, built, and launched 5+ products solo in 4 months. Since Sep 2026, also PM for the Animal League public platform (pre-launch)."
             )}
           </p>
         </Prose>
@@ -65,7 +65,7 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
               label: t("포지션", "Position"),
               value: (
                 <>
-                  Problem Solver (PM) · Sep 2026 – Present
+                  Problem Solver · Sep 2026 – Present
                   <br />
                   AI Product Manager · Apr–Sep 2026
                 </>

@@ -13,11 +13,14 @@ export default function Intro({ lang }: { lang: Lang }) {
       />
 
       <div className="pb-10 lg:pb-16">
-        <h1 className="text-[40px] font-bold leading-[1.1] tracking-tight sm:text-[52px]">
-          {ko ? "위승주" : "Seungju Wi"}
+        <h1 className="hero-in text-[40px] font-bold leading-[1.1] tracking-tight sm:text-[52px]">
+          {ko ? "위승주" : "Seungju WI"}
         </h1>
 
-        <div className="mt-7 max-w-[35em] space-y-4 text-[17px] leading-[1.85] text-copy">
+        <div
+          className="hero-in mt-7 max-w-[35em] space-y-4 text-[17px] leading-[1.85] text-copy"
+          style={{ "--i": 1 } as React.CSSProperties}
+        >
           {ko ? (
             <>
               <p>
@@ -101,7 +104,10 @@ export default function Intro({ lang }: { lang: Lang }) {
           )}
         </div>
 
-        <p className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
+        <p
+          className="hero-in mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm"
+          style={{ "--i": 2 } as React.CSSProperties}
+        >
           <a
             href="mailto:wsj@likelion.net"
             className="bg-ink px-4 py-2.5 font-medium text-paper transition-colors hover:bg-copy"
@@ -123,11 +129,14 @@ export default function Intro({ lang }: { lang: Lang }) {
       </div>
 
       {/* 상반신이 아래 구분선 위에 서 있도록 바닥에 붙인다 */}
-      <div className="ml-auto w-64 self-end sm:w-80 lg:w-full">
+      <div
+        className="hero-in ml-auto w-64 self-end sm:w-80 lg:w-full"
+        style={{ "--i": 1 } as React.CSSProperties}
+      >
         <div className="aspect-[6/7] overflow-hidden">
           <Image
             src="/images/profile-cutout.png"
-            alt={ko ? "위승주 프로필 사진" : "Portrait of Seungju Wi"}
+            alt={ko ? "위승주 프로필 사진" : "Portrait of Seungju WI"}
             width={1100}
             height={1375}
             loading="eager"

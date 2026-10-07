@@ -50,7 +50,7 @@ export function CasePage({
               ← {back.label}
             </Link>
           </p>
-          <h1 className="mt-6 text-[48px] font-bold leading-[1.05] tracking-tight sm:text-[84px]">
+          <h1 className="hero-in mt-6 text-[48px] font-bold leading-[1.05] tracking-tight sm:text-[84px]">
             {title}
             {subtitle && (
               <span className="ml-4 text-lg font-normal tracking-normal text-muted sm:text-2xl">
@@ -59,7 +59,10 @@ export function CasePage({
             )}
           </h1>
 
-          <div className="mt-8 grid gap-x-12 gap-y-5 sm:mt-10 lg:grid-cols-[220px_1fr]">
+          <div
+            className="hero-in mt-8 grid gap-x-12 gap-y-5 sm:mt-10 lg:grid-cols-[220px_1fr]"
+            style={{ "--i": 1 } as React.CSSProperties}
+          >
             <div className="text-[13px] leading-[1.7] text-muted">
               {meta?.map((line) => (
                 <p key={line}>{line}</p>
@@ -85,7 +88,11 @@ export function CasePage({
             </p>
           </div>
 
-          {hero && <Plate {...hero} eager className="mt-12" />}
+          {hero && (
+            <div className="hero-in" style={{ "--i": 2 } as React.CSSProperties}>
+              <Plate {...hero} eager className="mt-12" />
+            </div>
+          )}
         </header>
 
         {children}

@@ -18,11 +18,11 @@ const PATH = "/experience/planfit";
 
 export function planfitMetadata(lang: Lang): Metadata {
   return {
-    title: lang === "ko" ? "Planfit AI Problem Solver 인턴" : { absolute: "Planfit — AI Problem Solver Intern | Seungju Wi" },
+    title: lang === "ko" ? "Planfit AI Problem Solver 인턴" : { absolute: "Planfit — AI Problem Solver Intern | Seungju WI" },
     description: pick(
       lang,
       "위승주의 Planfit(플랜핏) 경력. 유료 구독 전환율 개선을 전담하며 약 3개월간 70건 이상의 실험을 설계·실행, AI 영상 페이월(+20%)과 Monetai 도입(+75%) 케이스 스터디.",
-      "Seungju Wi at Planfit: owned paid subscription conversion, designed and ran 70+ experiments in about 3 months. Case studies on the AI video paywall (+20%) and the Monetai rollout (+75%)."
+      "Seungju WI at Planfit: owned paid subscription conversion, designed and ran 70+ experiments in about 3 months. Case studies on the AI video paywall (+20%) and the Monetai rollout (+75%)."
     ),
     alternates: alternatesFor(lang, PATH),
     ...(lang === "en" ? { openGraph: { locale: "en_US" } } : {}),

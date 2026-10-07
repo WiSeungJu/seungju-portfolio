@@ -27,11 +27,11 @@ export default function ResumePage() {
                   <h1 className="text-[32px] font-extrabold tracking-tight leading-none">
                     위승주{" "}
                     <span className="text-[16px] font-normal text-[#555] tracking-normal">
-                      Seungju Wi
+                      Seungju WI
                     </span>
                   </h1>
                   <p className="text-[13px] font-semibold text-[#0f0f0f] mt-1.5 tracking-wide">
-                    Product Manager · Problem Solver
+                    Problem Solver
                   </p>
                   <p className="text-[10.5px] text-[#666] mt-1">
                     남성 · 2001년생 · 홍익대학교 컴퓨터공학과 졸업
@@ -92,7 +92,7 @@ export default function ResumePage() {
                   </span>
                 </div>
                 <p className="text-[10.5px] text-[#555] italic mb-1.5">
-                  Problem Solver (PM) 2026.09 — 현재 · AI Product Manager
+                  Problem Solver 2026.09 — 현재 · AI Product Manager
                   2026.04 — 2026.09
                 </p>
                 <ul className="resume-ul">

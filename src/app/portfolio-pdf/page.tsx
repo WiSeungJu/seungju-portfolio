@@ -77,7 +77,7 @@ export default function PortfolioPdfPage() {
               <h1 className="text-[72px] font-extrabold tracking-tight leading-[0.92] text-white">
                 위승주
                 <span className="block text-[26px] font-light text-white/50 mt-2 tracking-tight">
-                  Seungju Wi
+                  Seungju WI
                 </span>
               </h1>
               <p className="text-[14px] text-white/70 mt-6 leading-relaxed max-w-[140mm]">

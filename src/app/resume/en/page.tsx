@@ -27,7 +27,7 @@ const experience = [
     location: "Seoul, South Korea",
     roles: [
       {
-        title: "Problem Solver (Product Manager), Global New Business",
+        title: "Problem Solver, Global New Business",
         period: "Sep 2026 – Present",
       },
       { title: "AI Product Manager", period: "Apr 2026 – Sep 2026" },
@@ -112,7 +112,7 @@ export default function ResumeEnPage() {
       >
         <div className="jake-inner">
           <header className="text-center">
-            <h1 className="jake-name">Seungju Wi</h1>
+            <h1 className="jake-name">Seungju WI</h1>
             <p className="jake-contact">
               +82 10-3655-5641 <span>|</span> wsj@likelion.net <span>|</span>{" "}
               linkedin.com/in/wiseungju <span>|</span> github.com/SeungjuWI{" "}

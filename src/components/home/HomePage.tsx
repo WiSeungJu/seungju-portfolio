@@ -16,7 +16,7 @@ const jsonLd = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: "위승주 포트폴리오",
-      alternateName: "Seungju Wi — Portfolio",
+      alternateName: "Seungju WI — Portfolio",
       inLanguage: ["ko", "en"],
       author: { "@id": `${SITE_URL}/#person` },
     },

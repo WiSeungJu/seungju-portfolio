@@ -45,11 +45,11 @@ const screens = [
 
 export function drinkigMetadata(lang: Lang): Metadata {
   return {
-    title: lang === "ko" ? "드링키지 Drinkig — AI 와인 큐레이팅 앱" : { absolute: "Drinkig — AI Wine Curation App | Seungju Wi" },
+    title: lang === "ko" ? "드링키지 Drinkig — AI 와인 큐레이팅 앱" : { absolute: "Drinkig — AI Wine Curation App | Seungju WI" },
     description: pick(
       lang,
       "위승주가 1인으로 기획·디자인·개발한 AI 와인 큐레이팅 앱 드링키지(Drinkig). 와인 입문자를 위한 취향 기반 추천, React Native, App Store 출시, 홍익대학교 창업경진대회 우수상.",
-      "Drinkig (드링키지), an AI wine curation app planned, designed, and built solo by Seungju Wi. Taste-based recommendations for wine beginners, React Native, on the App Store, 2nd place at the Hongik University Startup Competition."
+      "Drinkig (드링키지), an AI wine curation app planned, designed, and built solo by Seungju WI. Taste-based recommendations for wine beginners, React Native, on the App Store, 2nd place at the Hongik University Startup Competition."
     ),
     alternates: alternatesFor(lang, PATH),
     ...(lang === "en" ? { openGraph: { locale: "en_US" } } : {}),

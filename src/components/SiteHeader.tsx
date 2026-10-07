@@ -25,12 +25,12 @@ export default function SiteHeader({
           href={localize(lang, "/")}
           className="text-lg font-bold tracking-tight"
         >
-          {lang === "ko" ? "위승주" : "Seungju Wi"}
+          {lang === "ko" ? "위승주" : "Seungju WI"}
         </Link>
       )}
       <nav
         aria-label={lang === "ko" ? "주요 메뉴" : "Main menu"}
-        className="ml-auto flex items-baseline gap-5 text-sm text-muted"
+        className="ml-auto flex items-center gap-5 text-sm text-muted"
       >
         {navItems.map((item) => (
           <Link
@@ -43,9 +43,11 @@ export default function SiteHeader({
             {item.label}
           </Link>
         ))}
+        {/* 한/영 토글: 현재 언어가 채워진 칸 */}
         <span
+          role="group"
           aria-label={lang === "ko" ? "언어 선택" : "Language"}
-          className="ml-1 flex items-baseline gap-1.5 border-l border-rule pl-4 text-[13px]"
+          className="ml-1 inline-flex overflow-hidden rounded-full border border-rule text-[11px] leading-none"
         >
           {(["ko", "en"] as const).map((code) => (
             <Link
@@ -53,13 +55,13 @@ export default function SiteHeader({
               href={code === "ko" ? path : localize("en", path)}
               hrefLang={code}
               aria-current={code === lang ? "page" : undefined}
-              className={
+              className={`px-2.5 py-1.5 transition-colors ${
                 code === lang
-                  ? "font-semibold text-ink"
-                  : "hover:text-ink transition-colors"
-              }
+                  ? "bg-ink font-semibold text-paper"
+                  : "text-muted hover:text-ink"
+              }`}
             >
-              {code.toUpperCase()}
+              {code === "ko" ? "한국어" : "English"}
             </Link>
           ))}
         </span>
