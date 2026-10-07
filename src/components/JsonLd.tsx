@@ -10,23 +10,42 @@ export default function JsonLd({ data }: { data: Record<string, unknown> }) {
 
 export const SITE_URL = "https://portfolio.gourmevel.com";
 
+// 위승주가 대표로 운영하는 회사
+export const GOURMEVEL = {
+  "@type": "Organization",
+  "@id": `${SITE_URL}/#gourmevel`,
+  name: "고메블",
+  alternateName: "Gourmevel",
+  url: "https://gourmevel.com/",
+  foundingDate: "2021-11",
+  sameAs: [
+    "https://www.instagram.com/gourmevel/",
+    "https://blog.naver.com/gourmevel",
+  ],
+};
+
 // 사이트 전체에서 같은 사람을 가리키도록 한 곳에서 정의한다.
 export const PERSON = {
   "@type": "Person",
   "@id": `${SITE_URL}/#person`,
   name: "위승주",
   alternateName: ["Seungju Wi", "Wi Seungju"],
-  jobTitle: "Problem Solver (Product Manager)",
+  jobTitle: ["고메블 대표", "Problem Solver (Product Manager)"],
   description:
-    "AI를 활용해 문제 정의부터 기획, 개발, 출시까지 엔드투엔드로 담당하는 PM",
+    "미식 매거진 고메블(Gourmevel)을 창간해 운영하는 대표이자, AI를 활용해 문제 정의부터 기획, 개발, 출시까지 엔드투엔드로 담당하는 PM",
   url: SITE_URL,
   image: `${SITE_URL}/images/profile-cutout.png`,
   email: "wsj@likelion.net",
-  worksFor: {
-    "@type": "Organization",
-    name: "멋쟁이사자처럼",
-    alternateName: "LIKELION",
-  },
+  worksFor: [
+    GOURMEVEL,
+    {
+      "@type": "Organization",
+      name: "멋쟁이사자처럼",
+      alternateName: "LIKELION",
+    },
+  ],
+  // 창업한 회사. Organization 쪽에서는 founder로 다시 가리킨다.
+  owns: GOURMEVEL,
   alumniOf: {
     "@type": "CollegeOrUniversity",
     name: "홍익대학교",

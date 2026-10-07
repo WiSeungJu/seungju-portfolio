@@ -12,7 +12,7 @@ const projects: Entry[] = [
   },
   {
     name: "Gourmevel",
-    tag: "미식 매거진",
+    tag: "미식 매거진 · 대표",
     roles: [{ period: "Nov 2021 – Present" }],
     description:
       "파인다이닝·미쉐린 레스토랑 심층 리뷰, 유료 광고 없이 팔로워 1만",

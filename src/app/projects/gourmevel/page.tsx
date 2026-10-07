@@ -16,29 +16,21 @@ import {
   Steps,
   Story,
 } from "@/components/CaseStudy";
-import JsonLd, { PERSON, SITE_URL } from "@/components/JsonLd";
+import JsonLd, { GOURMEVEL, PERSON, SITE_URL } from "@/components/JsonLd";
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "고메블",
-  alternateName: "Gourmevel",
+  ...GOURMEVEL,
   description:
-    "파인다이닝과 미쉐린 레스토랑 심층 리뷰 중심의 미식 매거진. 2021년 11월 창간.",
-  url: "https://gourmevel.com/",
-  foundingDate: "2021-11",
+    "파인다이닝과 미쉐린 레스토랑 심층 리뷰 중심의 미식 매거진. 2021년 11월 창간, 대표 위승주.",
   founder: PERSON,
-  sameAs: [
-    "https://www.instagram.com/gourmevel/",
-    "https://blog.naver.com/gourmevel",
-  ],
   mainEntityOfPage: `${SITE_URL}/projects/gourmevel`,
 };
 
 export const metadata: Metadata = {
   title: "고메블 Gourmevel — 미식 매거진",
   description:
-    "위승주가 창간해 운영하는 미식 매거진 고메블(Gourmevel). 파인다이닝·미쉐린 레스토랑 심층 리뷰, 유료 광고 없이 팔로워 1만, 숏폼 최고 124만 뷰, 브랜드 협업 50건 이상. 200명에서 1만 팔로워까지의 성장 과정.",
+    "위승주가 창간해 대표로 운영하는 미식 매거진 고메블(Gourmevel). 파인다이닝·미쉐린 레스토랑 심층 리뷰, 유료 광고 없이 팔로워 1만, 숏폼 최고 124만 뷰, 브랜드 협업 50건 이상. 200명에서 1만 팔로워까지의 성장 과정.",
   alternates: { canonical: "/projects/gourmevel" },
 };
 
@@ -52,7 +44,7 @@ export default function GourmevelPage() {
       subtitle="고메블"
       summary="미식 정보 기반 인스타그램 매거진"
       meta={[
-        "1인 총괄 기획 · 운영",
+        "대표 · 1인 총괄 기획 · 운영",
         "124만 뷰 · 1만 팔로워",
         "Nov 2021 – Present",
       ]}
@@ -81,7 +73,7 @@ export default function GourmevelPage() {
         </Prose>
         <Facts
           items={[
-            { label: "역할", value: "1인 기획 · 제작 · 편집 · 운영" },
+            { label: "역할", value: "대표 · 기획 · 제작 · 편집 · 운영" },
             { label: "기간", value: "Nov 2021 – Present" },
             { label: "채널", value: "Instagram · 네이버 블로그 · YouTube" },
             {

@@ -45,7 +45,7 @@ export default function Intro() {
             <Link href="/projects/gourmevel" className="link text-ink">
               고메블
             </Link>
-            과 와인 큐레이팅 앱{" "}
+            을 창간해 대표로 운영하고, 와인 큐레이팅 앱{" "}
             <Link href="/projects/drinkig" className="link text-ink">
               드링키지
             </Link>
