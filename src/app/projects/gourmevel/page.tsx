@@ -44,7 +44,7 @@ export default function GourmevelPage() {
       subtitle="고메블"
       summary="미식 정보 기반 인스타그램 매거진"
       meta={[
-        "대표 · 1인 총괄 기획 · 운영",
+        "Founder · 1인 총괄 기획 · 운영",
         "124만 뷰 · 1만 팔로워",
         "Nov 2021 – Present",
       ]}
@@ -73,7 +73,7 @@ export default function GourmevelPage() {
         </Prose>
         <Facts
           items={[
-            { label: "역할", value: "대표 · 기획 · 제작 · 편집 · 운영" },
+            { label: "역할", value: "Founder · 기획 · 제작 · 편집 · 운영" },
             { label: "기간", value: "Nov 2021 – Present" },
             { label: "채널", value: "Instagram · 네이버 블로그 · YouTube" },
             {
