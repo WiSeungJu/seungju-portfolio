@@ -1,7 +1,7 @@
 import GourmevelCase, { gourmevelMetadata } from "@/content/GourmevelCase";
 
-export const metadata = gourmevelMetadata("ko");
+export const metadata = gourmevelMetadata("en");
 
 export default function Page() {
-  return <GourmevelCase lang="ko" />;
+  return <GourmevelCase lang="en" />;
 }

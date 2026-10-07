@@ -1,7 +1,7 @@
 import PlanfitCase, { planfitMetadata } from "@/content/PlanfitCase";
 
-export const metadata = planfitMetadata("ko");
+export const metadata = planfitMetadata("en");
 
 export default function Page() {
-  return <PlanfitCase lang="ko" />;
+  return <PlanfitCase lang="en" />;
 }

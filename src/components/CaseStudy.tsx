@@ -4,11 +4,14 @@ import type { ReactNode } from "react";
 import SectionGrid from "./SectionGrid";
 import SiteFooter from "./SiteFooter";
 import SiteHeader from "./SiteHeader";
+import { localize, type Lang } from "@/i18n";
 
 type NavLink = { label: string; href: string };
 type Figure = { src: string; alt: string; width: number; height: number };
 
 export function CasePage({
+  lang,
+  path,
   back,
   title,
   subtitle,
@@ -20,6 +23,9 @@ export function CasePage({
   next,
   children,
 }: {
+  lang: Lang;
+  // 한국어 기준 경로. 언어 토글과 hreflang에 쓴다.
+  path: string;
   back: NavLink;
   title: string;
   subtitle?: string;
@@ -32,12 +38,15 @@ export function CasePage({
   children: ReactNode;
 }) {
   return (
-    <div className="page-enter mx-auto max-w-[1080px] px-5 sm:px-8">
-      <SiteHeader />
+    <div lang={lang} className="page-enter mx-auto max-w-[1080px] px-5 sm:px-8">
+      <SiteHeader lang={lang} path={path} />
       <main>
         <header className="pt-12 sm:pt-20">
           <p className="text-[13px] text-muted">
-            <Link href={back.href} className="hover:text-ink transition-colors">
+            <Link
+              href={localize(lang, back.href)}
+              className="hover:text-ink transition-colors"
+            >
               ← {back.label}
             </Link>
           </p>
@@ -82,18 +91,18 @@ export function CasePage({
         {children}
 
         <nav
-          aria-label="다른 글"
+          aria-label={lang === "ko" ? "다른 글" : "More"}
           className="mt-20 flex justify-between gap-6 border-t border-rule pt-5 text-sm"
         >
-          <Link href={prev.href} className="link">
+          <Link href={localize(lang, prev.href)} className="link">
             ← {prev.label}
           </Link>
-          <Link href={next.href} className="link text-right">
+          <Link href={localize(lang, next.href)} className="link text-right">
             {next.label} →
           </Link>
         </nav>
       </main>
-      <SiteFooter />
+      <SiteFooter lang={lang} />
     </div>
   );
 }

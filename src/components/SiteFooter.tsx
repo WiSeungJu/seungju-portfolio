@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { localize, type Lang } from "@/i18n";
 
 const links = [
   {
@@ -17,7 +18,7 @@ const links = [
     href: "https://github.com/SeungjuWI",
   },
   {
-    label: "GitHub · 개인",
+    label: { ko: "GitHub · 개인", en: "GitHub · personal" },
     text: "github.com/WiSeungJu",
     href: "https://github.com/WiSeungJu",
   },
@@ -28,7 +29,7 @@ const links = [
   },
 ];
 
-export default function SiteFooter() {
+export default function SiteFooter({ lang }: { lang: Lang }) {
   return (
     <footer
       id="contact"
@@ -38,29 +39,33 @@ export default function SiteFooter() {
 
       <div>
         <dl className="grid gap-x-12 border-t border-rule text-sm sm:grid-cols-2">
-          {links.map((link) => (
-            <div
-              key={link.label}
-              className="grid grid-cols-[6.5rem_1fr] items-baseline border-b border-rule py-3"
-            >
-              <dt className="text-muted">{link.label}</dt>
-              <dd>
-                <a
-                  href={link.href}
-                  target={link.href.startsWith("mailto") ? undefined : "_blank"}
-                  rel="noopener noreferrer"
-                  className="link"
-                >
-                  {link.text}
-                </a>
-              </dd>
-            </div>
-          ))}
+          {links.map((link) => {
+            const label =
+              typeof link.label === "string" ? link.label : link.label[lang];
+            return (
+              <div
+                key={link.href}
+                className="grid grid-cols-[6.5rem_1fr] items-baseline border-b border-rule py-3"
+              >
+                <dt className="text-muted">{label}</dt>
+                <dd>
+                  <a
+                    href={link.href}
+                    target={link.href.startsWith("mailto") ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    className="link"
+                  >
+                    {link.text}
+                  </a>
+                </dd>
+              </div>
+            );
+          })}
           <div className="grid grid-cols-[6.5rem_1fr] items-baseline border-b border-rule py-3">
             <dt className="text-muted">Resume</dt>
             <dd>
-              <Link href="/resume" className="link">
-                이력서 보기
+              <Link href={localize(lang, "/resume")} className="link">
+                {lang === "ko" ? "이력서 보기" : "View resume"}
               </Link>
             </dd>
           </div>

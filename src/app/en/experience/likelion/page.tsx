@@ -1,7 +1,7 @@
 import LikelionCase, { likelionMetadata } from "@/content/LikelionCase";
 
-export const metadata = likelionMetadata("ko");
+export const metadata = likelionMetadata("en");
 
 export default function Page() {
-  return <LikelionCase lang="ko" />;
+  return <LikelionCase lang="en" />;
 }

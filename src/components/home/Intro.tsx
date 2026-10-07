@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
+import { localize, type Lang } from "@/i18n";
 
-export default function Intro() {
+export default function Intro({ lang }: { lang: Lang }) {
+  const ko = lang === "ko";
   return (
     <section className="relative grid gap-x-12 pt-12 sm:pt-16 lg:grid-cols-[1fr_420px] lg:pt-20">
       {/* 구분선은 사진 위에 그려서 끊기지 않게 한다 */}
@@ -12,45 +14,91 @@ export default function Intro() {
 
       <div className="pb-10 lg:pb-16">
         <h1 className="text-[40px] font-bold leading-[1.1] tracking-tight sm:text-[52px]">
-          위승주
+          {ko ? "위승주" : "Seungju Wi"}
         </h1>
 
         <div className="mt-7 max-w-[35em] space-y-4 text-[17px] leading-[1.85] text-copy">
-          <p>
-            AI를 활용해 문제 정의부터 기획, 개발, 출시까지 직접 하는 PM입니다.
-          </p>
-          <p>
-            현재{" "}
-            <Link href="/experience/likelion" className="link text-ink">
-              멋쟁이사자처럼
-            </Link>
-            에서 베트남 IT 인재와 한국 기업을 잇는 채용 플랫폼{" "}
-            <a
-              href="https://salary-fyi.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="link whitespace-nowrap text-ink"
-            >
-              Salary FYI
-            </a>
-            를 맡아, 출시 5개월 만에 가입 8,800명, 채용 지원 1만 건을
-            만들었습니다. 이전에는{" "}
-            <Link href="/experience/planfit" className="link text-ink">
-              Planfit
-            </Link>
-            에서 70건이 넘는 실험으로 유료 구독 전환율을 개선했습니다.
-          </p>
-          <p>
-            팔로워 1만 미식 매거진{" "}
-            <Link href="/projects/gourmevel" className="link text-ink">
-              고메블
-            </Link>
-            을 창간해 운영하고, 와인 큐레이팅 앱{" "}
-            <Link href="/projects/drinkig" className="link text-ink">
-              드링키지
-            </Link>
-            를 직접 만들어 운영합니다.
-          </p>
+          {ko ? (
+            <>
+              <p>
+                AI를 활용해 문제 정의부터 기획, 개발, 출시까지 직접 하는
+                PM입니다.
+              </p>
+              <p>
+                현재{" "}
+                <Link href="/experience/likelion" className="link text-ink">
+                  멋쟁이사자처럼
+                </Link>
+                에서 베트남 IT 인재와 한국 기업을 잇는 채용 플랫폼{" "}
+                <a
+                  href="https://salary-fyi.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link whitespace-nowrap text-ink"
+                >
+                  Salary FYI
+                </a>
+                를 맡아, 출시 5개월 만에 가입 8,800명, 채용 지원 1만 건을
+                만들었습니다. 이전에는{" "}
+                <Link href="/experience/planfit" className="link text-ink">
+                  Planfit
+                </Link>
+                에서 70건이 넘는 실험으로 유료 구독 전환율을 개선했습니다.
+              </p>
+              <p>
+                팔로워 1만 미식 매거진{" "}
+                <Link href="/projects/gourmevel" className="link text-ink">
+                  고메블
+                </Link>
+                을 창간해 운영하고, 와인 큐레이팅 앱{" "}
+                <Link href="/projects/drinkig" className="link text-ink">
+                  드링키지
+                </Link>
+                를 직접 만들어 운영합니다.
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                A product manager who takes products from problem definition
+                to launch, using AI to plan, build, and ship end to end.
+              </p>
+              <p>
+                Currently at{" "}
+                <Link href="/en/experience/likelion" className="link text-ink">
+                  LIKELION
+                </Link>
+                , building{" "}
+                <a
+                  href="https://salary-fyi.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="link whitespace-nowrap text-ink"
+                >
+                  Salary FYI
+                </a>
+                , a hiring platform connecting Vietnamese IT talent with
+                Korean companies: 8,800 sign-ups and 10,000 job applications
+                within five months of launch. Previously improved paid
+                subscription conversion at{" "}
+                <Link href="/en/experience/planfit" className="link text-ink">
+                  Planfit
+                </Link>{" "}
+                with 70+ experiments.
+              </p>
+              <p>
+                Founded{" "}
+                <Link href="/en/projects/gourmevel" className="link text-ink">
+                  Gourmevel
+                </Link>
+                , a fine-dining magazine with 10K followers, and built{" "}
+                <Link href="/en/projects/drinkig" className="link text-ink">
+                  Drinkig
+                </Link>
+                , an AI wine curation app, solo.
+              </p>
+            </>
+          )}
         </div>
 
         <p className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm">
@@ -58,10 +106,10 @@ export default function Intro() {
             href="mailto:wsj@likelion.net"
             className="bg-ink px-4 py-2.5 font-medium text-paper transition-colors hover:bg-copy"
           >
-            이메일
+            {ko ? "이메일" : "Email"}
           </a>
-          <Link href="/resume" className="link">
-            이력서
+          <Link href={localize(lang, "/resume")} className="link">
+            {ko ? "이력서" : "Resume"}
           </Link>
           <a
             href="https://www.linkedin.com/in/wiseungju/"
@@ -79,7 +127,7 @@ export default function Intro() {
         <div className="aspect-[6/7] overflow-hidden">
           <Image
             src="/images/profile-cutout.png"
-            alt="위승주 프로필 사진"
+            alt={ko ? "위승주 프로필 사진" : "Portrait of Seungju Wi"}
             width={1100}
             height={1375}
             loading="eager"

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import { localize, type Lang } from "@/i18n";
 
 export type Entry = {
   name: string;
@@ -12,7 +13,13 @@ export type Entry = {
   href?: string;
 };
 
-function EntryLink({ href, children }: { href?: string; children: ReactNode }) {
+function EntryLink({
+  href,
+  children,
+}: {
+  href?: string;
+  children: ReactNode;
+}) {
   const className = "block py-5";
   if (!href) return <div className={className}>{children}</div>;
   if (href.startsWith("http")) {
@@ -35,12 +42,18 @@ function EntryLink({ href, children }: { href?: string; children: ReactNode }) {
 }
 
 // 홈의 목록 공통 형식: 이름 + 구분, 기간, 한 줄 설명
-export default function EntryList({ items }: { items: Entry[] }) {
+export default function EntryList({
+  items,
+  lang,
+}: {
+  items: Entry[];
+  lang: Lang;
+}) {
   return (
     <ul className="entry-list border-t border-rule">
       {items.map((item) => (
         <li key={item.name} className="border-b border-rule">
-          <EntryLink href={item.href}>
+          <EntryLink href={item.href && localize(lang, item.href)}>
             <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-1.5">
               <h3 className="text-xl font-bold tracking-tight">
                 {item.name}
