@@ -12,8 +12,8 @@ const experiences = (lang: Lang): Entry[] => [
     ],
     description: pick(
       lang,
-      "베트남 IT 인재 채용 플랫폼 Salary FYI 제품 전체 담당, 출시 5개월 만에 가입 8,800명 · 채용 지원 1만 건",
-      "Owned Salary FYI, a hiring platform for Vietnamese IT talent: 8,800 sign-ups and 10K applications in 5 months"
+      "베트남 IT 인재 채용 플랫폼 Salary FYI 제품 전체 담당, 출시 6개월 만에 가입 10,000명+ · 채용 지원 14,000건+",
+      "Owned Salary FYI, a hiring platform for Vietnamese IT talent: 10,000+ sign-ups and 14,000+ applications in 6 months"
     ),
     href: "/experience/likelion",
   },

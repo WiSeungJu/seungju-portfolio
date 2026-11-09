@@ -41,7 +41,7 @@ export default function Intro({ lang }: { lang: Lang }) {
                 >
                   Salary FYI
                 </a>
-                를 맡아, 출시 5개월 만에 가입 8,800명, 채용 지원 1만 건을
+                를 맡아, 출시 6개월 만에 가입 10,000명+, 채용 지원 14,000건+을
                 만들었습니다. 이전에는{" "}
                 <Link href="/experience/planfit" className="link text-ink">
                   Planfit
@@ -81,8 +81,8 @@ export default function Intro({ lang }: { lang: Lang }) {
                   Salary FYI
                 </a>
                 , a hiring platform connecting Vietnamese IT talent with
-                Korean companies: 8,800 sign-ups and 10,000 job applications
-                within five months of launch. Previously improved paid
+                Korean companies: 10,000+ sign-ups and 14,000+ job applications
+                within six months of launch. Previously improved paid
                 subscription conversion at{" "}
                 <Link href="/en/experience/planfit" className="link text-ink">
                   Planfit

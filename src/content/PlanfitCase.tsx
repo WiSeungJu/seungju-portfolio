@@ -89,6 +89,7 @@ export default function PlanfitCase({ lang }: { lang: Lang }) {
 
       <Section id="key-projects" title="Key Projects">
         <Story
+          collapse={lang}
           id="paywall"
           kicker="Project 01 — AI Video Paywall · New User"
           title={
@@ -304,6 +305,7 @@ export default function PlanfitCase({ lang }: { lang: Lang }) {
         </Story>
 
         <Story
+          collapse={lang}
           id="monetai"
           kicker="Project 02 — AI Prediction · Free User"
           title={

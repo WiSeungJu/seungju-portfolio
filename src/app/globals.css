@@ -10,6 +10,10 @@
   --color-rule: #e4e4e2;
   --color-point: #111111;
 
+  /* 강조: 핵심 수치는 주황 글자, 핵심 문구는 노란 형광펜 */
+  --color-hi: #c2410c;
+  --color-hi-bg: #ffe08a;
+
   /* /portfolio-pdf 인쇄용 문서가 쓰는 기존 토큰 */
   --color-accent: #6366f1;
   --color-accent-secondary: #8b5cf6;
@@ -46,6 +50,16 @@ body::before {
   body::before {
     display: none;
   }
+  /* 인쇄할 때는 접힌 프로젝트 상세도 모두 펼친다 */
+  .collapsible-panel {
+    grid-template-rows: 1fr !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .collapsible-panel {
+    transition: none;
+  }
 }
 
 ::selection {
@@ -78,9 +92,12 @@ body::before {
     text-decoration-color: var(--color-point);
   }
 
-  /* 제목 안 강조: 형광펜처럼 아래쪽만 깔리는 회색 */
-  .mark {
-    background: linear-gradient(transparent 62%, #e6e6e3 62%);
+  /* 제목·본문 안 강조: 형광펜처럼 아래쪽만 깔리는 노란색 */
+  .mark,
+  .hl {
+    background: linear-gradient(transparent 58%, var(--color-hi-bg) 58%);
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
   }
 
   .page-enter {

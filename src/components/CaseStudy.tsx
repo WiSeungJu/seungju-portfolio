@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import Collapsible from "./Collapsible";
 import SectionGrid from "./SectionGrid";
 import SiteFooter from "./SiteFooter";
 import SiteHeader from "./SiteHeader";
@@ -138,9 +139,17 @@ export function Prose({ children }: { children: ReactNode }) {
   );
 }
 
-// 본문 안의 강조
+// 본문 안의 강조: 굵게 + 형광펜
 export function B({ children }: { children: ReactNode }) {
-  return <strong className="font-semibold text-ink">{children}</strong>;
+  return <strong className="hl font-semibold text-ink">{children}</strong>;
+}
+
+// 문자열 안의 **강조**를 <B>로 바꾼다. 문자열이 아니면 그대로 둔다.
+function rich(node: ReactNode): ReactNode {
+  if (typeof node !== "string" || !node.includes("**")) return node;
+  return node.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 === 1 ? <B key={i}>{part}</B> : part
+  );
 }
 
 export function Facts({
@@ -185,14 +194,18 @@ export function Figures({
   );
 }
 
-// 큰 섹션 안의 한 프로젝트: 한 줄 요약과 핵심 결과를 먼저 보여준다
+// 큰 섹션 안의 한 프로젝트: 한 줄 요약과 핵심 결과를 먼저 보여준다.
+// collapse에 언어를 넘기면 ledger·children 같은 상세는 토글 안에 접어 둔다.
+// highlight는 접히지 않고 요약 바로 아래에 늘 보인다.
 export function Story({
   id,
   kicker,
   title,
   lede,
   result,
+  highlight,
   ledger,
+  collapse,
   children,
 }: {
   id?: string;
@@ -200,34 +213,13 @@ export function Story({
   title: ReactNode;
   lede: ReactNode;
   result?: { value: string; label: string; note?: string };
+  highlight?: ReactNode;
   ledger?: { label: string; value: string }[];
+  collapse?: Lang;
   children?: ReactNode;
 }) {
-  return (
-    <article
-      id={id}
-      className="mt-14 scroll-mt-8 border-t border-rule pt-10 first:mt-0 first:border-t-0 first:pt-0"
-    >
-      <p className="text-xs font-medium tracking-wide text-point">{kicker}</p>
-      <div className="mt-3 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-end sm:gap-10">
-        <h3 className="text-[28px] font-bold leading-[1.3] tracking-tight sm:text-[34px]">
-          {title}
-        </h3>
-        {result && (
-          <div className="sm:text-right">
-            <p
-              className={`font-bold leading-none tabular-nums text-point ${
-                result.value.length > 4 ? "text-[38px]" : "text-[56px]"
-              }`}
-            >
-              {result.value}
-            </p>
-            <p className="mt-2 text-xs text-muted">{result.label}</p>
-            {result.note && <p className="text-[13px]">{result.note}</p>}
-          </div>
-        )}
-      </div>
-      <p className="mt-5 text-[15.5px] leading-[1.85] text-copy">{lede}</p>
+  const details = (ledger || children) && (
+    <>
       {ledger && (
         <dl className="mt-6 border-t border-rule text-sm">
           {ledger.map((row) => (
@@ -242,6 +234,49 @@ export function Story({
         </dl>
       )}
       {children}
+    </>
+  );
+
+  return (
+    <article
+      id={id}
+      className={
+        collapse
+          ? "mt-6 scroll-mt-8 bg-wash p-6 first:mt-0 sm:p-10 print:bg-transparent print:p-0"
+          : "mt-14 scroll-mt-8 border-t border-rule pt-10 first:mt-0 first:border-t-0 first:pt-0"
+      }
+    >
+      <p className="text-xs font-medium tracking-wide text-point">{kicker}</p>
+      <div className="mt-3 grid gap-6 sm:grid-cols-[1fr_auto] sm:items-end sm:gap-10">
+        <h3 className="text-[28px] font-bold leading-[1.3] tracking-tight sm:text-[34px]">
+          {title}
+        </h3>
+        {result && (
+          <div className="sm:text-right">
+            <p
+              className={`font-bold leading-none tabular-nums text-hi ${
+                result.value.length > 4 ? "text-[38px]" : "text-[56px]"
+              }`}
+            >
+              {result.value}
+            </p>
+            <p className="mt-2 text-xs text-muted">{result.label}</p>
+            {result.note && <p className="text-[13px]">{result.note}</p>}
+          </div>
+        )}
+      </div>
+      <p className="mt-5 text-[15.5px] leading-[1.85] text-copy">{rich(lede)}</p>
+      {highlight && <div className="mt-6">{highlight}</div>}
+      {details &&
+        (collapse ? (
+          <Collapsible targetId={id} lang={collapse}>
+            <div className="mt-4 bg-paper px-5 pb-8 pt-2 sm:px-8 print:px-0">
+              {details}
+            </div>
+          </Collapsible>
+        ) : (
+          details
+        ))}
     </article>
   );
 }
@@ -406,12 +441,12 @@ export function Rows({
           <dt className="font-semibold leading-snug">
             {item.title}
             {item.sub && (
-              <span className="mt-1 block text-[13px] font-normal text-muted">
+              <span className="mt-1 block text-[13px] font-semibold tabular-nums text-hi">
                 {item.sub}
               </span>
             )}
           </dt>
-          <dd className="text-sm leading-[1.8] text-copy">{item.body}</dd>
+          <dd className="text-sm leading-[1.8] text-copy">{rich(item.body)}</dd>
         </div>
       ))}
     </dl>

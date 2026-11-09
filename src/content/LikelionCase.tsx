@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
 import {
-  B,
   CasePage,
   Facts,
   Figures,
-  Note,
   Phase,
   Prose,
   Rows,
@@ -20,8 +18,8 @@ export function likelionMetadata(lang: Lang): Metadata {
     title: lang === "ko" ? "멋쟁이사자처럼 Problem Solver" : { absolute: "LIKELION — Problem Solver | Seungju WI" },
     description: pick(
       lang,
-      "위승주의 멋쟁이사자처럼 글로벌신사업본부 경력. 베트남 IT 인재 채용 플랫폼 Salary FYI 제품 전체 담당, 출시 5개월 만에 가입 8,800명·채용 지원 1만 건. 채용 업무 자동화, 크로스보더 협업 툴, KTC.",
-      "Seungju WI at LIKELION's Global New Business division: owned Salary FYI, a hiring platform for Vietnamese IT talent, reaching 8,800 sign-ups and 10K job applications within 5 months of launch. Hiring automation, a cross-border collaboration tool, and KTC."
+      "위승주의 멋쟁이사자처럼 글로벌신사업본부 경력. 베트남 IT 인재 채용 플랫폼 Salary FYI 제품 전체 담당, 출시 6개월 만에 가입 10,000명+·채용 지원 14,000건+. 채용 업무 자동화, K-Tech College, 애니멀리그.",
+      "Seungju WI at LIKELION's Global New Business division: owned Salary FYI, a hiring platform for Vietnamese IT talent, reaching 10,000+ sign-ups and 14,000+ job applications within 6 months of launch. Hiring automation, K-Tech College, and Animal League."
     ),
     alternates: alternatesFor(lang, PATH),
     ...(lang === "en" ? { openGraph: { locale: "en_US" } } : {}),
@@ -46,7 +44,10 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
         "Problem Solver · Sep 2026 – Present",
         "AI Product Manager · Apr–Sep 2026",
       ]}
-      links={[{ label: "salary-fyi.com", href: "https://salary-fyi.com" }]}
+      links={[
+        { label: "salary-fyi.com", href: "https://salary-fyi.com" },
+        { label: "animal-league.kr", href: "https://animal-league.kr" },
+      ]}
       prev={{ label: t("메인으로", "Home"), href: "/#experience" }}
       next={{ label: "Planfit", href: "/experience/planfit" }}
     >
@@ -54,8 +55,8 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
         <Prose>
           <p>
             {t(
-              "AI Product Manager로 시작해 현재 Problem Solver. 입사 3일 차에 첫 MVP 배포, 4개월간 제품 5개 이상을 단독으로 기획·개발·출시. 2026년 9월부터 애니멀리그 공개 플랫폼 PM 담당(출시 전).",
-              "Joined as AI Product Manager, now Problem Solver. Shipped the first MVP on day 3 and planned, built, and launched 5+ products solo in 4 months. Since Sep 2026, also PM for the Animal League public platform (pre-launch)."
+              "AI Product Manager로 시작해 현재 Problem Solver. 입사 3일 차에 첫 MVP 배포, 4개월간 제품 5개 이상을 단독으로 기획·개발·출시. 2026년 9월부터 애니멀리그 공개 플랫폼 PM 담당(2026.11 런칭).",
+              "Joined as AI Product Manager, now Problem Solver. Shipped the first MVP on day 3 and planned, built, and launched 5+ products solo in 4 months. Since Sep 2026, also PM for the Animal League public platform (launched Nov 2026)."
             )}
           </p>
         </Prose>
@@ -78,8 +79,8 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
             {
               label: t("담당 제품", "Products"),
               value: t(
-                "Salary FYI · 채용 업무 자동화 · 크로스보더 협업 툴 · KTC · 애니멀리그",
-                "Salary FYI · Hiring automation · Cross-border collaboration tool · KTC · Animal League"
+                "Salary FYI · 채용 업무 자동화 · K-Tech College · 애니멀리그",
+                "Salary FYI · Hiring automation · K-Tech College · Animal League"
               ),
             },
             {
@@ -95,35 +96,38 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
 
       <Section id="projects" title="Projects">
         <Story
+          collapse={lang}
           id="fyi"
           kicker="Project 01 — salary-fyi.com"
           title="Salary FYI"
           lede={t(
-            "베트남 IT 인재와 한국 기업을 연결하는 채용 플랫폼. 검증된 연봉 데이터를 기반으로 인재를 모음. 웹, 모바일 앱, 커뮤니티, 어드민 대시보드까지 제품 전체를 담당.",
-            "A hiring platform connecting Vietnamese IT talent with Korean companies, built around verified salary data. Owned the whole product: web, mobile app, community, and admin dashboard."
+            "베트남 IT 인재와 한국 기업을 연결하는 채용 플랫폼. 검증된 연봉 데이터를 기반으로 인재를 모음. 웹, 모바일 앱, 커뮤니티, 어드민 대시보드까지 **제품 전체를 담당**.",
+            "A hiring platform connecting Vietnamese IT talent with Korean companies, built around verified salary data. **Owned the whole product**: web, mobile app, community, and admin dashboard."
           )}
           result={{
-            value: t("지원 1만+", "10K+"),
+            value: t("지원 14,000+", "14,000+"),
             label: t(
-              "채용 공고 지원 · 출시 5개월 만에",
-              "Job applications · within 5 months of launch"
+              "채용 공고 지원 · 출시 6개월 만에",
+              "Job applications · within 6 months of launch"
             ),
             note: t("가입자의 60%가 이력서 등록", "60% of sign-ups registered a resume"),
           }}
+          highlight={
+            <Figures
+              items={[
+                { value: t("12.4만", "124K"), label: t("방문 세션", "Sessions") },
+                { value: "10,000+", label: t("가입자 (명)", "Sign-ups") },
+                { value: "6,600+", label: t("이력서 등록 (건)", "Resumes registered") },
+                { value: "14,000+", label: t("채용 공고 지원 (건)", "Job applications") },
+              ]}
+            />
+          }
         >
           <Phase
             num="01"
             label="Metrics"
-            title={t("지표 (Apr 20 – Oct 6, 2026 기준)", "Metrics (Apr 20 – Oct 6, 2026)")}
+            title={t("지표 (Apr 20 – Nov 9, 2026 기준)", "Metrics (Apr 20 – Nov 9, 2026)")}
           >
-            <Figures
-              items={[
-                { value: t("12.4만", "124K"), label: t("방문 세션", "Sessions") },
-                { value: "8,800+", label: t("가입자 (명)", "Sign-ups") },
-                { value: "5,300+", label: t("이력서 등록 (건)", "Resumes registered") },
-                { value: t("1만+", "10K+"), label: t("채용 공고 지원 (건)", "Job applications") },
-              ]}
-            />
             <dl className="text-sm">
               {[
                 {
@@ -138,14 +142,17 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
                   label: "MAU",
                   value: t("3만", "30K"),
                   note: t(
-                    "출시 4개월 만에 · 활성 사용자 매월 65~80% 성장",
-                    "Within 4 months of launch · active users growing 65–80% monthly"
+                    "출시 6개월 만에 · 활성 사용자 매월 65~80% 성장",
+                    "Within 6 months of launch · active users growing 65–80% monthly"
                   ),
                 },
                 {
                   label: t("연봉 정보", "Salary data"),
-                  value: t("12,517건 · 4,064개 회사", "12,517 entries · 4,064 companies"),
-                  note: t("자연 유입 7,455 / 광고 유입 5,062", "7,455 organic / 5,062 from ads"),
+                  value: t("17,000건+ · 4,200개+ 회사", "17,000+ entries · 4,200+ companies"),
+                  note: t(
+                    "약 69%가 자연 유입 (12,000건+)",
+                    "~69% organic (12,000+ entries)"
+                  ),
                 },
                 { label: t("채용 페이지 조회", "Job page views"), value: t("7.1만", "71K") },
                 { label: t("공고 카드 클릭", "Job card clicks"), value: t("4.1만", "41K") },
@@ -172,27 +179,35 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
             <Rows
               items={[
                 {
+                  title: t("가입 퍼널 재설계", "Sign-up funnel redesign"),
+                  sub: "1.5% → 14.4%",
+                  body: t(
+                    "K-Tech College 지원자 CV로 FYI 프로필을 미리 만들어 두는 메일로 **가입 전환 1.5% → 14.4%**, 한 달 만에 **인재풀 680명 → 2,000명**.",
+                    "Pre-built FYI profiles from K-Tech College applicants' CVs; **sign-up conversion 1.5% → 14.4%**, **talent pool 680 → 2,000** in one month."
+                  ),
+                },
+                {
                   title: t("이력서 공개율", "Resume visibility rate"),
                   sub: "7.7% → 88.3%",
                   body: t(
-                    "원탭 지원과 LLM 타깃 캠페인(클릭률 14~30%)으로 이력서 공개율을 7.7%에서 88.3%로 개선.",
-                    "Raised the resume visibility rate from 7.7% to 88.3% with one-tap apply and LLM-targeted campaigns (14–30% click-through)."
+                    "원탭 지원과 LLM 타깃 캠페인(클릭률 14~30%)으로 **이력서 공개율을 7.7%에서 88.3%로 개선**.",
+                    "**Raised the resume visibility rate from 7.7% to 88.3%** with one-tap apply and LLM-targeted campaigns (14–30% click-through)."
                   ),
                 },
                 {
                   title: t("KPI 재정의", "KPI redefinition"),
                   sub: t("지원율 79배", "79x application rate"),
                   body: t(
-                    "이력서를 등록한 유저의 지원율이 79배 높다는 점을 발견해 팀 KPI를 재정의하고 광고 예산을 전면 재배분.",
-                    "Found that users with a registered resume apply 79x more often; redefined the team KPI around it and reallocated the entire ad budget."
+                    "이력서를 등록한 유저의 **지원율이 79배 높다**는 점을 발견해 **팀 KPI를 재정의**하고 광고 예산을 전면 재배분.",
+                    "Found that users with a registered resume **apply 79x more often**; **redefined the team KPI** around it and reallocated the entire ad budget."
                   ),
                 },
                 {
                   title: t("인재풀 확대", "Talent pool"),
                   sub: t("콜드메일 2만 건+", "20K+ cold emails"),
                   body: t(
-                    "맞춤 콜드메일을 2만 건 이상 발송해 인재풀을 확대.",
-                    "Sent 20,000+ personalized cold emails to expand the talent pool."
+                    "맞춤 콜드메일을 **2만 건 이상** 발송해 인재풀을 확대.",
+                    "Sent **20,000+ personalized cold emails** to expand the talent pool."
                   ),
                 },
                 {
@@ -222,15 +237,26 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
         </Story>
 
         <Story
+          collapse={lang}
           id="hiring"
           kicker="Project 02 — Hiring Automation"
           title={t("채용 업무 자동화", "Hiring Automation")}
           lede={t(
-            "이력서 검토, AI 인터뷰, 최종 평가, 결과 메일 발송까지 8단계 전 과정을 자동화해, 스프레드시트 수작업 운영을 대체.",
-            "Automated the 8-step hiring workflow end to end, from resume review and AI interviews to final evaluation and result emails, replacing manual spreadsheet operations."
+            "외부 업체 없이 **인재 실력을 직접 검증**하도록 채용 8단계를 자체 구축. AI 음성 인터뷰도 **자체 서비스로 만들어 비용을 줄임**.",
+            "Built the 8-step hiring pipeline in-house to **verify candidates ourselves**, without outside vendors. Made the AI voice interview **our own service to cut its cost**."
           )}
-          result={{ value: t("8단계", "8 steps"), label: t("전 과정 자동화", "fully automated") }}
+          result={{
+            value: "$20K → $180",
+            label: t("AI 음성 인터뷰 연간 예상 비용", "Projected AI voice interview cost per year"),
+          }}
           ledger={[
+            {
+              label: t("AI 음성 인터뷰 비용", "AI voice interview cost"),
+              value: t(
+                "예상 연 약 2,800만 원(약 $20K) → 월 $15 수준",
+                "~₩28M (~$20K)/yr projected → ~$15/mo"
+              ),
+            },
             {
               label: t("구성", "Components"),
               value: t(
@@ -238,41 +264,14 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
                 "LLM resume screening · AI voice interview · Interview tracking · Slack bot"
               ),
             },
-            {
-              label: t("대체한 것", "Replaced"),
-              value: t("스프레드시트 수작업 운영", "Manual spreadsheet operations"),
-            },
           ]}
         />
 
         <Story
-          id="collab-tool"
-          kicker="Project 03 — Cross-border Collaboration"
-          title={t("크로스보더 협업 툴", "Cross-border Collaboration Tool")}
-          lede={t(
-            "베트남 구성원과의 소통 비효율을 줄이려고, 실시간 번역이 되는 프로젝트 관리 툴 제작.",
-            "Built a project management tool with real-time translation to cut communication overhead with Vietnamese team members."
-          )}
-        >
-          <Note label={t("배운 점", "What I learned")}>
-            {lang === "ko" ? (
-              <>
-                기능을 빨리 만드는 것보다, 사용자가 새 툴에 적응하는 시간(
-                <B>온보딩</B>)까지 설계해야 한다는 것.
-              </>
-            ) : (
-              <>
-                Shipping features fast matters less than designing for the time
-                users need to adapt to a new tool: <B>onboarding</B>.
-              </>
-            )}
-          </Note>
-        </Story>
-
-        <Story
+          collapse={lang}
           id="ktc"
-          kicker={t("Project 04 — 정부지원사업", "Project 04 — Government-funded program")}
-          title="KTC"
+          kicker={t("Project 03 — 정부지원사업", "Project 03 — Government-funded program")}
+          title="K-Tech College"
           lede={t(
             "한국 스타트업에 베트남 원격 개발자, 디자이너, 마케터를 매칭하는 정부지원사업을 담당.",
             "Ran a government-funded program matching Korean startups with remote Vietnamese developers, designers, and marketers."
@@ -288,22 +287,97 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
                 {
                   title: t("이력서 한국어 번역 기능", "Korean resume translation"),
                   body: t(
-                    "건당 약 3시간 걸리던 번역 요청을 즉시 생성으로 단축.",
-                    "Cut translation requests from about 3 hours each to instant generation."
+                    "건당 **약 3시간** 걸리던 번역 요청을 **즉시 생성**으로 단축.",
+                    "Cut translation requests from **about 3 hours** each to **instant generation**."
+                  ),
+                },
+                {
+                  title: t("병목 재정의", "Bottleneck reframed"),
+                  sub: t("공고 112개 전수 진단", "112 job posts audited"),
+                  body: t(
+                    "진행 중 공고 112개를 전수 진단해 **병목이 '기업 전달' 단계**임을 찾음(합격자 약 500명 대기). SLA, 지연 알림, 노쇼 관리를 자동화로 연결.",
+                    "Audited all 112 open job posts and **found the bottleneck in company handoff** (~500 passed candidates waiting); automated SLA tracking, delay alerts, and no-show management."
+                  ),
+                },
+                {
+                  title: t("데이터 누락 복구", "Data recovery"),
+                  sub: t("1,960건 복구 · 오류 0건", "1,960 recovered · 0 errors"),
+                  body: t(
+                    "지원자 동기화 누락의 원인을 찾아 식별 구조를 재설계. 누락 약 2,000건 중 **1,960건 복구, 오류 0건**.",
+                    "Traced a candidate sync failure to its root cause and redesigned record identity; **recovered 1,960 of ~2,000 missing records with zero errors**."
                   ),
                 },
                 {
                   title: t("현지 운영", "On-site operations"),
-                  sub: t("다낭 · Sep 30, 2026", "Da Nang · Sep 30, 2026"),
                   body: t(
-                    "K-Tech College Job Matching Weekend 2026을 현지에서 운영.",
-                    "Ran the K-Tech College Job Matching Weekend 2026 on site."
+                    "K-Tech College Job Matching Weekend 2026을 다낭 현지에서 운영 (2026.09.30).",
+                    "Ran the K-Tech College Job Matching Weekend 2026 on site in Da Nang (Sep 30, 2026)."
+                  ),
+                },
+                {
+                  title: t("크로스보더 협업 툴", "Cross-border collaboration tool"),
+                  body: t(
+                    "베트남 구성원과의 소통 비효율을 줄이려고 실시간 번역이 되는 프로젝트 관리 툴을 제작. 기능을 빨리 만드는 것보다 **사용자가 새 툴에 적응하는 시간(온보딩)까지 설계**해야 한다는 걸 배움.",
+                    "Built a project management tool with real-time translation to cut communication overhead with Vietnamese team members. Learned that shipping features fast matters less than **designing for the time users need to adapt (onboarding)**."
                   ),
                 },
               ]}
             />
           </div>
         </Story>
+
+        <Story
+          collapse={lang}
+          id="animal-league"
+          kicker="Project 04 — animal-league.kr"
+          title={t("애니멀리그", "Animal League")}
+          lede={t(
+            "대학생 전용 커뮤니티를 누구나 참여하는 공개 해커톤 플랫폼으로 전환. PM으로 **킥오프 약 6주 만에 런칭**(2026.11).",
+            "Turned a university-only community into an open hackathon platform. As PM, **launched about 6 weeks after kickoff** (Nov 2026)."
+          )}
+          result={{
+            value: t("약 6주", "~6 weeks"),
+            label: t("킥오프에서 런칭까지", "Kickoff to launch"),
+          }}
+        >
+          <div className="mt-6">
+            <Rows
+              items={[
+                {
+                  title: t("범위 정리", "Scoping"),
+                  sub: t("축소안 8개 중 7개 적용", "7 of 8 cuts adopted"),
+                  body: t(
+                    "2~3주 개발 일정에 맞춰 범위를 정리.",
+                    "Scoped the product to fit a 2–3 week dev window."
+                  ),
+                },
+                {
+                  title: t("약관 리스크", "Terms-of-service risk"),
+                  body: t(
+                    "공개 전환에 걸리는 **약관 리스크를 개발 전에 발견**하고 대안을 설계.",
+                    "**Flagged terms-of-service risk** for going public **before development started**, and designed the fix."
+                  ),
+                },
+                {
+                  title: t("일정 방어", "Schedule"),
+                  body: t(
+                    "C레벨 요청으로 핵심 기능이 바뀐 뒤에도 **조정된 일정에 맞춰 런칭**.",
+                    "**Shipped on the revised schedule** after a C-level change to core features."
+                  ),
+                },
+                {
+                  title: t("QA 설계", "QA design"),
+                  sub: t("체크리스트 1,243줄 · 219단계", "1,243-line checklist · 219 steps"),
+                  body: t(
+                    "QA 직접 설계 (어드민 체크리스트 1,243줄, 플로우 테스트 219단계).",
+                    "Designed QA (1,243-line admin checklist, 219-step flow tests)."
+                  ),
+                },
+              ]}
+            />
+          </div>
+        </Story>
+
       </Section>
     </CasePage>
   );
