@@ -13,6 +13,8 @@ const projects = (lang: Lang): Entry[] => [
       "Taste-based recommendations that lower the barrier for wine beginners; built and shipped solo"
     ),
     href: "/projects/drinkig",
+    logo: "/images/logos/drinkig.png",
+    brand: "#7e13b1",
   },
   {
     name: "Gourmevel",
@@ -24,6 +26,8 @@ const projects = (lang: Lang): Entry[] => [
       "In-depth reviews of fine-dining and Michelin restaurants; 10K followers with zero ad spend"
     ),
     href: "/projects/gourmevel",
+    logo: "/images/logos/gourmevel.png",
+    brand: "#1b341e",
   },
 ];
 

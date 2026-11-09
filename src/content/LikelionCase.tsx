@@ -110,6 +110,10 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
           id="fyi"
           kicker="Project 01 — salary-fyi.com"
           title="Salary FYI"
+          links={[
+            { label: t("웹사이트", "Website"), href: "https://salary-fyi.com" },
+            { label: "App Store", href: "https://apps.apple.com/app/id6778311550" },
+          ]}
           visual={
             <Image
               src="/images/likelion/fyi-logo.png"
@@ -292,6 +296,7 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
           id="ktc"
           kicker={t("Project 03 — 정부지원사업", "Project 03 — Government-funded program")}
           title="K-Tech College"
+          links={[{ label: t("프로그램 페이지", "Program page"), href: "https://salary-fyi.com/ktc" }]}
           lede={t(
             "한국 스타트업에 베트남 원격 개발자, 디자이너, 마케터를 매칭하는 정부지원사업을 담당.",
             "Ran a government-funded program matching Korean startups with remote Vietnamese developers, designers, and marketers."
@@ -351,6 +356,7 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
           id="animal-league"
           kicker="Project 04 — animal-league.kr"
           title={t("애니멀리그", "Animal League")}
+          links={[{ label: t("웹사이트", "Website"), href: "https://animal-league.kr" }]}
           lede={t(
             "대학생 전용 커뮤니티를 누구나 참여하는 공개 해커톤 플랫폼으로 전환. PM으로 **킥오프 약 6주 만에 런칭**(2026.11).",
             "Turned a university-only community into an open hackathon platform. As PM, **launched about 6 weeks after kickoff** (Nov 2026)."

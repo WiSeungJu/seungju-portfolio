@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { localize, type Lang } from "@/i18n";
@@ -11,6 +12,9 @@ export type Entry = {
   description?: string;
   // 내부 경로 또는 외부 주소. 없으면 링크 없이 표시
   href?: string;
+  // 마우스를 올리면 행을 덮는 워드마크 로고(7:3 비율)와 그 배경색(#rrggbb). 마우스를 올렸을 때 행을 물들일 브랜드 색(#rrggbb)
+  logo?: string;
+  brand?: string;
 };
 
 function EntryLink({
@@ -52,35 +56,64 @@ export default function EntryList({
   return (
     <ul className="entry-list border-t border-rule">
       {items.map((item) => (
-        <li key={item.name} className="border-b border-rule">
+        <li
+          key={item.name}
+          className="border-b border-rule"
+          style={
+            item.brand
+              ? ({ "--brand": item.brand } as React.CSSProperties)
+              : undefined
+          }
+        >
           <EntryLink href={item.href && localize(lang, item.href)}>
-            <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-1.5">
-              <h3 className="text-xl font-bold tracking-tight">
-                {item.name}
-                {item.tag && (
-                  <span className="ml-2.5 inline-block text-xs font-normal tracking-normal text-muted">
-                    {item.tag}
-                  </span>
-                )}
-              </h3>
-              <ul className="space-y-0.5 pt-1 text-[13px] leading-snug sm:text-right">
-                {item.roles.map((role) => (
-                  <li key={role.period}>
-                    {role.title && (
-                      <span className="text-muted">{role.title} </span>
-                    )}
-                    <span className="font-medium tabular-nums">
-                      {role.period}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            {item.description && (
-              <p className="mt-1.5 text-[15px] leading-[1.7] text-copy">
-                {item.description}
-              </p>
+            {item.logo && (
+              // 마우스를 올리면 행 전체를 브랜드 색으로 덮고 로고만 보여준다
+              <span aria-hidden="true" className="entry-cover">
+                <Image
+                  src={item.logo}
+                  alt=""
+                  width={336}
+                  height={144}
+                  sizes="140px"
+                  className="h-14 w-auto"
+                />
+                <span className="text-2xl text-white">→</span>
+              </span>
             )}
+            <div>
+              <div className="flex flex-wrap items-start justify-between gap-x-6 gap-y-1.5">
+                <h3 className="text-xl font-bold tracking-tight">
+                  {item.name}
+                  {item.tag && (
+                    <span className="ml-2.5 inline-block text-xs font-normal tracking-normal text-muted">
+                      {item.tag}
+                    </span>
+                  )}
+                  {item.href && (
+                    <span aria-hidden="true" className="entry-arrow ml-2 inline-block">
+                      →
+                    </span>
+                  )}
+                </h3>
+                <ul className="space-y-0.5 pt-1 text-[13px] leading-snug sm:text-right">
+                  {item.roles.map((role) => (
+                    <li key={role.period}>
+                      {role.title && (
+                        <span className="text-muted">{role.title} </span>
+                      )}
+                      <span className="font-medium tabular-nums">
+                        {role.period}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              {item.description && (
+                <p className="mt-1.5 text-[15px] leading-[1.7] text-copy">
+                  {item.description}
+                </p>
+              )}
+            </div>
           </EntryLink>
         </li>
       ))}

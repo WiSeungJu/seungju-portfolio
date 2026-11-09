@@ -204,6 +204,7 @@ export function Story({
   lede,
   result,
   visual,
+  links,
   highlight,
   ledger,
   collapse,
@@ -216,6 +217,8 @@ export function Story({
   result?: { value: string; label: string; note?: string };
   // 요약 옆에 놓는 작은 이미지
   visual?: ReactNode;
+  // 서비스·스토어 바로가기
+  links?: NavLink[];
   highlight?: ReactNode;
   ledger?: { label: string; value: string }[];
   collapse?: Lang;
@@ -275,6 +278,22 @@ export function Story({
         </div>
       ) : (
         <p className="mt-5 text-[15.5px] leading-[1.85] text-copy">{rich(lede)}</p>
+      )}
+      {links && (
+        <p className="mt-5 flex flex-wrap gap-2">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-ink/20 bg-paper px-3.5 py-1.5 text-[13px] font-medium transition-colors hover:border-ink"
+            >
+              {link.label}
+              <span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </p>
       )}
       {highlight && <div className="mt-6">{highlight}</div>}
       {details &&

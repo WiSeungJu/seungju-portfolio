@@ -16,6 +16,8 @@ const experiences = (lang: Lang): Entry[] => [
       "Owned Salary FYI, a hiring platform for Vietnamese IT talent: 10,000+ sign-ups and 14,000+ applications in 6 months"
     ),
     href: "/experience/likelion",
+    logo: "/images/logos/likelion.png",
+    brand: "#ff6000",
   },
   {
     name: "Planfit",
@@ -27,6 +29,8 @@ const experiences = (lang: Lang): Entry[] => [
       "Owned paid subscription conversion; 70+ experiments, payment conversion up to +75%"
     ),
     href: "/experience/planfit",
+    logo: "/images/logos/planfit.png",
+    brand: "#111111",
   },
 ];
 
