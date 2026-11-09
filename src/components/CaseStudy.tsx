@@ -203,6 +203,7 @@ export function Story({
   title,
   lede,
   result,
+  visual,
   highlight,
   ledger,
   collapse,
@@ -213,6 +214,8 @@ export function Story({
   title: ReactNode;
   lede: ReactNode;
   result?: { value: string; label: string; note?: string };
+  // 요약 옆에 놓는 작은 이미지
+  visual?: ReactNode;
   highlight?: ReactNode;
   ledger?: { label: string; value: string }[];
   collapse?: Lang;
@@ -265,7 +268,14 @@ export function Story({
           </div>
         )}
       </div>
-      <p className="mt-5 text-[15.5px] leading-[1.85] text-copy">{rich(lede)}</p>
+      {visual ? (
+        <div className="mt-5 grid gap-6 sm:grid-cols-[1fr_200px] sm:items-start sm:gap-10">
+          <p className="text-[15.5px] leading-[1.85] text-copy">{rich(lede)}</p>
+          <div className="max-w-[240px] sm:max-w-none">{visual}</div>
+        </div>
+      ) : (
+        <p className="mt-5 text-[15.5px] leading-[1.85] text-copy">{rich(lede)}</p>
+      )}
       {highlight && <div className="mt-6">{highlight}</div>}
       {details &&
         (collapse ? (

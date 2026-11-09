@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   CasePage,
   Facts,
@@ -44,6 +45,15 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
         "Problem Solver · Sep 2026 – Present",
         "AI Product Manager · Apr–Sep 2026",
       ]}
+      hero={{
+        src: "/images/likelion/likelion-hero.jpg",
+        alt: t(
+          "멋쟁이사자처럼 로고와 Salary FYI 앱 화면, 애니멀리그 캐릭터",
+          "LIKELION logo with the Salary FYI app and Animal League characters"
+        ),
+        width: 1920,
+        height: 774,
+      }}
       links={[
         { label: "salary-fyi.com", href: "https://salary-fyi.com" },
         { label: "animal-league.kr", href: "https://animal-league.kr" },
@@ -100,6 +110,16 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
           id="fyi"
           kicker="Project 01 — salary-fyi.com"
           title="Salary FYI"
+          visual={
+            <Image
+              src="/images/likelion/fyi-logo.png"
+              alt="Salary FYI"
+              width={640}
+              height={416}
+              sizes="240px"
+              className="h-auto w-full"
+            />
+          }
           lede={t(
             "베트남 IT 인재와 한국 기업을 연결하는 채용 플랫폼. 검증된 연봉 데이터를 기반으로 인재를 모음. 웹, 모바일 앱, 커뮤니티, 어드민 대시보드까지 **제품 전체를 담당**.",
             "A hiring platform connecting Vietnamese IT talent with Korean companies, built around verified salary data. **Owned the whole product**: web, mobile app, community, and admin dashboard."
@@ -335,6 +355,25 @@ export default function LikelionCase({ lang }: { lang: Lang }) {
             "대학생 전용 커뮤니티를 누구나 참여하는 공개 해커톤 플랫폼으로 전환. PM으로 **킥오프 약 6주 만에 런칭**(2026.11).",
             "Turned a university-only community into an open hackathon platform. As PM, **launched about 6 weeks after kickoff** (Nov 2026)."
           )}
+          highlight={
+            <ul
+              aria-label={t("애니멀리그 캐릭터", "Animal League characters")}
+              className="flex items-end justify-between gap-1 border-y border-rule py-4"
+            >
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((n) => (
+                <li key={n} className="w-[11%]">
+                  <Image
+                    src={`/images/likelion/al-char-${n}.png`}
+                    alt=""
+                    width={190}
+                    height={175}
+                    sizes="80px"
+                    className="h-auto w-full"
+                  />
+                </li>
+              ))}
+            </ul>
+          }
           result={{
             value: t("약 6주", "~6 weeks"),
             label: t("킥오프에서 런칭까지", "Kickoff to launch"),
