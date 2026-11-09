@@ -57,21 +57,13 @@ export default function ResumePage() {
                 담당하는 PM 위승주입니다.
               </strong>
             </p>
-            <p className="text-[10.5px] text-[#222] leading-[1.55] mb-1.5">
-              현재 멋쟁이사자처럼 글로벌신사업본부에서 베트남 IT 인재 채용 플랫폼{" "}
-              <strong>Salary FYI</strong>의 웹, 모바일 앱, 커뮤니티, 어드민까지
-              제품 전체를 맡아, 출시 6개월 만에{" "}
-              <strong>가입 10,000명+, 채용 지원 14,000건+</strong>을 만들었습니다.
-              입사 3일 차에 첫 MVP를 배포했고, 4개월간 5개 이상의 제품을
-              단독으로 기획·개발·출시했습니다.
-            </p>
             <p className="text-[10.5px] text-[#222] leading-[1.55]">
-              이전에는 Planfit에서 유료 구독 전환율 개선을 전담하며 70건 이상의
-              실험을 설계·실행했고, 외부 솔루션 제휴를 주도해{" "}
-              <strong>주간 결제 전환율(CVR)을 75% 끌어올렸습니다.</strong> 개인
-              프로젝트로 AI 와인 큐레이팅 앱 <strong>드링키지</strong>를 1인으로
-              개발·출시했고, 미식 매거진 <strong>고메블</strong>을 팔로워 1만
-              채널로 운영하고 있습니다.
+              멋쟁이사자처럼에서 베트남 IT 인재 채용 플랫폼{" "}
+              <strong>Salary FYI</strong>를 맡아 출시 6개월 만에{" "}
+              <strong>가입 10,000명+, 채용 지원 14,000건+</strong>을
+              만들었습니다. 입사 3일 차에 첫 MVP를 배포했고, 이전에는
+              Planfit에서 70건 이상의 실험으로{" "}
+              <strong>주간 결제 전환율을 75% 끌어올렸습니다.</strong>
             </p>
           </section>
 
@@ -97,50 +89,33 @@ export default function ResumePage() {
                 </p>
                 <ul className="resume-ul">
                   <li>
-                    <strong>Salary FYI(salary-fyi.com) 제품 전체 담당:</strong>{" "}
-                    베트남 IT 인재와 한국 기업을 연결하는 채용 플랫폼의 웹·모바일
-                    앱·커뮤니티·어드민 대시보드를 기획·개발. 출시 6개월 만에{" "}
-                    <strong>
-                      가입 10,000명+, 이력서 6,600건+, 지원 14,000건+, MAU 3만
-                    </strong>
+                    <strong>Salary FYI 제품 전체 담당:</strong> 베트남 IT 인재
+                    채용 플랫폼(웹·앱·커뮤니티·어드민). 출시 6개월 만에{" "}
+                    <strong>가입 10,000명+, 지원 14,000건+, MAU 3만</strong>
                   </li>
                   <li>
-                    <strong>팀 KPI 재정의 · 이력서 공개율 7.7% → 88.3%:</strong>{" "}
-                    이력서 등록 유저의 지원율이 79배 높다는 점을 발견해 KPI와 광고
-                    예산을 재배분하고, 원탭 지원과 LLM 타깃 캠페인(클릭률 14~30%)으로
-                    공개율 개선
+                    <strong>KPI 재정의:</strong> 이력서 등록 유저의 지원율이
+                    79배 높다는 점을 찾아 KPI를 바꾸고, 원탭 지원·LLM 캠페인으로{" "}
+                    <strong>이력서 공개율 7.7% → 88.3%</strong>
                   </li>
                   <li>
-                    <strong>가입 퍼널 재설계:</strong> K-Tech College 지원자 CV로 프로필을
-                    미리 만들어 둔 메일로 가입 전환 1.5% → 14.4%, 한 달 만에
-                    인재풀 680 → 2,000명
+                    <strong>가입 퍼널 재설계:</strong> 지원자 CV로 프로필을 미리
+                    만든 메일로 <strong>가입 전환 1.5% → 14.4%</strong>, 한 달
+                    만에 인재풀 680 → 2,000명
                   </li>
                   <li>
-                    <strong>채용 검증 내재화:</strong> 외부 업체 의존 없이
-                    인재 실력을 직접 검증하도록 이력서 검토·AI 음성 인터뷰·최종
-                    평가·결과 안내까지 채용 8단계를 자체 구축. AI 음성 인터뷰를
-                    자체 서비스로 만들어 예상 비용 연 약 2,800만 원 → 월 $15 수준으로 절감
+                    <strong>채용 검증 내재화:</strong> 채용 8단계를 자체 구축하고
+                    AI 음성 인터뷰를 직접 만들어{" "}
+                    <strong>예상 비용 연 2,800만 원 → 월 $15</strong>
                   </li>
                   <li>
-                    <strong>K-Tech College(정부지원사업):</strong> 한국 스타트업과 베트남
-                    원격 인재 매칭 담당. 이력서 한국어 번역을 건당 약 3시간에서
-                    즉시 생성으로 단축, K-Tech College Job Matching Weekend
-                    2026(다낭) 현지 운영. 공고 112개 전수 진단으로 매칭
-                    병목(합격자 약 500명 기업 전달 대기)을 찾아 SLA·지연 알림을
-                    자동화
+                    <strong>K-Tech College(정부지원사업):</strong> 공고 112개
+                    전수 진단으로 매칭 병목(합격자 약 500명 대기)을 찾아 SLA·지연
+                    알림 자동화, 이력서 번역 건당 3시간 → 즉시
                   </li>
                   <li>
-                    <strong>애니멀리그 PM:</strong> 공개 해커톤 플랫폼의
-                    기획부터 QA까지 리드, 킥오프 약 6주 만에 런칭
-                  </li>
-                  <li>
-                    <strong>KSGC(정부지원사업) 운영 플랫폼:</strong> 스타트업 37곳
-                    멘토링 프로그램의 예약·증빙·KPI 집계 플랫폼을 착수 1주 만에 직접
-                    개발·배포
-                  </li>
-                  <li>
-                    입사 3일 차 첫 MVP 배포, 4개월간 제품 5개 이상을 단독으로
-                    기획·개발·출시. 맞춤 콜드메일 2만 건 이상으로 인재풀 확대
+                    <strong>애니멀리그 PM:</strong> 공개 해커톤 플랫폼 기획부터
+                    QA까지 리드, <strong>킥오프 약 6주 만에 런칭</strong>
                   </li>
                 </ul>
               </div>
@@ -163,25 +138,18 @@ export default function ResumePage() {
                 </p>
                 <ul className="resume-ul">
                   <li>
-                    <strong>외부 AI 솔루션(Monetai) 발굴·도입 주도:</strong> 유저
-                    구매 확률 예측 솔루션을 직접 리서치·발굴하고 제휴사와 1:3
-                    기술 미팅을 단독으로 리드. 맞춤형 타겟팅 프로모션 런칭으로{" "}
-                    <strong>주간 결제 전환율(CVR) +75% 상승</strong> 달성 후
-                    프로덕션 정착
+                    <strong>외부 AI 솔루션(Monetai) 도입 주도:</strong> 구매 확률
+                    예측 솔루션을 발굴·도입해{" "}
+                    <strong>주간 결제 전환율 +75%</strong>, 지금도 프로덕션 운영 중
                   </li>
                   <li>
-                    <strong>비디오 생성 AI 활용 결제창 영상 배포:</strong> 타
-                    부서 의존 없이 단독으로 시즌 페이월 영상을 제작·배포, 신규
-                    유저 전환율 <strong>목표 2배 초과(+20%)</strong> 달성
+                    <strong>AI 시즌 페이월:</strong> 영상 생성 AI로 결제창 영상을
+                    단독 제작·배포해 신규 유저 전환율{" "}
+                    <strong>+20%(목표의 2배)</strong>
                   </li>
                   <li>
-                    Amplitude 데이터 분석 기반으로 약 3개월간{" "}
-                    <strong>70건 이상의 실험 설계·실행</strong>, PRD 100건 이상
-                    작성, 결제 퍼널 병목 분석 및 개선
-                  </li>
-                  <li>
-                    <strong>Stack:</strong> Amplitude · Figma · Cursor · Claude ·
-                    Veo
+                    Amplitude 퍼널 분석으로 약 3개월간{" "}
+                    <strong>실험 70건+</strong> 설계·실행, PRD 100건+ 작성
                   </li>
                 </ul>
               </div>
@@ -211,22 +179,13 @@ export default function ResumePage() {
                 </p>
                 <ul className="resume-ul">
                   <li>
-                    와인 입문자의 진입장벽을 낮추는 앱. 취향, 테이스팅 노트,
-                    품종 기반 개인화 추천
-                  </li>
-                  <li>
-                    v1(10인 팀 · Swift)의 실패 회고에서 &ldquo;초보는 자기 취향
-                    자체를 모른다&rdquo;는 인사이트를 도출해 진입점을{" "}
-                    &lsquo;취향 테스트&rsquo;로 재정의
-                  </li>
-                  <li>
-                    React Native로 전면 리라이트, 약 1.5개월 개발 후{" "}
-                    <strong>2026.01 App Store 승인</strong>
+                    실패한 v1(10인 팀)을 &lsquo;취향 테스트&rsquo; 중심으로
+                    재정의하고 React Native로 약 1.5개월 만에 재구축,{" "}
+                    <strong>2026.01 App Store 출시</strong>
                   </li>
                   <li>
                     <strong>홍익대학교 창업경진대회 우수상(2위)</strong> ·
-                    주간동아 &ldquo;코딩 몰라도 AI 활용해 앱 자유자재로
-                    만든다&rdquo; 보도
+                    주간동아 보도
                   </li>
                 </ul>
               </div>
@@ -250,18 +209,11 @@ export default function ResumePage() {
                 </p>
                 <ul className="resume-ul">
                   <li>
-                    유료 광고 0원, 오가닉 도달만으로 팔로워{" "}
-                    <strong>1만+</strong>, 숏폼 최고{" "}
-                    <strong>124만 뷰</strong>, 릴스 평균 30만 뷰 달성
+                    유료 광고 없이 팔로워 <strong>1만+</strong>, 숏폼 최고{" "}
+                    <strong>124만 뷰</strong>
                   </li>
                   <li>
-                    초기 팔로워 200명 정체 구간에서 &lsquo;감상형&rsquo;
-                    콘텐츠를 &lsquo;셰프 취재 기반 매거진&rsquo;으로 리포지셔닝,
-                    2주 만에 +1,000 팔로워 회복
-                  </li>
-                  <li>
-                    캐치테이블 등 브랜드와 <strong>50+ 건 협업</strong>, 광고와
-                    촬영으로 수익화
+                    캐치테이블 등 브랜드 <strong>협업 50건+</strong>로 수익화
                   </li>
                 </ul>
               </div>

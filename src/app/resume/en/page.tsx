@@ -33,14 +33,12 @@ const experience = [
       { title: "AI Product Manager", period: "Apr 2026 – Sep 2026" },
     ],
     bullets: [
-      "Own Salary FYI end to end (web, app, community, admin), a hiring platform connecting Vietnamese IT talent with Korean companies; 10,000+ sign-ups, 6,600+ resumes, 14,000+ applications, and 30K MAU within 6 months of launch",
-      "Found that users with a registered resume apply 79x more often; redefined the team KPI and ad budget around it, and raised the resume visibility rate from 7.7% to 88.3% with one-tap apply and LLM-targeted campaigns (14–30% click-through rate)",
-      "Redesigned the sign-up funnel with emails offering profiles pre-built from K-Tech College applicants' CVs; sign-up conversion rose from 1.5% to 14.4% and the talent pool grew from 680 to 2,000 in one month",
-      "Built an in-house 8-step hiring pipeline (LLM resume screening, AI voice interview, final evaluation, result emails) to verify candidates' skills in-house; built our own AI voice interview, cutting its projected cost from ~$20K/yr to ~$15/mo",
-      "K-Tech College (government-funded Korea–Vietnam talent matching): cut resume translation from ~3 hours to instant; audited 112 open job posts, found the company-handoff bottleneck (~500 passed candidates waiting), and automated SLA and delay alerts",
-      "PM for Animal League, an open hackathon platform: led scoping through QA and launched about 6 weeks after kickoff",
-      "Built and shipped the operations platform for K-Startup Grand Challenge (government-funded, 37 startups) in a week",
-      "Shipped the first MVP on day 3 and planned, built, and launched 5+ products solo in 4 months",
+      "Own Salary FYI end to end (web, app, community, admin), a hiring platform for Vietnamese IT talent: 10,000+ sign-ups, 14,000+ applications, and 30K MAU within 6 months of launch",
+      "Found that users with a resume apply 79x more often; redefined the team KPI around it and raised resume visibility from 7.7% to 88.3%",
+      "Redesigned sign-up with profiles pre-built from applicants' CVs: conversion 1.5% → 14.4%, talent pool 680 → 2,000 in one month",
+      "Built the 8-step hiring pipeline in-house, including our own AI voice interview, cutting its projected cost from ~$20K/yr to ~$15/mo",
+      "K-Tech College (government-funded): audited 112 job posts, found the company-handoff bottleneck (~500 candidates waiting), and automated SLA and delay alerts",
+      "PM for Animal League, an open hackathon platform; launched about 6 weeks after kickoff",
     ],
   },
   {
@@ -50,10 +48,9 @@ const experience = [
       { title: "AI Problem Solver Intern", period: "Jun 2025 – Dec 2025" },
     ],
     bullets: [
-      "Owned free-to-paid subscription conversion; designed and ran 70+ experiments in about 3 months as a one-person sprint across planning, UI/UX design, React Native front end, and QA",
+      "Owned free-to-paid conversion; ran 70+ experiments in about 3 months and wrote 100+ PRDs as a one-person sprint (planning, design, React Native, QA)",
       "Sourced and led the adoption of Monetai, an external AI purchase-prediction solution; lifted weekly payment conversion for existing users by 75%, still running in production",
       "Replaced a static paywall with an AI-generated seasonal video (Veo, Midjourney), lifting new-user payment conversion by 20%, double the 10% target",
-      "Wrote 100+ PRDs and fixed payment-funnel bottlenecks using Amplitude funnel analysis",
     ],
   },
 ];
@@ -64,8 +61,7 @@ const projects = [
     stack: "React Native, MySQL, Claude, Cursor",
     period: "Jan 2026 – Present",
     bullets: [
-      "Built an AI wine curation app for beginners with recommendations based on taste, tasting notes, and grape variety; handled planning, design, development, and QA alone",
-      "Rebuilt it from a failed 10-person v1 in about 1.5 months; approved on the App Store in Jan 2026",
+      "Rebuilt a failed 10-person v1 solo in about 1.5 months as a taste-based wine app for beginners; launched on the App Store in Jan 2026",
       "Won 2nd place at the Hongik University Startup Competition; featured in Weekly Dong-A",
     ],
   },
