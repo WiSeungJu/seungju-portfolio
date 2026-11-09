@@ -41,7 +41,9 @@ export default function Intro({ lang }: { lang: Lang }) {
                 >
                   Salary FYI
                 </a>
-                를 맡아, 출시 6개월 만에 가입 10,000명+, 채용 지원 14,000건+을
+                를 맡아, 출시 6개월 만에{" "}
+                <span className="whitespace-nowrap">가입 10,000명+</span>,{" "}
+                <span className="whitespace-nowrap">채용 지원 14,000건+</span>을
                 만들었습니다. 이전에는{" "}
                 <Link href="/experience/planfit" className="link text-ink">
                   Planfit

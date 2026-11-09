@@ -17,22 +17,22 @@ export default function ResumeBar({ lang }: { lang: "ko" | "en" }) {
   const t = copy[lang];
   return (
     <div className="print:hidden sticky top-0 z-50 bg-paper/90 backdrop-blur-xl border-b border-rule">
-      <div className="max-w-[820px] mx-auto px-6 h-14 flex items-center justify-between gap-4">
+      <div className="max-w-[820px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-3">
         <Link
           href="/"
-          className="text-sm text-muted hover:text-ink transition-colors"
+          className="whitespace-nowrap text-sm text-muted hover:text-ink transition-colors"
         >
           {t.back}
         </Link>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
           <div className="flex border border-rule text-xs">
             {versions.map((v) => (
               <Link
                 key={v.lang}
                 href={v.href}
                 aria-current={v.lang === lang ? "page" : undefined}
-                className={`px-3 py-1.5 transition-colors ${
+                className={`whitespace-nowrap px-3 py-1.5 transition-colors ${
                   v.lang === lang
                     ? "bg-ink font-semibold text-paper"
                     : "text-muted hover:text-ink"
@@ -45,7 +45,8 @@ export default function ResumeBar({ lang }: { lang: "ko" | "en" }) {
 
           <button
             onClick={() => window.print()}
-            className="px-4 py-2 bg-ink hover:bg-copy text-paper text-xs font-semibold transition-colors inline-flex items-center gap-2"
+            aria-label={t.save}
+            className="whitespace-nowrap px-3 sm:px-4 py-2 bg-ink hover:bg-copy text-paper text-xs font-semibold transition-colors inline-flex items-center gap-2"
           >
             <svg
               width="14"
@@ -59,7 +60,7 @@ export default function ResumeBar({ lang }: { lang: "ko" | "en" }) {
               <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
               <rect x="6" y="14" width="12" height="8" />
             </svg>
-            {t.save}
+            <span className="hidden sm:inline">{t.save}</span>
           </button>
         </div>
       </div>

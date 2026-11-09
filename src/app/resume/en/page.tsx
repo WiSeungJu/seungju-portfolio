@@ -270,6 +270,58 @@ export default function ResumeEnPage() {
         .jake-skills p {
           margin-bottom: 1pt;
         }
+        /* Phones: drop the Letter sheet, reflow to the screen and enlarge type (print unaffected) */
+        @media screen and (max-width: 640px) {
+          .jake-sheet {
+            width: 100%;
+            min-height: 0;
+            margin: 0;
+            box-shadow: none;
+            line-height: 1.45;
+          }
+          .jake-inner {
+            padding: 24px 18px 36px;
+          }
+          .jake-name {
+            font-size: 28px;
+          }
+          .jake-contact,
+          .jake-sub,
+          .jake-ul,
+          .jake-skills {
+            font-size: 14.5px;
+          }
+          .jake-contact {
+            margin-top: 8px;
+            line-height: 1.6;
+          }
+          .jake-h2 {
+            margin-top: 22px;
+            font-size: 18px;
+          }
+          .jake-entry {
+            margin-bottom: 14px;
+            font-size: 16px;
+          }
+          .jake-row {
+            flex-wrap: wrap;
+            column-gap: 12px;
+            row-gap: 0;
+          }
+          .jake-row > :last-child {
+            text-align: left;
+          }
+          .jake-ul {
+            margin-top: 6px;
+            padding-left: 18px;
+          }
+          .jake-ul > li {
+            margin-bottom: 6px;
+          }
+          .jake-skills p {
+            margin-bottom: 6px;
+          }
+        }
         @media print {
           html,
           body {

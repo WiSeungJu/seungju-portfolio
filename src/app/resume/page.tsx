@@ -474,6 +474,69 @@ export default function ResumePage() {
         .resume-sheet h3 {
           break-after: avoid;
         }
+        /* 휴대폰: A4 종이 대신 화면 폭에 맞춰 다시 흘리고 글자를 키운다 (인쇄에는 영향 없음) */
+        @media screen and (max-width: 640px) {
+          .resume-sheet {
+            width: 100%;
+            margin: 0;
+            box-shadow: none;
+          }
+          .resume-inner {
+            padding: 24px 18px 36px;
+          }
+          .resume-photo {
+            width: 64px;
+            height: 82px;
+          }
+          .resume-sheet .justify-between {
+            flex-wrap: wrap;
+            row-gap: 2px;
+          }
+          .resume-sheet header .text-right {
+            text-align: left;
+          }
+          .resume-sheet [class*="text-[10px]"],
+          .resume-sheet [class*="text-[10.5px]"],
+          .resume-sheet [class*="text-[11px]"] {
+            font-size: 13.5px;
+            line-height: 1.6;
+          }
+          .resume-sheet [class*="text-[13px]"],
+          .resume-sheet [class*="text-[14px]"] {
+            font-size: 16px;
+          }
+          .resume-sheet [class*="text-[16px]"] {
+            font-size: 14px;
+          }
+          .resume-sheet [class*="text-[32px]"] {
+            font-size: 28px;
+          }
+          .resume-sheet section {
+            padding-top: 16px;
+            padding-bottom: 16px;
+          }
+          .resume-h2 {
+            font-size: 11px;
+          }
+          .resume-ul {
+            font-size: 14px;
+            line-height: 1.65;
+            padding-left: 18px;
+          }
+          .resume-ul > li {
+            margin-bottom: 6px;
+          }
+          .resume-skill-cat-inline {
+            min-width: 84px;
+            font-size: 10px;
+          }
+          .resume-tag {
+            font-size: 12px;
+          }
+          .resume-sheet .font-mono {
+            word-break: break-all;
+          }
+        }
         @media print {
           html,
           body {

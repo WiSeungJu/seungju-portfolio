@@ -54,7 +54,7 @@ export function CasePage({
           <h1 className="hero-in mt-6 text-[48px] font-bold leading-[1.05] tracking-tight sm:text-[84px]">
             {title}
             {subtitle && (
-              <span className="ml-4 text-lg font-normal tracking-normal text-muted sm:text-2xl">
+              <span className="mt-2 block text-lg font-normal tracking-normal text-muted sm:ml-4 sm:mt-0 sm:inline sm:text-2xl">
                 {subtitle}
               </span>
             )}
@@ -248,7 +248,7 @@ export function Story({
       id={id}
       className={
         collapse
-          ? "mt-6 scroll-mt-8 bg-wash p-6 first:mt-0 sm:p-10 print:bg-transparent print:p-0"
+          ? "-mx-2 mt-5 scroll-mt-8 bg-wash p-5 first:mt-0 sm:mx-0 sm:mt-6 sm:p-10 print:bg-transparent print:p-0"
           : "mt-14 scroll-mt-8 border-t border-rule pt-10 first:mt-0 first:border-t-0 first:pt-0"
       }
     >
@@ -274,7 +274,7 @@ export function Story({
       {visual ? (
         <div className="mt-5 grid gap-6 sm:grid-cols-[1fr_200px] sm:items-start sm:gap-10">
           <p className="text-[15.5px] leading-[1.85] text-copy">{rich(lede)}</p>
-          <div className="max-w-[240px] sm:max-w-none">{visual}</div>
+          <div className="max-w-[160px] sm:max-w-none">{visual}</div>
         </div>
       ) : (
         <p className="mt-5 text-[15.5px] leading-[1.85] text-copy">{rich(lede)}</p>
@@ -299,7 +299,7 @@ export function Story({
       {details &&
         (collapse ? (
           <Collapsible targetId={id} lang={collapse}>
-            <div className="mt-4 bg-paper px-5 pb-8 pt-2 sm:px-8 print:px-0">
+            <div className="-mx-2 mt-4 bg-paper px-4 pb-8 pt-2 sm:mx-0 sm:px-8 print:px-0">
               {details}
             </div>
           </Collapsible>
